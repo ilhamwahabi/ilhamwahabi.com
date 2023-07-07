@@ -8,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { Analytics } from "@vercel/analytics/react";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -23,6 +24,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Analytics />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
