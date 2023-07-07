@@ -10,29 +10,33 @@ export const meta: V2_MetaFunction = () => {
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
+      <h1>Welcome to ilhamwahabi.com</h1>
       <ul>
         <li>
           <a
             target="_blank"
-            href="https://remix.run/tutorials/blog"
+            href="https://github.com/ilhamwahabi"
             rel="noreferrer"
           >
-            15m Quickstart Blog Tutorial
+            Github
           </a>
         </li>
         <li>
           <a
             target="_blank"
-            href="https://remix.run/tutorials/jokes"
+            href="https://twitter.com/ilhamwahabigx"
             rel="noreferrer"
           >
-            Deep Dive Jokes App Tutorial
+            Twitter
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/ilham-wahabi"
+            rel="noreferrer"
+          >
+            LinkedIn
           </a>
         </li>
       </ul>
