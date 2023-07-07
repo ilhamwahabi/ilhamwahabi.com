@@ -2,6 +2,7 @@ type Post = {
   id: string;
   slug: string;
   title: string;
+  description: string;
 };
 
 const NOTION_WORKER = "https://notion-api.splitbee.io/v1";

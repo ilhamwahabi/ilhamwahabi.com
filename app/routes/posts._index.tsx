@@ -1,4 +1,4 @@
-import { json } from "@remix-run/node";
+import { type V2_MetaFunction, json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { getPosts } from "~/models/post.server";
 
@@ -6,6 +6,16 @@ export const loader = async () => {
   return json({
     posts: await getPosts(),
   });
+};
+
+export const meta: V2_MetaFunction = () => {
+  return [
+    { title: `All Post | Ilham Wahabi` },
+    {
+      name: "description",
+      content: "My writing",
+    },
+  ];
 };
 
 export default function Posts() {
