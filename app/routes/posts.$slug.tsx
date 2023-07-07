@@ -21,18 +21,38 @@ export const loader = async ({ params }: LoaderArgs) => {
 };
 
 export const meta: V2_MetaFunction = ({ data }) => {
-  const { title, description, keywords } = data.post;
+  const { title, slug, description, keywords, thumbnail } = data.post;
 
   return [
+    // Title
     { title: `${title} | Ilham Wahabi` },
-    {
-      name: "description",
-      content: description,
-    },
-    {
-      name: "keywords",
-      content: keywords.join(","),
-    },
+    { property: "og:title", content: `${title} | Ilham Wahabi` },
+    { name: "twitter:title", content: `${title} | Ilham Wahabi` },
+    { name: "application-name", content: `${title} | Ilham Wahabi` },
+    { name: "apple-mobile-web-app-title", content: `${title} | Ilham Wahabi` },
+
+    // Description
+    { name: "description", content: description },
+    { property: "og:description", content: description },
+    { name: "twitter:description", content: description },
+
+    // URL
+    { rel: "canonical", href: `https://ilhamwahabi.com/posts/${slug}` },
+    { property: "og:url", content: `https://ilhamwahabi.com/posts/${slug}` },
+    { name: "twitter:url", content: `https://ilhamwahabi.com/posts/${slug}` },
+
+    // Keywords
+    { name: "keywords", content: keywords.join(",") },
+
+    // Image
+    { property: "og:image", content: thumbnail[0].url },
+    { name: "twitter:image", content: thumbnail[0].url },
+
+    // Others
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:creator", content: "@ilhamwahabigx" },
+    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: "ilhamwahabi" },
   ];
 };
 
