@@ -10,10 +10,12 @@ import {
 } from "@remix-run/react";
 import { Analytics } from "@vercel/analytics/react";
 
-import styles from "./tailwind.css";
+import tailwind from "./tailwind.css";
+import styles from "./app.css";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+  { rel: "stylesheet", href: tailwind },
   { rel: "stylesheet", href: styles },
 ];
 

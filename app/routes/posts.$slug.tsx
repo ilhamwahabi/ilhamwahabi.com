@@ -37,9 +37,11 @@ export default function PostSlug() {
   const { title } = post;
 
   return (
-    <main className="mx-auto max-w-4xl">
-      <h1 className="my-6 border-b-2 text-center text-3xl pb-4">{title}</h1>
-      <NotionRenderer blockMap={blocks} />
+    <main className="w-full flex flex-col justify-center items-center min-h-screen p-4 bg-[#21292E] !text-white">
+      <h1 className="my-6 border-b-2 text-center text-3xl pb-2">{title}</h1>
+      <div className="w-4/5 md:w-2/5 mx-auto">
+        <NotionRenderer blockMap={blocks} />
+      </div>
     </main>
   );
 }
