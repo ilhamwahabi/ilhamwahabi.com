@@ -2,6 +2,7 @@ type Post = {
   id: string;
   slug: string;
   title: string;
+  keywords: string;
   description: string;
 };
 

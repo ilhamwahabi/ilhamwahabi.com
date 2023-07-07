@@ -2,3 +2,11 @@
   color: white;
   caret-color: white;
 }
+
+.notion-image-caption {
+  color: white;
+}
+
+.notion-hr {
+  border-color: rgba(255, 255, 255, 0.25);
+}
