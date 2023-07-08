@@ -1,6 +1,7 @@
 import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -28,12 +29,53 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-[#21292E] text-white">
+        <header className="py-8 lg:py-16 flex justify-center">
+          <div className="flex flex-col lg:flex-row justify-start items-center w-4/5 md:w-2/5 ">
+            <h1 className="text-xl lg:text-2xl">
+              <Link to="posts">Ilham Wahabi</Link>
+            </h1>
+            <div className="lg:ml-16 mt-4 lg:mt-0 space-x-4 text-base lg:text-lg flex items-end">
+              <Link className="sm:p-2 md:p-4" to="posts">
+                Posts
+              </Link>
+              <Link className="sm:p-2 md:p-4" to="talks">
+                Talks
+              </Link>
+            </div>
+          </div>
+        </header>
         <Analytics />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <footer className="flex justify-center items-center space-x-4 p-16 border-t-gray-600 border-t text-sm md:text-base">
+          <a
+            target="_blank"
+            href="https://github.com/ilhamwahabi"
+            rel="noreferrer"
+            className="sm:p-2 md:p-4"
+          >
+            Github
+          </a>
+          <a
+            target="_blank"
+            href="https://twitter.com/ilhamwahabigx"
+            rel="noreferrer"
+            className="sm:p-2 md:p-4"
+          >
+            Twitter
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/ilham-wahabi"
+            rel="noreferrer"
+            className="sm:p-2 md:p-4"
+          >
+            LinkedIn
+          </a>
+        </footer>
       </body>
     </html>
   );

@@ -62,10 +62,10 @@ export default function PostSlug() {
 
   return (
     <main className="w-full flex flex-col justify-start items-center min-h-screen p-4 bg-[#21292E] !text-white">
-      <h1 className="mt-24 mb-8 border-b-2 text-center text-3xl pb-2">
+      <h1 className="my-2 lg:my-8 border-b-2 text-center text-2xl lg:text-3xl pb-2">
         {title}
       </h1>
-      <div className="w-4/5 md:w-2/5 my-16">
+      <div className="w-4/5 md:w-2/5 my-8 lg:my-12">
         <NotionRenderer blockMap={blocks} />
       </div>
     </main>
