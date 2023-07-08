@@ -22,7 +22,7 @@ export default function Blogs() {
   const { blogs } = useLoaderData<typeof loader>();
 
   return (
-    <main className="flex flex-col justify-center items-center p-16 bg-[#21292E] text-white">
+    <main className="flex flex-col justify-center items-center p-16">
       <h1 className="text-center text-2xl md:text-5xl">Blog</h1>
       <ul className="mt-8 md:mt-12 text-lg md:text-2xl space-y-2 md:space-y-4 text-center">
         {blogs.map((blog: { title: string; slug: string }) => (

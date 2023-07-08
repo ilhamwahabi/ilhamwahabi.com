@@ -61,7 +61,7 @@ export default function BlogSlug() {
   const { title } = blog;
 
   return (
-    <main className="w-full flex flex-col justify-start items-center p-4 bg-[#21292E] !text-white">
+    <main className="w-full flex flex-col justify-start items-center p-4">
       <h1 className="my-2 lg:my-8 border-b-2 text-center text-2xl lg:text-3xl pb-2">
         {title}
       </h1>

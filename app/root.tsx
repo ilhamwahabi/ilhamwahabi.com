@@ -44,6 +44,9 @@ export default function App() {
               <Link className="sm:p-2 md:p-4" to="talk">
                 Talk
               </Link>
+              <Link className="sm:p-2 md:p-4" to="about">
+                About
+              </Link>
             </div>
           </div>
         </header>
@@ -56,7 +59,7 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <footer className="flex justify-center items-center space-x-4 p-16 border-t-gray-600 border-t text-sm md:text-base">
+        <footer className="flex justify-center items-center space-x-4 p-16 border-t-gray-600 border-t text-sm md:text-base mt-8 lg:mt-24">
           <a
             target="_blank"
             href="https://github.com/ilhamwahabi"
