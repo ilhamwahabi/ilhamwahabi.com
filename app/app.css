@@ -1,3 +1,5 @@
+/* Handle dark mode, since Notion is default in light mode */
+
 .notion {
   color: white;
   caret-color: white;

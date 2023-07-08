@@ -18,15 +18,9 @@ export const meta: V2_MetaFunction = () => {
     { name: "apple-mobile-web-app-title", content: "Blog | Ilham Wahabi" },
 
     // Description
-    { name: "description", content: "Buah pikir sebagai seorang manusia 🤯" },
-    {
-      property: "og:description",
-      content: "Buah pikir sebagai seorang manusia 🤯",
-    },
-    {
-      name: "twitter:description",
-      content: "Buah pikir sebagai seorang manusia 🤯",
-    },
+    { name: "description", content: "Buah pikir sebagai manusia 🤯" },
+    { property: "og:description", content: "Buah pikir sebagai manusia 🤯" },
+    { name: "twitter:description", content: "Buah pikir sebagai manusia 🤯" },
 
     // URL
     { rel: "canonical", href: `https://ilhamwahabi.com/blog` },
@@ -61,7 +55,7 @@ export default function Blogs() {
     <main className="flex flex-col justify-center items-center p-6 lg:p-16">
       <h1 className="text-center text-2xl md:text-5xl">Blog</h1>
       <div className="mt-8 space-y-4 text-base lg:text-lg flex flex-col items-center w-full text-center">
-        <p>Buah pikir sebagai seorang manusia 🤯</p>
+        <p>Buah pikir sebagai manusia 🤯</p>
       </div>
       <ul className="mt-8 md:mt-12 text-lg md:text-2xl space-y-2 md:space-y-4 text-center">
         {blogs.map((blog: { title: string; slug: string }) => (
