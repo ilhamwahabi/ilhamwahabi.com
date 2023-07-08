@@ -29,11 +29,13 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-[#21292E] text-white">
+      <body className="bg-[#21292E] text-white min-h-screen flex flex-col">
         <header className="py-8 lg:py-16 flex justify-center">
           <div className="flex flex-col lg:flex-row justify-start items-center w-4/5 md:w-2/5 ">
             <h1 className="text-xl lg:text-2xl">
-              <Link to="posts">Ilham Wahabi</Link>
+              <Link className="sm:p-2 md:p-4" to="">
+                Ilham Wahabi
+              </Link>
             </h1>
             <div className="lg:ml-16 mt-4 lg:mt-0 space-x-4 text-base lg:text-lg flex items-end">
               <Link className="sm:p-2 md:p-4" to="posts">
@@ -46,7 +48,11 @@ export default function App() {
           </div>
         </header>
         <Analytics />
-        <Outlet />
+        <main className="flex-1">
+          <div className="w-4/5 md:w-2/5 mx-auto">
+            <Outlet />
+          </div>
+        </main>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
