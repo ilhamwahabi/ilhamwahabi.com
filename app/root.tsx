@@ -81,7 +81,7 @@ export default function App() {
           </a>
           <a
             target="_blank"
-            href="https://www.linkedin.com/in/ilham-wahabi"
+            href="https://www.linkedin.com/in/ilhamwahabi"
             rel="noreferrer"
             className="sm:p-2 md:p-4"
           >

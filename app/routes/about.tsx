@@ -56,7 +56,7 @@ export default function About() {
           Dulu berkuliah di Institut Teknologi Bandung jurusan Teknik
           Informatika.
         </p>
-        <p>Selain ngoding suka baca buka dan main badminton.</p>
+        <p>Selain ngoding suka baca buku dan main badminton.</p>
         <p>
           Sekarang lagi <em>sabbatical leave</em>, kalau ada opportunity bisa
           beritahu aja ya.
