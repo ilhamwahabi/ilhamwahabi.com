@@ -36,7 +36,7 @@ export const meta: V2_MetaFunction = () => {
     { name: "twitter:url", content: `https://ilhamwahabi.com` },
 
     // Keywords
-    { name: "keywords", content: "ilhamwahabi" },
+    { name: "keywords", content: "ilhamwahabi,pembicara" },
 
     // Image
     {
@@ -73,7 +73,7 @@ export default function Talks() {
             </Link>
           </li>
         ))}
-        {talks.length === 0 && "Belum ada item yang bisa ditampilkan 🙏"}
+        {talks.length === 0 && "Belum ada yang bisa ditampilkan 🙏"}
       </ul>
     </main>
   );

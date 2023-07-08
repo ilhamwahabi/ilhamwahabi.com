@@ -34,7 +34,7 @@ export const meta: V2_MetaFunction = () => {
     { name: "twitter:url", content: `https://ilhamwahabi.com/blog` },
 
     // Keywords
-    { name: "keywords", content: "ilhamwahabi" },
+    { name: "keywords", content: "ilhamwahabi,blog" },
 
     // Image
     {
