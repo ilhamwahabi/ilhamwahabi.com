@@ -10,7 +10,7 @@ export const loader = async () => {
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: `All Blog | Ilham Wahabi` },
+    { title: `Blog | Ilham Wahabi` },
     {
       name: "description",
       content: "My writing",
@@ -25,7 +25,7 @@ export default function Blogs() {
     <main className="flex flex-col justify-center items-center p-16">
       <h1 className="text-center text-2xl md:text-5xl">Blog</h1>
       <div className="mt-8 space-y-4 text-lg flex flex-col items-center w-full">
-        <p>Buah pikir sebagai seorang manusia</p>
+        <p>Buah pikir sebagai seorang manusia 🤯</p>
       </div>
       <ul className="mt-8 md:mt-12 text-lg md:text-2xl space-y-2 md:space-y-4 text-center">
         {blogs.map((blog: { title: string; slug: string }) => (
