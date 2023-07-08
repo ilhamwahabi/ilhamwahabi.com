@@ -44,6 +44,9 @@ export default function App() {
               <Link className="sm:p-2 md:p-4" to="talk">
                 Talk
               </Link>
+              <Link className="sm:p-2 md:p-4" to="project">
+                Project
+              </Link>
               <Link className="sm:p-2 md:p-4" to="about">
                 About
               </Link>
