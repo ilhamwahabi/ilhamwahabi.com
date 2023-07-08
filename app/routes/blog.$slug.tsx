@@ -2,26 +2,26 @@ import type { LoaderArgs, V2_MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { NotionRenderer } from "react-notion";
-import { getBlocks, getPosts } from "~/models/post.server";
+import { getBlocks, getBlogs } from "~/models/blog.server";
 import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 
 export const loader = async ({ params }: LoaderArgs) => {
-  const posts = await getPosts();
-  const post = posts.find((post) => post.slug === params.slug);
+  const blogs = await getBlogs();
+  const blog = blogs.find((blog) => blog.slug === params.slug);
 
-  if (!post) {
+  if (!blog) {
     throw new Response(null, {
       status: 404,
       statusText: "Not Found",
     });
   }
 
-  return json({ post, blocks: await getBlocks(post.id) });
+  return json({ blog, blocks: await getBlocks(blog.id) });
 };
 
 export const meta: V2_MetaFunction = ({ data }) => {
-  const { title, slug, description, keywords, thumbnail } = data.post;
+  const { title, slug, description, keywords, thumbnail } = data.blog;
 
   return [
     // Title
@@ -37,9 +37,9 @@ export const meta: V2_MetaFunction = ({ data }) => {
     { name: "twitter:description", content: description },
 
     // URL
-    { rel: "canonical", href: `https://ilhamwahabi.com/posts/${slug}` },
-    { property: "og:url", content: `https://ilhamwahabi.com/posts/${slug}` },
-    { name: "twitter:url", content: `https://ilhamwahabi.com/posts/${slug}` },
+    { rel: "canonical", href: `https://ilhamwahabi.com/blog/${slug}` },
+    { property: "og:url", content: `https://ilhamwahabi.com/blog/${slug}` },
+    { name: "twitter:url", content: `https://ilhamwahabi.com/blog/${slug}` },
 
     // Keywords
     { name: "keywords", content: keywords.join(",") },
@@ -56,9 +56,9 @@ export const meta: V2_MetaFunction = ({ data }) => {
   ];
 };
 
-export default function PostSlug() {
-  const { post, blocks } = useLoaderData<typeof loader>();
-  const { title } = post;
+export default function BlogSlug() {
+  const { blog, blocks } = useLoaderData<typeof loader>();
+  const { title } = blog;
 
   return (
     <main className="w-full flex flex-col justify-start items-center p-4 bg-[#21292E] !text-white">

@@ -38,11 +38,11 @@ export default function App() {
               </Link>
             </h1>
             <div className="lg:ml-16 mt-4 lg:mt-0 space-x-4 text-base lg:text-lg flex items-end">
-              <Link className="sm:p-2 md:p-4" to="posts">
-                Posts
+              <Link className="sm:p-2 md:p-4" to="blog">
+                Blog
               </Link>
-              <Link className="sm:p-2 md:p-4" to="talks">
-                Talks
+              <Link className="sm:p-2 md:p-4" to="talk">
+                Talk
               </Link>
             </div>
           </div>
