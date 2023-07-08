@@ -2,11 +2,41 @@ import type { V2_MetaFunction } from "@remix-run/node";
 
 export const meta: V2_MetaFunction = () => {
   return [
+    // Title
     { title: "Ilham Wahabi" },
+    { property: "og:title", content: "Ilham Wahabi" },
+    { name: "twitter:title", content: "Ilham Wahabi" },
+    { name: "application-name", content: "Ilham Wahabi" },
+    { name: "apple-mobile-web-app-title", content: "Ilham Wahabi" },
+
+    // Description
+    { name: "description", content: "Website pribadi tempat berbagi" },
+    { property: "og:description", content: "Website pribadi tempat berbagi" },
+    { name: "twitter:description", content: "Website pribadi tempat berbagi" },
+
+    // URL
+    { rel: "canonical", href: `https://ilhamwahabi.com` },
+    { property: "og:url", content: `https://ilhamwahabi.com` },
+    { name: "twitter:url", content: `https://ilhamwahabi.com` },
+
+    // Keywords
+    { name: "keywords", content: "ilhamwahabi" },
+
+    // Image
     {
-      name: "description",
-      content: "Welcome to Ilham Wahabi personal website",
+      property: "og:image",
+      content: "https://i.ibb.co/6mzTs13/Google-Play-Header.png",
     },
+    {
+      name: "twitter:image",
+      content: "https://i.ibb.co/6mzTs13/Google-Play-Header.png",
+    },
+
+    // Others
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:creator", content: "@ilhamwahabigx" },
+    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: "ilhamwahabi" },
   ];
 };
 

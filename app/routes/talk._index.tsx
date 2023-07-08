@@ -9,11 +9,50 @@ export const loader = async () => {
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: `Talk | Ilham Wahabi` },
+    // Title
+    { title: "Talk | Ilham Wahabi" },
+    { property: "og:title", content: "Talk | Ilham Wahabi" },
+    { name: "twitter:title", content: "Talk | Ilham Wahabi" },
+    { name: "application-name", content: "Talk | Ilham Wahabi" },
+    { name: "apple-mobile-web-app-title", content: "Talk | Ilham Wahabi" },
+
+    // Description
     {
       name: "description",
-      content: "My writing",
+      content: "Hal sewaktu pernah ngomong depan orang banyak 👨",
     },
+    {
+      property: "og:description",
+      content: "Hal sewaktu pernah ngomong depan orang banyak 👨",
+    },
+    {
+      name: "twitter:description",
+      content: "Hal sewaktu pernah ngomong depan orang banyak 👨",
+    },
+
+    // URL
+    { rel: "canonical", href: `https://ilhamwahabi.com` },
+    { property: "og:url", content: `https://ilhamwahabi.com` },
+    { name: "twitter:url", content: `https://ilhamwahabi.com` },
+
+    // Keywords
+    { name: "keywords", content: "ilhamwahabi" },
+
+    // Image
+    {
+      property: "og:image",
+      content: "https://i.ibb.co/6mzTs13/Google-Play-Header.png",
+    },
+    {
+      name: "twitter:image",
+      content: "https://i.ibb.co/6mzTs13/Google-Play-Header.png",
+    },
+
+    // Others
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:creator", content: "@ilhamwahabigx" },
+    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: "ilhamwahabi" },
   ];
 };
 
@@ -24,7 +63,7 @@ export default function Talks() {
     <main className="flex flex-col justify-center items-center p-16">
       <h1 className="text-center text-2xl md:text-5xl">Talk</h1>
       <div className="mt-8 space-y-4 text-lg flex flex-col items-center w-full">
-        <p>Materi sewaktu aku menjadi pembicara 👨</p>
+        <p>Hal sewaktu pernah ngomong depan orang banyak 👨</p>
       </div>
       <ul className="mt-8 md:mt-12 text-lg md:text-2xl space-y-2 md:space-y-4 text-center">
         {talks.map((talk: { title: string; slug: string }) => (

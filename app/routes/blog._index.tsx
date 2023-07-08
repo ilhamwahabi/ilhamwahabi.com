@@ -10,11 +10,47 @@ export const loader = async () => {
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: `Blog | Ilham Wahabi` },
+    // Title
+    { title: "Blog | Ilham Wahabi" },
+    { property: "og:title", content: "Blog | Ilham Wahabi" },
+    { name: "twitter:title", content: "Blog | Ilham Wahabi" },
+    { name: "application-name", content: "Blog | Ilham Wahabi" },
+    { name: "apple-mobile-web-app-title", content: "Blog | Ilham Wahabi" },
+
+    // Description
+    { name: "description", content: "Buah pikir sebagai seorang manusia 🤯" },
     {
-      name: "description",
-      content: "My writing",
+      property: "og:description",
+      content: "Buah pikir sebagai seorang manusia 🤯",
     },
+    {
+      name: "twitter:description",
+      content: "Buah pikir sebagai seorang manusia 🤯",
+    },
+
+    // URL
+    { rel: "canonical", href: `https://ilhamwahabi.com/blog` },
+    { property: "og:url", content: `https://ilhamwahabi.com/blog` },
+    { name: "twitter:url", content: `https://ilhamwahabi.com/blog` },
+
+    // Keywords
+    { name: "keywords", content: "ilhamwahabi" },
+
+    // Image
+    {
+      property: "og:image",
+      content: "https://i.ibb.co/6mzTs13/Google-Play-Header.png",
+    },
+    {
+      name: "twitter:image",
+      content: "https://i.ibb.co/6mzTs13/Google-Play-Header.png",
+    },
+
+    // Others
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:creator", content: "@ilhamwahabigx" },
+    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: "ilhamwahabi" },
   ];
 };
 
