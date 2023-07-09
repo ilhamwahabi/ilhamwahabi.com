@@ -1,6 +1,7 @@
 import { type V2_MetaFunction, json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { type Project, getProjects } from "~/models/project.server";
+import { getProjects } from "~/models/project.server";
+import { FaGithub } from "react-icons/fa6";
 
 export const loader = async () => {
   return json({
@@ -57,10 +58,34 @@ export default function Projects() {
       <div className="mt-4 lg:mt-8 space-y-4 text-base lg:text-lg flex flex-col items-center w-full text-center">
         <p>Hasil karya kerja keras 🤩</p>
       </div>
-      <ul className="mt-8 md:mt-12 space-y-8 md:space-y-16 text-center">
-        {projects.map((project: Project) => (
+      <ul className="mt-8 md:mt-16 space-y-8 md:space-y-16 text-center">
+        {projects.map((project) => (
           <div key={project.name}>
-            <h2 className="text-lg md:text-3xl">{project.name}</h2>
+            <div className="flex items-center justify-center">
+              <h2
+                className={`text-lg md:text-3xl ${
+                  project.link && "md:pb-1 border-b border-b-white"
+                }`}
+              >
+                {project.link ? (
+                  <a target="_blank" href={project.link} rel="noreferrer">
+                    {project.name}
+                  </a>
+                ) : (
+                  project.name
+                )}
+              </h2>
+              {project.repo && (
+                <a
+                  target="_blank"
+                  href={project.repo}
+                  rel="noreferrer"
+                  className="ml-2 lg:ml-4"
+                >
+                  <FaGithub className="text-base md:text-2xl" />
+                </a>
+              )}
+            </div>
             <p className="text-[0.6rem] md:text-base mt-4 md:mt-8 max-w-lg leading-4 md:leading-8 mx-auto">
               {project.desc}
             </p>
