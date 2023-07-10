@@ -20,7 +20,7 @@ export default function Index() {
         Preparing something exciting here
       </p>
       <p className="mt-4 text-base md:text-2xl text-center">
-        Please have a look around first
+        Please take a look at others first
       </p>
     </div>
   );

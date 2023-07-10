@@ -14,22 +14,22 @@ export default function About() {
   return (
     <div className="flex flex-col justify-center items-center p-6 lg:p-16">
       <h1 className="text-center text-xl md:text-4xl">
-        Salam kenal, aku <span className="text-[#F6983F]">Ilham Wahabi</span> 👋
+        Hello, <span className="text-[#F6983F]">Ilham Wahabi</span> here 👋
       </h1>
       <div className="mt-8 lg:mt-12 text-left space-y-4 text-base md:text-xl flex flex-col items-start w-full">
-        <p>Aku seorang frontend developer berlokasi di Bandung, Indonesia.</p>
+        <p>I'm a frontend developer based in Bandung, Indonesia.</p>
         <p>
-          Lagi tertarik seputar SEO, accessibility, dan performance
+          Graduated from Institut Teknologi Bandung majoring in Teknik
+          Informatika (Informatics).
+        </p>
+        <p>
+          Currently interested in SEO, accessibility, and performance
           optimization.
         </p>
+        <p>Beside coding, I like to read books and play Badminton.</p>
         <p>
-          Dulu berkuliah di Institut Teknologi Bandung jurusan Teknik
-          Informatika.
-        </p>
-        <p>Selain ngoding suka baca buku dan main badminton.</p>
-        <p>
-          Sekarang lagi <em>sabbatical leave</em>, kalau ada opportunity bisa
-          beritahu aja ya 👇
+          In sabbatical leave at this moment, if you have an opportunity kindly
+          let me know 👇
         </p>
       </div>
     </div>
