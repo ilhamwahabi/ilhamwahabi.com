@@ -12,7 +12,7 @@ export const loader = async () => {
 export const meta: V2_MetaFunction = () => {
   return getMeta({
     title: "Blog",
-    description: "Buah pikir sebagai manusia 🤯",
+    description: "Thought as a human 🧠",
     url: "/blog",
     keywords: "blog",
   });
@@ -25,7 +25,7 @@ export default function Blogs() {
     <main className="flex flex-col justify-center items-center p-6 lg:p-16">
       <h1 className="text-center text-2xl md:text-5xl">Blog</h1>
       <div className="mt-4 lg:mt-8 space-y-4 text-base lg:text-lg flex flex-col items-center w-full text-center">
-        <p>Buah pikir sebagai manusia 🤯</p>
+        <p>Thought as a human 🧠</p>
       </div>
       <ul className="mt-8 md:mt-12 text-lg md:text-2xl space-y-2 md:space-y-4 text-center">
         {blogs.map((blog) => (
@@ -39,6 +39,11 @@ export default function Blogs() {
           </li>
         ))}
       </ul>
+      {blogs.length === 0 && (
+        <p className="text-center text-lg md:text-2xl">
+          Nothing to display yet 🙏
+        </p>
+      )}
     </main>
   );
 }

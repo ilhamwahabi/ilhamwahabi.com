@@ -4,7 +4,7 @@ import { getMeta } from "~/utils/seo";
 export const meta: V2_MetaFunction = () => {
   return getMeta({
     title: "",
-    description: "Website pribadi tempat berbagi",
+    description: "Personal website for sharing",
     url: "",
     keywords: "",
   });
@@ -17,7 +17,7 @@ export default function Index() {
         Welcome to <span className="text-[#F6983F]">ilhamwahabi.com</span>
       </h1>
       <p className="mt-16 text-base md:text-2xl text-center">
-        Preparing something exciting here
+        Preparing something interesting here
       </p>
       <p className="mt-4 text-base md:text-2xl text-center">
         Please take a look at others first

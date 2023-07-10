@@ -3,10 +3,10 @@ import { getMeta } from "~/utils/seo";
 
 export const meta: V2_MetaFunction = () => {
   return getMeta({
-    title: "Tentang",
+    title: "About",
     description: "Siapa tuh? Yuk kenalan dulu 👋",
     url: "/about",
-    keywords: "tentang",
+    keywords: "about,tentang",
   });
 };
 
@@ -22,14 +22,11 @@ export default function About() {
           Graduated from Institut Teknologi Bandung majoring in Teknik
           Informatika (Informatics).
         </p>
-        <p>
-          Currently interested in SEO, accessibility, and performance
-          optimization.
-        </p>
+        <p>Interested in SEO, accessibility, and performance optimization.</p>
         <p>Beside coding, I like to read books and play Badminton.</p>
         <p>
-          In sabbatical leave at this moment, if you have an opportunity kindly
-          let me know 👇
+          Currently in sabbatical leave, if you have an opportunity kindly let
+          me know 👇
         </p>
       </div>
     </div>

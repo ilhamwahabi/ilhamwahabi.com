@@ -13,7 +13,7 @@ export const loader = async () => {
 export const meta: V2_MetaFunction = () => {
   return getMeta({
     title: "Project",
-    description: "Hasil karya kerja keras 🤩",
+    description: "Result of hard work 👨‍💻",
     url: "/project",
     keywords: "proyek,portofolio",
   });
@@ -26,7 +26,7 @@ export default function Projects() {
     <main className="flex flex-col justify-center items-center p-6 lg:py-16 lg:px-0">
       <h1 className="text-center text-2xl md:text-5xl">Project</h1>
       <div className="mt-4 lg:mt-8 space-y-4 text-base lg:text-lg flex flex-col items-center w-full text-center">
-        <p>Hasil karya kerja keras 🤩</p>
+        <p>Result of hard work 👨‍💻</p>
       </div>
       <ul className="mt-8 md:mt-16 space-y-8 md:space-y-16 text-center">
         {projects.map((project) => (
@@ -65,11 +65,11 @@ export default function Projects() {
       </ul>
       {projects.length === 0 ? (
         <p className="text-center text-lg md:text-2xl">
-          Belum ada yang bisa ditampilkan 🙏
+          Nothing to display yet 🙏
         </p>
       ) : (
         <p className="mt-16 lg:mt-24 text-xs leading-6 md:text-lg text-center">
-          Dan project lainnya yang tidak saya masukkan kesini 🫡
+          ...and other projects that not included here 🫡
         </p>
       )}
     </main>

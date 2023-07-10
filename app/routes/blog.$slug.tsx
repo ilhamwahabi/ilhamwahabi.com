@@ -33,7 +33,7 @@ export const meta: V2_MetaFunction = ({ data }) => {
   });
 };
 
-export default function BlogSlug() {
+export default function Blog() {
   const { blog, blocks } = useLoaderData<typeof loader>();
   const { title } = blog;
 

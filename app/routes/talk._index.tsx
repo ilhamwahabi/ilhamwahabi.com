@@ -13,9 +13,9 @@ export const loader = async () => {
 export const meta: V2_MetaFunction = () => {
   return getMeta({
     title: "Talk",
-    description: "Ketika pernah ngomong depan orang banyak 👨",
+    description: "When I become speaker 👨",
     url: "/talk",
-    keywords: "pembicara",
+    keywords: "talk,pembicara",
   });
 };
 
@@ -26,7 +26,7 @@ export default function Talks() {
     <main className="flex flex-col justify-center items-center p-6 lg:p-16">
       <h1 className="text-center text-2xl md:text-5xl">Talk</h1>
       <div className="mt-4 lg:mt-8 space-y-4 text-base lg:text-lg flex flex-col items-center w-full text-center">
-        <p>Ketika pernah ngomong depan orang banyak 👨</p>
+        <p>When I become speaker 👨</p>
       </div>
       <ul className="mt-8 md:mt-16 space-y-8 md:space-y-16 text-center">
         {talks.map((talk) => (
@@ -50,7 +50,7 @@ export default function Talks() {
       </ul>
       {talks.length === 0 && (
         <p className="text-center text-lg md:text-2xl">
-          Belum ada yang bisa ditampilkan 🙏
+          Nothing to display yet 🙏
         </p>
       )}
     </main>
