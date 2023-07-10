@@ -1,4 +1,5 @@
 import type { V2_MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 import { getMeta } from "~/utils/seo";
 
 export const meta: V2_MetaFunction = () => {
@@ -20,7 +21,11 @@ export default function Index() {
         Preparing something interesting here
       </p>
       <p className="mt-4 text-base md:text-2xl text-center">
-        Please take a look at others first
+        Why don't you{" "}
+        <Link className="underline" to="project">
+          take a look at my other projects
+        </Link>
+        ?
       </p>
     </div>
   );
