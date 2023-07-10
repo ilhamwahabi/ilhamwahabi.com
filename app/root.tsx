@@ -62,7 +62,15 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <footer className="flex justify-center items-center space-x-4 p-16 border-t-gray-600 border-t text-sm md:text-base mt-8 lg:mt-12">
+        <footer className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 p-12 md:p-16 border-t-gray-600 border-t text-sm md:text-base mt-8 lg:mt-12">
+          <a
+            target="_blank"
+            href="https://medium.com/@ilhamwahabi"
+            rel="noreferrer"
+            className="sm:p-2 md:p-4"
+          >
+            Medium
+          </a>
           <a
             target="_blank"
             href="https://github.com/ilhamwahabi"
@@ -86,6 +94,14 @@ export default function App() {
             className="sm:p-2 md:p-4"
           >
             LinkedIn
+          </a>
+          <a
+            target="_blank"
+            href="https://www.goodreads.com/ilhamwahabi"
+            rel="noreferrer"
+            className="sm:p-2 md:p-4"
+          >
+            Goodreads
           </a>
         </footer>
       </body>
