@@ -2,7 +2,7 @@ import { type V2_MetaFunction, json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import dayjs from "dayjs";
 import { getTalks } from "~/models/talk.server";
-import { getMeta } from "../utils/seo";
+import { getMeta } from "~/utils/seo";
 
 export const loader = async () => {
   return json({

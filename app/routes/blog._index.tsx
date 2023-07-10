@@ -1,7 +1,7 @@
 import { type V2_MetaFunction, json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { getBlogs } from "~/models/blog.server";
-import { getMeta } from "../utils/seo";
+import { getMeta } from "~/utils/seo";
 
 export const loader = async () => {
   return json({
@@ -28,11 +28,14 @@ export default function Blogs() {
         <p>Buah pikir sebagai manusia 🤯</p>
       </div>
       <ul className="mt-8 md:mt-12 text-lg md:text-2xl space-y-2 md:space-y-4 text-center">
-        {blogs.map((blog: { title: string; slug: string }) => (
+        {blogs.map((blog) => (
           <li key={blog.slug}>
             <Link to={blog.slug} className="underline">
               {blog.title}
             </Link>
+            <p className="text-[0.6rem] md:text-base mt-1 md:mt-2 max-w-lg leading-4 md:leading-8 mx-auto">
+              {blog.description}
+            </p>
           </li>
         ))}
       </ul>

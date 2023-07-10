@@ -2,7 +2,7 @@ import { type V2_MetaFunction, json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getProjects } from "~/models/project.server";
 import { FaGithub } from "react-icons/fa6";
-import { getMeta } from "../utils/seo";
+import { getMeta } from "~/utils/seo";
 
 export const loader = async () => {
   return json({

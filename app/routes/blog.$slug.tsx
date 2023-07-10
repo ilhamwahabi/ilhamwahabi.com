@@ -5,7 +5,7 @@ import { NotionRenderer } from "react-notion";
 import { getBlocks, getBlogs } from "~/models/blog.server";
 import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
-import { getMeta } from "../utils/seo";
+import { getMeta } from "~/utils/seo";
 
 export const loader = async ({ params }: LoaderArgs) => {
   const blogs = await getBlogs();
