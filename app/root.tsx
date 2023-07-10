@@ -10,6 +10,8 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import { Analytics } from "@vercel/analytics/react";
+import { FaGithub, FaGoodreads, FaLinkedin, FaTwitter } from "react-icons/fa6";
+import { FaMedium } from "react-icons/fa";
 
 import tailwind from "./tailwind.css";
 import styles from "./app.css";
@@ -62,14 +64,14 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <footer className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 p-12 md:p-16 border-t-gray-600 border-t text-sm md:text-base mt-8 lg:mt-12">
+        <footer className="flex justify-center items-center space-x-6 sm:space-x-2 p-12 border-t-gray-600 border-t text-lg md:text-2xl mt-8 lg:mt-12">
           <a
             target="_blank"
             href="https://medium.com/@ilhamwahabi"
             rel="noreferrer"
             className="sm:p-2 md:p-4"
           >
-            Medium
+            <FaMedium />
           </a>
           <a
             target="_blank"
@@ -77,7 +79,7 @@ export default function App() {
             rel="noreferrer"
             className="sm:p-2 md:p-4"
           >
-            Github
+            <FaGithub />
           </a>
           <a
             target="_blank"
@@ -85,7 +87,7 @@ export default function App() {
             rel="noreferrer"
             className="sm:p-2 md:p-4"
           >
-            Twitter
+            <FaTwitter />
           </a>
           <a
             target="_blank"
@@ -93,7 +95,7 @@ export default function App() {
             rel="noreferrer"
             className="sm:p-2 md:p-4"
           >
-            LinkedIn
+            <FaLinkedin />
           </a>
           <a
             target="_blank"
@@ -101,7 +103,7 @@ export default function App() {
             rel="noreferrer"
             className="sm:p-2 md:p-4"
           >
-            Goodreads
+            <FaGoodreads />
           </a>
         </footer>
       </body>
