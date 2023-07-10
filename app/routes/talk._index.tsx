@@ -2,6 +2,7 @@ import { type V2_MetaFunction, json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import dayjs from "dayjs";
 import { getTalks } from "~/models/talk.server";
+import { getMeta } from "../utils/seo";
 
 export const loader = async () => {
   return json({
@@ -10,52 +11,12 @@ export const loader = async () => {
 };
 
 export const meta: V2_MetaFunction = () => {
-  return [
-    // Title
-    { title: "Talk | Ilham Wahabi" },
-    { property: "og:title", content: "Talk | Ilham Wahabi" },
-    { name: "twitter:title", content: "Talk | Ilham Wahabi" },
-    { name: "application-name", content: "Talk | Ilham Wahabi" },
-    { name: "apple-mobile-web-app-title", content: "Talk | Ilham Wahabi" },
-
-    // Description
-    {
-      name: "description",
-      content: "Ketika pernah ngomong depan orang banyak 👨",
-    },
-    {
-      property: "og:description",
-      content: "Ketika pernah ngomong depan orang banyak 👨",
-    },
-    {
-      name: "twitter:description",
-      content: "Ketika pernah ngomong depan orang banyak 👨",
-    },
-
-    // URL
-    { rel: "canonical", href: `https://ilhamwahabi.com` },
-    { property: "og:url", content: `https://ilhamwahabi.com` },
-    { name: "twitter:url", content: `https://ilhamwahabi.com` },
-
-    // Keywords
-    { name: "keywords", content: "ilhamwahabi,pembicara" },
-
-    // Image
-    {
-      property: "og:image",
-      content: "https://i.ibb.co/6mzTs13/Google-Play-Header.png",
-    },
-    {
-      name: "twitter:image",
-      content: "https://i.ibb.co/6mzTs13/Google-Play-Header.png",
-    },
-
-    // Others
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:creator", content: "@ilhamwahabigx" },
-    { property: "og:type", content: "website" },
-    { property: "og:site_name", content: "ilhamwahabi" },
-  ];
+  return getMeta({
+    title: "Talk",
+    description: "Ketika pernah ngomong depan orang banyak 👨",
+    url: "/talk",
+    keywords: "pembicara",
+  });
 };
 
 export default function Talks() {

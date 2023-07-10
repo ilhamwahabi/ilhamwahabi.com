@@ -1,43 +1,13 @@
 import type { V2_MetaFunction } from "@remix-run/node";
+import { getMeta } from "../utils/seo";
 
 export const meta: V2_MetaFunction = () => {
-  return [
-    // Title
-    { title: "Tentang | Ilham Wahabi" },
-    { property: "og:title", content: "Tentang | Ilham Wahabi" },
-    { name: "twitter:title", content: "Tentang | Ilham Wahabi" },
-    { name: "application-name", content: "Tentang | Ilham Wahabi" },
-    { name: "apple-mobile-web-app-title", content: "Tentang | Ilham Wahabi" },
-
-    // Description
-    { name: "description", content: "Siapa tuh? Yuk kenalan dulu 👋" },
-    { property: "og:description", content: "Siapa tuh? Yuk kenalan dulu 👋" },
-    { name: "twitter:description", content: "Siapa tuh? Yuk kenalan dulu 👋" },
-
-    // URL
-    { rel: "canonical", href: `https://ilhamwahabi.com/about` },
-    { property: "og:url", content: `https://ilhamwahabi.com/about` },
-    { name: "twitter:url", content: `https://ilhamwahabi.com/about` },
-
-    // Keywords
-    { name: "keywords", content: "ilhamwahabi,tentang" },
-
-    // Image
-    {
-      property: "og:image",
-      content: "https://i.ibb.co/6mzTs13/Google-Play-Header.png",
-    },
-    {
-      name: "twitter:image",
-      content: "https://i.ibb.co/6mzTs13/Google-Play-Header.png",
-    },
-
-    // Others
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:creator", content: "@ilhamwahabigx" },
-    { property: "og:type", content: "website" },
-    { property: "og:site_name", content: "ilhamwahabi" },
-  ];
+  return getMeta({
+    title: "Tentang",
+    description: "Siapa tuh? Yuk kenalan dulu 👋",
+    url: "/about",
+    keywords: "tentang",
+  });
 };
 
 export default function About() {

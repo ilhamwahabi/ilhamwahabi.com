@@ -2,6 +2,7 @@ import { type V2_MetaFunction, json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getProjects } from "~/models/project.server";
 import { FaGithub } from "react-icons/fa6";
+import { getMeta } from "../utils/seo";
 
 export const loader = async () => {
   return json({
@@ -10,43 +11,12 @@ export const loader = async () => {
 };
 
 export const meta: V2_MetaFunction = () => {
-  return [
-    // Title
-    { title: "Project | Ilham Wahabi" },
-    { property: "og:title", content: "Project | Ilham Wahabi" },
-    { name: "twitter:title", content: "Project | Ilham Wahabi" },
-    { name: "application-name", content: "Project | Ilham Wahabi" },
-    { name: "apple-mobile-web-app-title", content: "Project | Ilham Wahabi" },
-
-    // Description
-    { name: "description", content: "Hasil karya kerja keras 🤩" },
-    { property: "og:description", content: "Hasil karya kerja keras 🤩" },
-    { name: "twitter:description", content: "Hasil karya kerja keras 🤩" },
-
-    // URL
-    { rel: "canonical", href: `https://ilhamwahabi.com/project` },
-    { property: "og:url", content: `https://ilhamwahabi.com/project` },
-    { name: "twitter:url", content: `https://ilhamwahabi.com/project` },
-
-    // Keywords
-    { name: "keywords", content: "ilhamwahabi,proyek,portofolio" },
-
-    // Image
-    {
-      property: "og:image",
-      content: "https://i.ibb.co/6mzTs13/Google-Play-Header.png",
-    },
-    {
-      name: "twitter:image",
-      content: "https://i.ibb.co/6mzTs13/Google-Play-Header.png",
-    },
-
-    // Others
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:creator", content: "@ilhamwahabigx" },
-    { property: "og:type", content: "website" },
-    { property: "og:site_name", content: "ilhamwahabi" },
-  ];
+  return getMeta({
+    title: "Project",
+    description: "Hasil karya kerja keras 🤩",
+    url: "/project",
+    keywords: "proyek,portofolio",
+  });
 };
 
 export default function Projects() {
