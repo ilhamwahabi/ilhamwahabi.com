@@ -29,7 +29,7 @@ export default function About() {
         <p>Selain ngoding suka baca buku dan main badminton.</p>
         <p>
           Sekarang lagi <em>sabbatical leave</em>, kalau ada opportunity bisa
-          beritahu aja ya.
+          beritahu aja ya 👇
         </p>
       </div>
     </div>

@@ -64,7 +64,7 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <footer className="flex justify-center items-center space-x-6 sm:space-x-2 p-12 border-t-gray-600 border-t text-lg md:text-2xl mt-8 lg:mt-12">
+        <footer className="flex justify-center items-center space-x-6 md:space-x-2 p-12 border-t-gray-600 border-t text-lg md:text-2xl mt-8 lg:mt-12">
           <a
             target="_blank"
             href="https://medium.com/@ilhamwahabi"
