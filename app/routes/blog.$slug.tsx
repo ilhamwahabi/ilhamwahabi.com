@@ -27,7 +27,7 @@ export const meta: V2_MetaFunction = ({ data }) => {
   return getMeta({
     title: `${title}`,
     description: description,
-    url: `/${slug}`,
+    url: `/blog/${slug}`,
     keywords: keywords.join(","),
     image: thumbnail[0].url,
   });
