@@ -24,10 +24,7 @@ export default function About() {
         </p>
         <p>Interested in SEO, accessibility, and performance optimization.</p>
         <p>Beside coding, I like to read books and play Badminton.</p>
-        <p>
-          Currently in sabbatical leave, if you have an opportunity kindly let
-          me know 👇
-        </p>
+        <p>If you got an interesting opportunity kindly let me know 👇</p>
       </div>
     </div>
   );

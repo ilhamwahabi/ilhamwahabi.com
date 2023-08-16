@@ -11,7 +11,6 @@ import {
 } from "@remix-run/react";
 import { Analytics } from "@vercel/analytics/react";
 import { FaGithub, FaGoodreads, FaLinkedin, FaTwitter } from "react-icons/fa6";
-import { FaMedium } from "react-icons/fa";
 
 import tailwind from "./tailwind.css";
 import styles from "./app.css";
@@ -65,14 +64,6 @@ export default function App() {
         <Scripts />
         <LiveReload />
         <footer className="flex justify-center items-center space-x-6 md:space-x-2 p-12 border-t-gray-600 border-t text-lg md:text-2xl mt-8 lg:mt-12">
-          <a
-            target="_blank"
-            href="https://medium.com/@ilhamwahabi"
-            rel="noreferrer"
-            className="sm:p-2 md:p-4"
-          >
-            <FaMedium />
-          </a>
           <a
             target="_blank"
             href="https://github.com/ilhamwahabi"
