@@ -19,12 +19,12 @@ export default function About() {
       <div className="mt-8 lg:mt-12 text-left space-y-4 text-base md:text-xl flex flex-col items-start w-full">
         <p>I'm a frontend developer based in Bandung, Indonesia.</p>
         <p>
-          Graduated from Institut Teknologi Bandung majoring in Teknik
-          Informatika (Informatics).
+          Graduated from Institut Teknologi Bandung with a major in Informatics
+          Engineering (Computer Science).
         </p>
         <p>Interested in SEO, accessibility, and performance optimization.</p>
-        <p>Beside coding, I like to read books and play Badminton.</p>
-        <p>If you got an interesting opportunity kindly let me know 👇</p>
+        <p>Besides coding, I enjoy reading books and playing badminton.</p>
+        <p>If you have an interesting opportunity, please let me know 👇</p>
       </div>
     </div>
   );

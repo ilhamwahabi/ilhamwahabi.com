@@ -15,7 +15,7 @@ export const meta: V2_MetaFunction = () => {
     title: "Project",
     description: "Result of hard work 👨‍💻",
     url: "/project",
-    keywords: "proyek,portofolio",
+    keywords: "proyek,project,portofolio",
   });
 };
 

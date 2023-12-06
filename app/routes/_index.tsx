@@ -16,33 +16,33 @@ export default function Index() {
     <div className="flex flex-col justify-center items-center p-6 lg:p-16">
       <h1 className="text-center text-2xl md:text-4xl">Hello there!</h1>
       <p className="mt-8 md:mt-16 text-base md:text-2xl text-center">
-        This is my personal website for sharing many things.
+        This is my personal website for sharing various things.
       </p>
       <p className="mt-12 text-base md:text-2xl text-center">
-        I wrote about{" "}
+        I write about{" "}
         <span className="text-[#F6983F]">
-          tech, thought, and life journey ✍️
+          tech, thoughts, and my life journey ✍️
         </span>{" "}
-        that you can{" "}
+        which you can{" "}
         <Link className="border-b border-b-white" to="blog">
           read here
         </Link>
         .
       </p>
       <p className="mt-8 text-base md:text-2xl text-center">
-        Sometimes I <span className="text-[#F6983F]">give a talk 👨</span> which
-        you can{" "}
+        Sometimes I <span className="text-[#F6983F]">give a talks 👨</span>{" "}
+        which you can{" "}
         <Link className="border-b border-b-white" to="talk">
-          see here
+          find here
         </Link>
         .
       </p>
       <p className="mt-8 text-base md:text-2xl text-center">
-        I'm also{" "}
-        <span className="text-[#F6983F]">made some side projects 👨‍💻</span> that
-        you can{" "}
+        I've also{" "}
+        <span className="text-[#F6983F]">created some side projects 👨‍💻</span>{" "}
+        that you can{" "}
         <Link className="border-b border-b-white" to="project">
-          take a look here
+          take a look at here
         </Link>
         .
       </p>

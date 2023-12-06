@@ -15,7 +15,7 @@ export const meta: V2_MetaFunction = () => {
     title: "Talk",
     description: "When I become speaker 👨",
     url: "/talk",
-    keywords: "talk,pembicara",
+    keywords: "talk,speaker,pembicara",
   });
 };
 
