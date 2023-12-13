@@ -8,20 +8,32 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useNavigation,
 } from "@remix-run/react";
 import { Analytics } from "@vercel/analytics/react";
 import { FaGithub, FaGoodreads, FaLinkedin, FaTwitter } from "react-icons/fa6";
+import NProgress from "nprogress";
+import nProgressStyles from "nprogress/nprogress.css";
 
 import tailwind from "./tailwind.css";
 import styles from "./app.css";
+import { useEffect } from "react";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   { rel: "stylesheet", href: tailwind },
   { rel: "stylesheet", href: styles },
+  { rel: "stylesheet", href: nProgressStyles },
 ];
 
 export default function App() {
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    if (navigation.state === "loading") NProgress.start();
+    if (navigation.state === "idle") NProgress.done();
+  }, [navigation.state]);
+
   return (
     <html lang="en">
       <head>
