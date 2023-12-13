@@ -33,7 +33,7 @@ export default function Blogs() {
             <Link to={blog.slug} className="underline">
               {blog.title}
             </Link>
-            <p className="text-[0.6rem] md:text-base mt-1 md:mt-2 max-w-lg leading-4 md:leading-8 mx-auto">
+            <p className="text-base md:text-lg mt-2 md:mt-3 max-w-lg leading-4 md:leading-8 mx-auto">
               {blog.description}
             </p>
           </li>

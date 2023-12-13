@@ -56,7 +56,7 @@ export default function Projects() {
                 </a>
               )}
             </div>
-            <p className="text-[0.6rem] md:text-base mt-4 md:mt-8 max-w-lg leading-4 md:leading-8 mx-auto">
+            <p className="text-base md:text-lg mt-4 md:mt-8 max-w-lg leading-4 md:leading-8 mx-auto">
               {project.desc}
             </p>
             <img className="mt-8" src={project.preview} alt="" />
