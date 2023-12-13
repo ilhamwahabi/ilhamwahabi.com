@@ -14,10 +14,11 @@ import { Analytics } from "@vercel/analytics/react";
 import { FaGithub, FaGoodreads, FaLinkedin, FaTwitter } from "react-icons/fa6";
 import NProgress from "nprogress";
 import nProgressStyles from "nprogress/nprogress.css";
+import { SpeedInsights } from "@vercel/speed-insights/remix";
+import { useEffect } from "react";
 
 import tailwind from "./tailwind.css";
 import styles from "./app.css";
-import { useEffect } from "react";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -67,6 +68,7 @@ export default function App() {
           </div>
         </header>
         <Analytics />
+        <SpeedInsights />
         <main className="flex-1">
           <div className="w-4/5 md:w-2/5 mx-auto">
             <Outlet />
