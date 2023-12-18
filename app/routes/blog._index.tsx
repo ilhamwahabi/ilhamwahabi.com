@@ -27,13 +27,16 @@ export default function Blogs() {
       <div className="mt-4 lg:mt-8 space-y-4 text-base lg:text-lg flex flex-col items-center w-full text-center">
         <p>Thought as a human ✍️</p>
       </div>
-      <ul className="mt-8 md:mt-12 text-lg md:text-2xl space-y-2 md:space-y-4 text-center">
+      <ul className="mt-8 md:mt-12 text-lg md:text-2xl space-y-8 md:space-y-16 text-center">
         {blogs.map((blog) => (
           <li key={blog.slug}>
-            <Link to={blog.slug} className="underline">
+            <Link
+              to={blog.slug}
+              className="underline whitespace-nowrap overflow-hidden text-ellipsis"
+            >
               {blog.title}
             </Link>
-            <p className="text-base md:text-lg mt-2 md:mt-3 max-w-lg leading-4 md:leading-8 mx-auto">
+            <p className="text-base md:text-lg mt-2 md:mt-3 max-w-lg leading-4 md:leading-8 mx-auto whitespace-nowrap overflow-hidden text-ellipsis">
               {blog.description}
             </p>
           </li>

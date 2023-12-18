@@ -44,7 +44,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-[#21292E] text-white flex flex-col">
+      <body className="bg-[#21292E] text-white min-h-screen flex flex-col">
         <Scrollbars autoHide className="w-full min-h-screen">
           <header className="py-8 lg:py-16 flex justify-center">
             <div className="flex flex-col lg:flex-row justify-start items-center w-4/5 md:w-2/5 ">
