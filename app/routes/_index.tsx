@@ -18,7 +18,7 @@ export default function Index() {
       <p className="mt-8 md:mt-16 text-base md:text-2xl text-center">
         This is my personal website for sharing various things.
       </p>
-      <p className="mt-12 text-base md:text-2xl text-center">
+      <p className="mt-8 text-base md:text-2xl text-center">
         I write about{" "}
         <span className="text-[#F6983F]">
           tech, thoughts, and my life journey ✍️

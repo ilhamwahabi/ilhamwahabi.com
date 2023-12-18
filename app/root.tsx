@@ -44,8 +44,12 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-[#21292E] text-slate-100 min-h-screen flex flex-col">
-        <Scrollbars autoHide universal className="w-full min-h-screen">
+      <body className="bg-[#21292E] text-slate-100">
+        <Scrollbars
+          autoHide
+          universal
+          className="w-full min-h-[100svh] [&>*]:flex [&>*]:flex-col"
+        >
           <header className="py-8 lg:py-16 flex justify-center">
             <div className="flex flex-col lg:flex-row justify-start items-center w-4/5 md:w-2/5 ">
               <h1 className="text-xl lg:text-2xl">
@@ -53,7 +57,7 @@ export default function App() {
                   Ilham Wahabi
                 </Link>
               </h1>
-              <div className="lg:ml-16 mt-4 lg:mt-0 space-x-4 text-base lg:text-lg flex items-end">
+              <div className="lg:ml-16 mt-4 lg:mt-0 space-x-4 sm:space-x-6 md:space-x-4 text-base lg:text-lg flex items-end">
                 <Link className="sm:p-2 md:p-4" to="blog">
                   Blog
                 </Link>
@@ -79,7 +83,7 @@ export default function App() {
           <ScrollRestoration />
           <Scripts />
           <LiveReload />
-          <footer className="flex justify-center items-center space-x-6 md:space-x-2 p-12 border-t-gray-600 border-t text-lg md:text-2xl mt-8 lg:mt-12">
+          <footer className="flex justify-center items-center space-x-8 md:space-x-2 p-12 border-t-gray-600 border-t text-lg md:text-2xl mt-8 lg:mt-12">
             <a
               target="_blank"
               href="https://github.com/ilhamwahabi"

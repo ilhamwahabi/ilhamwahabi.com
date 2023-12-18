@@ -35,11 +35,11 @@ export default function Talks() {
               target="_blank"
               href={talk.ppt}
               rel="noreferrer"
-              className="underline text-base md:text-2xl "
+              className="underline text-lg md:text-2xl "
             >
               {talk.title}
             </a>
-            <p className="text-xs lg:text-lg mt-1 md:mt-2">
+            <p className="text-base lg:text-lg mt-1 md:mt-2">
               {dayjs(talk.date).format("D MMMM YYYY")} on{" "}
               <span className="text-[#F6983F] font-semibold">
                 {talk.organizer}

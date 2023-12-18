@@ -16,7 +16,7 @@ export default function About() {
       <h1 className="text-center text-xl md:text-4xl">
         Hi, <span className="text-[#F6983F]">Ilham Wahabi</span> here 👋
       </h1>
-      <div className="mt-8 lg:mt-12 text-left space-y-8 text-base md:text-xl flex flex-col items-start w-full">
+      <div className="mt-8 lg:mt-12 text-left space-y-6 md:space-y-8 text-base md:text-xl flex flex-col items-start w-full">
         <p>I'm a frontend developer based in Bandung, Indonesia.</p>
         <p>
           Graduated from Institut Teknologi Bandung with a major in Informatics
