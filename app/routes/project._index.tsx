@@ -34,7 +34,7 @@ export default function Projects() {
             <div className="flex items-center justify-center">
               <h2
                 className={`text-lg md:text-3xl ${
-                  project.link && "md:pb-1 border-b border-b-white"
+                  project.link && "md:pb-1 border-b border-b-slate-100"
                 }`}
               >
                 {project.link ? (

@@ -24,7 +24,7 @@ export default function Index() {
           tech, thoughts, and my life journey ✍️
         </span>{" "}
         which you can{" "}
-        <Link className="border-b border-b-white" to="blog">
+        <Link className="border-b border-b-slate-100" to="blog">
           read here
         </Link>
         .
@@ -32,7 +32,7 @@ export default function Index() {
       <p className="mt-8 text-base md:text-2xl text-center">
         Sometimes I <span className="text-[#F6983F]">give a talks 👨</span>{" "}
         which you can{" "}
-        <Link className="border-b border-b-white" to="talk">
+        <Link className="border-b border-b-slate-100" to="talk">
           find here
         </Link>
         .
@@ -41,7 +41,7 @@ export default function Index() {
         I've also{" "}
         <span className="text-[#F6983F]">created some side projects 👨‍💻</span>{" "}
         that you can{" "}
-        <Link className="border-b border-b-white" to="project">
+        <Link className="border-b border-b-slate-100" to="project">
           take a look at here
         </Link>
         .

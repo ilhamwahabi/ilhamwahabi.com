@@ -1,12 +1,12 @@
 /* Handle dark mode, since Notion is default in light mode */
 
 .notion {
-  color: white;
-  caret-color: white;
+  color: rgb(241 245 249);
+  caret-color: rgb(241 245 249);
 }
 
 .notion-image-caption {
-  color: white;
+  color: rgb(241 245 249);
 }
 
 .notion-hr {

@@ -27,7 +27,7 @@ export default function Blogs() {
       <div className="mt-4 lg:mt-8 space-y-4 text-base lg:text-lg flex flex-col items-center w-full text-center">
         <p>Thought as a human ✍️</p>
       </div>
-      <ul className="mt-8 md:mt-12 text-lg md:text-2xl space-y-8 md:space-y-16 text-center">
+      <ul className="mt-8 md:mt-16 text-lg md:text-2xl space-y-8 md:space-y-16 text-center">
         {blogs.map((blog) => (
           <li key={blog.slug}>
             <Link

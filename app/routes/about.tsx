@@ -20,7 +20,11 @@ export default function About() {
         <p>I'm a frontend developer based in Bandung, Indonesia.</p>
         <p>
           Graduated from Institut Teknologi Bandung with a major in Informatics
-          Engineering (Computer Science).
+          (Computer Science).
+        </p>
+        <p>
+          I have more than 4 years of experience working as a Software Engineer
+          in various companies in Indonesia and Singapore.
         </p>
         <p>Interested in SEO, accessibility, and performance optimization.</p>
         <p>Besides coding, I enjoy reading books and playing badminton.</p>
