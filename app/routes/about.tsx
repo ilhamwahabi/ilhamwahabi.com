@@ -27,7 +27,7 @@ export default function About() {
           in various companies in Indonesia and Singapore.
         </p>
         <p>Interested in SEO, accessibility, and performance optimization.</p>
-        <p>Besides coding, I enjoy reading books and playing badminton.</p>
+        <p>Besides coding, I enjoy reading books and playing Badminton.</p>
         <p>If you have an interesting opportunity, please let me know 👇</p>
       </div>
     </div>

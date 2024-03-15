@@ -39,10 +39,8 @@ export default function Blog() {
 
   return (
     <main className="w-full flex flex-col justify-start items-center p-4">
-      <h1 className="my-2 lg:my-8 border-b-2 text-center text-2xl lg:text-3xl pb-2">
-        {title}
-      </h1>
-      <div className="w-full my-8 lg:my-12">
+      <h1 className="text-center font-medium text-2xl lg:text-3xl">{title}</h1>
+      <div className="w-full my-8 lg:mb-12">
         <NotionRenderer blockMap={blocks} />
       </div>
     </main>
