@@ -17,23 +17,47 @@ export default function About() {
         Hi, <span className="text-[#F6983F]">Ilham Wahabi</span> here 👋
       </h1>
       <div className="mt-8 lg:mt-12 text-left space-y-6 md:space-y-8 text-base md:text-xl flex flex-col items-start w-full">
+        <p>I'm a UI engineer based in Jakarta, Indonesia.</p>
         <p>
-          I'm a frontend developer based in <s>Bandung</s> Jakarta, Indonesia.
+          Currently I'm working as a{" "}
+          <span className="text-[#F6983F]">
+            Frontend Engineer on Kargo Technologies
+          </span>
+          , a multinational Series A logistics company providing a range of
+          products to streamline the shipping process.
         </p>
         <p>
-          Graduated from Institut Teknologi Bandung with a major in Informatics
-          (Computer Science).
+          I'm graduated from{" "}
+          <span className="text-[#F6983F]">Institut Teknologi Bandung</span>{" "}
+          with a major in Informatics (Computer Science).
         </p>
         <p>
-          I have over 5 years of experience as a Software Engineer, working
-          across various industries in companies based in Indonesia and
-          Singapore.
+          I have over{" "}
+          <span className="text-[#F6983F]">5 years of experience</span> as a
+          Software Engineer especially on frontend side, and have worked across
+          various industries with companies based in Indonesia and Singapore.
         </p>
-        <p>Interested in SEO, accessibility, and performance optimization.</p>
+        <p>
+          I’m fluent in English, know how to craft clean and intuitive UIs, and
+          possess experience in frontend performance optimization.
+        </p>
         <p>Besides coding, I enjoy reading books and playing Badminton.</p>
         <p>
-          If you have an interesting opportunity, please let me know through one
-          of the contacts below 👇
+          I’m open to new opportunities! If you need assistance in creating
+          outstanding UIs, feel free to reach out to me at{" "}
+          <span className="text-[#F6983F]">
+            ilhamwahabi.sikumbang@gmail.com
+          </span>{" "}
+          or contact me on{" "}
+          <a
+            href="https://www.linkedin.com/in/ilhamwahabi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-b border-b-slate-50"
+          >
+            LinkedIn
+          </a>
+          .
         </p>
       </div>
     </div>
