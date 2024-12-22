@@ -36,13 +36,22 @@ export default function About() {
         <p>
           I have over{" "}
           <span className="text-[#F6983F]">5 years of experience</span> as a
-          Software Engineer especially on frontend side, and have worked across
-          various industries with companies based in Indonesia and Singapore,
-          remote and onsite.
+          Software Engineer especially on frontend web development, and have
+          worked across various industries with companies based in Indonesia and
+          Singapore, remote and onsite.
         </p>
         <p>
-          I’m fluent in English, know how to craft clean and intuitive UIs, and
-          possess experience in frontend performance optimization.
+          I’m fluent in English, know how to craft clean and intuitive UIs, have
+          experience in recruit & led teams, and possess experience in frontend
+          performance optimization.
+        </p>
+        <p>
+          Although I have more{" "}
+          <span className="text-[#F6983F]">
+            extensive experience with React.js
+          </span>
+          , I’m open to working with other technologies, since I believe that
+          the main principles of UI development remain the same.
         </p>
         <p>
           I also utilize AI in my development process, ensuring{" "}
@@ -51,9 +60,17 @@ export default function About() {
           </span>{" "}
           in my work.
         </p>
-        <p>Besides coding, I enjoy reading books and playing Badminton.</p>
         <p>
-          If you’re interested and would like to have a chat, feel free to{" "}
+          Aside from coding, I enjoy reading books and staying active through
+          sports like gym workouts, swimming, and badminton, which help keep{" "}
+          <span className="text-[#F6983F]">
+            my mind and body in excellent shape
+          </span>{" "}
+          for professional work.
+        </p>
+        <p>
+          If you’re interested about me and would like to have a chat, feel free
+          to{" "}
           <Link className="border-b border-b-slate-100" to="/contact">
             reach out to me here
           </Link>

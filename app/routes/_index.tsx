@@ -5,7 +5,7 @@ import { getMeta } from "~/utils/seo";
 export const meta: V2_MetaFunction = () => {
   return getMeta({
     title: "",
-    description: "Personal website for sharing things",
+    description: "UI Engineer based in Jakarta, Indonesia",
     url: "",
     keywords: "",
   });
@@ -17,13 +17,14 @@ export default function Index() {
       <h1 className="text-center text-2xl md:text-4xl self-center">
         Hello There!
       </h1>
-      <p className="mt-8 md:mt-16 text-base md:text-2xl text-center">
-        This is my personal website for sharing various things.
+      <p className="mt-8 md:mt-16 text-base md:text-2xl">
+        This is my personal website for sharing what I think, what I did, and
+        what I do.
       </p>
       <p className="mt-8 text-base md:text-2xl">
         I write about{" "}
         <span className="text-[#F6983F]">
-          tech, thoughts, and my life journey ✍️
+          technology, opinion, and life journey ✍️
         </span>{" "}
         which you can{" "}
         <Link className="border-b border-b-slate-100" to="blog">
@@ -32,9 +33,9 @@ export default function Index() {
         .
       </p>
       <p className="mt-8 text-base md:text-2xl">
-        And if you’d like to learn more about me, you can find out more{" "}
+        If you’d like to learn more about me, you can{" "}
         <Link className="border-b border-b-slate-100" to="about">
-          here
+          find out here
         </Link>
         .
       </p>
