@@ -32,23 +32,9 @@ export default function Index() {
         .
       </p>
       <p className="mt-8 text-base md:text-2xl">
-        Sometimes I give a talks 👨‍🏫 which you can{" "}
-        <Link className="border-b border-b-slate-100" to="talk">
-          find here
-        </Link>
-        .
-      </p>
-      <p className="mt-8 text-base md:text-2xl">
-        I've also created some side projects 👨‍💻 that you can{" "}
-        <Link className="border-b border-b-slate-100" to="project">
-          take a look at here
-        </Link>
-        .
-      </p>
-      <p className="mt-8 text-base md:text-2xl">
-        And if you’d like to learn more about me 👨, feel free to{" "}
+        And if you’d like to learn more about me, you can find out more{" "}
         <Link className="border-b border-b-slate-100" to="about">
-          do so here
+          here
         </Link>
         .
       </p>
