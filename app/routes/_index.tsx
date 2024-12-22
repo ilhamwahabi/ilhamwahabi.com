@@ -13,12 +13,14 @@ export const meta: V2_MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="flex flex-col justify-center items-center p-6 lg:p-16">
-      <h1 className="text-center text-2xl md:text-4xl">Hello There!</h1>
+    <div className="flex flex-col justify-center items-start p-6 lg:p-16">
+      <h1 className="text-center text-2xl md:text-4xl self-center">
+        Hello There!
+      </h1>
       <p className="mt-8 md:mt-16 text-base md:text-2xl text-center">
         This is my personal website for sharing various things.
       </p>
-      <p className="mt-8 text-base md:text-2xl text-center">
+      <p className="mt-8 text-base md:text-2xl">
         I write about{" "}
         <span className="text-[#F6983F]">
           tech, thoughts, and my life journey ✍️
@@ -29,30 +31,34 @@ export default function Index() {
         </Link>
         .
       </p>
-      <p className="mt-8 text-base md:text-2xl text-center">
-        Sometimes I <span className="text-[#F6983F]">give a talks 👨</span>{" "}
-        which you can{" "}
+      <p className="mt-8 text-base md:text-2xl">
+        Sometimes I give a talks 👨‍🏫 which you can{" "}
         <Link className="border-b border-b-slate-100" to="talk">
           find here
         </Link>
         .
       </p>
-      <p className="mt-8 text-base md:text-2xl text-center">
-        I've also{" "}
-        <span className="text-[#F6983F]">created some side projects 👨‍💻</span>{" "}
-        that you can{" "}
+      <p className="mt-8 text-base md:text-2xl">
+        I've also created some side projects 👨‍💻 that you can{" "}
         <Link className="border-b border-b-slate-100" to="project">
           take a look at here
         </Link>
         .
       </p>
-      <p className="mt-8 text-base md:text-2xl text-center">
-        If you’d like to learn more about me or{" "}
+      <p className="mt-8 text-base md:text-2xl">
+        And if you’d like to learn more about me 👨, feel free to{" "}
+        <Link className="border-b border-b-slate-100" to="about">
+          do so here
+        </Link>
+        .
+      </p>
+      <p className="mt-8 text-base md:text-2xl">
+        Or if you want to{" "}
         <span className="text-[#F6983F]">
           discuss an exciting opportunity 🤝
         </span>{" "}
         feel free to{" "}
-        <Link className="border-b border-b-slate-100" to="about">
+        <Link className="border-b border-b-slate-100" to="contact">
           reach out here
         </Link>
         .

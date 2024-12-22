@@ -1,4 +1,5 @@
 import type { V2_MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 import { getMeta } from "~/utils/seo";
 
 export const meta: V2_MetaFunction = () => {
@@ -29,34 +30,33 @@ export default function About() {
         <p>
           I'm graduated from{" "}
           <span className="text-[#F6983F]">Institut Teknologi Bandung</span>{" "}
-          with a major in Informatics (Computer Science).
+          with a major in Informatics (Computer Science). One of the best places
+          to study computer science in Indonesia.
         </p>
         <p>
           I have over{" "}
           <span className="text-[#F6983F]">5 years of experience</span> as a
           Software Engineer especially on frontend side, and have worked across
-          various industries with companies based in Indonesia and Singapore.
+          various industries with companies based in Indonesia and Singapore,
+          remote and onsite.
         </p>
         <p>
           I’m fluent in English, know how to craft clean and intuitive UIs, and
           possess experience in frontend performance optimization.
         </p>
+        <p>
+          I also utilize AI in my development process, ensuring{" "}
+          <span className="text-[#F6983F]">
+            faster and more efficient results
+          </span>{" "}
+          in my work.
+        </p>
         <p>Besides coding, I enjoy reading books and playing Badminton.</p>
         <p>
-          I’m open to new opportunities! If you need assistance in creating
-          outstanding UIs, feel free to reach out to me at{" "}
-          <span className="text-[#F6983F]">
-            ilhamwahabi.sikumbang@gmail.com
-          </span>{" "}
-          or contact me on{" "}
-          <a
-            href="https://www.linkedin.com/in/ilhamwahabi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border-b border-b-slate-50"
-          >
-            LinkedIn
-          </a>
+          If you’re interested and would like to have a chat, feel free to{" "}
+          <Link className="border-b border-b-slate-100" to="/contact">
+            reach out to me here
+          </Link>
           .
         </p>
       </div>
