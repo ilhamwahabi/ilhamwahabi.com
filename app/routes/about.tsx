@@ -50,15 +50,16 @@ export default function About() {
           <span className="text-[#F6983F]">
             extensive experience with React.js
           </span>
-          , I’m open to working with other technologies, since I believe that
-          the main principles of UI development remain the same.
+          , I’m open to working with other technologies, including mobile
+          development, since I believe that the main principles of UI
+          development remain the same.
         </p>
         <p>
           I also utilize AI in my development process, ensuring{" "}
           <span className="text-[#F6983F]">
-            faster and more efficient results
-          </span>{" "}
-          in my work.
+            faster and efficient work results
+          </span>
+          .
         </p>
         <p>
           Aside from coding, I enjoy reading books and staying active through
