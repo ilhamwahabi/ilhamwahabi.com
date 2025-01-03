@@ -24,8 +24,8 @@ export default function About() {
           <span className="text-[#F6983F]">
             Frontend Engineer on Kargo Technologies
           </span>
-          , a multinational Series A logistics company providing a range of
-          products to streamline the shipping process.
+          , a multinational Series A-funded logistics company based in
+          Indonesia.
         </p>
         <p>
           I'm graduated from{" "}
@@ -50,7 +50,7 @@ export default function About() {
           <span className="text-[#F6983F]">
             extensive experience with React.js
           </span>
-          , I’m open to working with other technologies, including mobile
+          , I’m able to working with other technologies, including mobile
           development, since I believe that the main principles of UI
           development remain the same.
         </p>

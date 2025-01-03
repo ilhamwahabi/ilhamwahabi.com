@@ -37,14 +37,14 @@ export default function Contact() {
           .
         </p>
         <p>
-          If you’d like to learn more about me first, you can visit the About
+          If you’d like to learn more about me first, you can visit the about
           page{" "}
           <Link className="border-b border-b-slate-100" to="/about">
             here
           </Link>
           .
         </p>
-        <p>I'll be waiting for your message! Let's have a chat and discuss.</p>
+        <p>I'll be waiting for your message! Let's have a chat.</p>
       </div>
     </div>
   );
