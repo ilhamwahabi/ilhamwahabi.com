@@ -14,9 +14,7 @@ export const meta: V2_MetaFunction = () => {
 export default function About() {
   return (
     <div className="flex flex-col justify-center items-center p-6 lg:p-16">
-      <h1 className="text-center text-xl md:text-4xl">
-        Hi, <span className="text-[#F6983F]">Ilham Wahabi</span> here 👋
-      </h1>
+      <h1 className="text-center text-xl md:text-4xl">A little about me… </h1>
       <div className="mt-8 lg:mt-12 text-left space-y-6 md:space-y-8 text-base md:text-xl flex flex-col items-start w-full">
         <p>I'm a UI engineer based in Jakarta, Indonesia.</p>
         <p>
