@@ -25,8 +25,12 @@ export default function Talks() {
   return (
     <main className="flex flex-col justify-center items-center p-6 lg:p-16">
       <h1 className="text-center text-2xl md:text-5xl">Talk</h1>
-      <div className="mt-4 lg:mt-8 space-y-4 text-base lg:text-lg flex flex-col items-center w-full text-center">
-        <p>When I become speaker 👨</p>
+      <div className="mt-4 lg:mt-8 space-y-2 text-base lg:text-lg flex flex-col items-center w-full text-center">
+        <p className="italic">
+          “To persuade, you must demonstrate credibility (Ethos), emotion
+          (Pathos), and logic (Logos)”
+        </p>
+        <p>- Aristotle’s Rhetoric</p>
       </div>
       <ul className="mt-8 md:mt-16 space-y-8 md:space-y-16 text-center">
         {talks.map((talk) => (

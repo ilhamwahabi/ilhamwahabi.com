@@ -25,8 +25,11 @@ export default function Projects() {
   return (
     <main className="flex flex-col justify-center items-center p-6 lg:py-16 lg:px-0">
       <h1 className="text-center text-2xl md:text-5xl">Project</h1>
-      <div className="mt-4 lg:mt-8 space-y-4 text-base lg:text-lg flex flex-col items-center w-full text-center">
-        <p>Result of hard work 👨‍💻</p>
+      <div className="mt-4 lg:mt-8 space-y-2 text-base lg:text-lg flex flex-col items-center w-full text-center">
+        <p className="italic">
+          "The best way to achieve a task is to find the best way to do it"
+        </p>
+        <p>- Gilbert's Law</p>
       </div>
       <ul className="mt-8 md:mt-16 space-y-8 md:space-y-16 text-center">
         {projects.map((project) => (
