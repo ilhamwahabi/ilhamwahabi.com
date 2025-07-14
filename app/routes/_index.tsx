@@ -18,30 +18,21 @@ export default function Index() {
         Hi, <span className="text-[#F6983F]">Ilham Wahabi</span> here 👋
       </h1>
       <p className="mt-8 md:mt-16 text-base md:text-2xl">
-        I'm an experienced UI engineer currently work as a frontend engineer at{" "}
-        <span className="text-[#F6983F]">Kargo Technologies</span>. You can find
-        out more about me{" "}
+        I'm an experienced software engineer currently work as a frontend
+        engineer at <span className="text-[#F6983F]">Kargo Technologies</span>.
+      </p>
+      <p className="mt-8 text-base md:text-2xl">
+        You can find out more about me{" "}
         <Link className="border-b border-b-slate-100" to="about">
           here
         </Link>
         .
       </p>
       <p className="mt-8 text-base md:text-2xl">
-        I <span className="text-[#F6983F]">write blog</span> about technology,
-        opinion, and life journey ✍️ which you can{" "}
+        I also <span className="text-[#F6983F]">write blog</span> about
+        technology, opinion, and life journey ✍️ which you can{" "}
         <Link className="border-b border-b-slate-100" to="blog">
           read here
-        </Link>
-        .
-      </p>
-      <p className="mt-8 text-base md:text-2xl">
-        Or if you want to{" "}
-        <span className="text-[#F6983F]">
-          discuss an exciting opportunity 🤝
-        </span>{" "}
-        feel free to{" "}
-        <Link className="border-b border-b-slate-100" to="contact">
-          reach out here
         </Link>
         .
       </p>

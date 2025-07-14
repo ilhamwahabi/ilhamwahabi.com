@@ -1,5 +1,4 @@
 import type { V2_MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
 import { getMeta } from "~/utils/seo";
 
 export const meta: V2_MetaFunction = () => {
@@ -16,7 +15,7 @@ export default function About() {
     <div className="flex flex-col justify-center items-center p-6 lg:p-16">
       <h1 className="text-center text-xl md:text-4xl">A little about me… </h1>
       <div className="mt-8 lg:mt-12 text-left space-y-6 md:space-y-8 text-base md:text-xl flex flex-col items-start w-full">
-        <p>I'm a UI engineer based in Jakarta, Indonesia.</p>
+        <p>I'm a software engineer based in Jakarta, Indonesia.</p>
         <p>
           Currently I'm working as a{" "}
           <span className="text-[#F6983F]">
@@ -68,11 +67,20 @@ export default function About() {
           for professional work.
         </p>
         <p>
-          If you’re interested about me and would like to have a chat, feel free
-          to{" "}
-          <Link className="border-b border-b-slate-100" to="/contact">
-            reach out to me here
-          </Link>
+          If you’re interested and would like to have a chat, feel free to reach
+          me out on{" "}
+          <span className="underline underline-offset-4">
+            ilhamwahabi.sikumbang@gmail.com
+          </span>{" "}
+          or you can also contant me on{" "}
+          <a
+            href="https://www.linkedin.com/in/ilhamwahabi"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-4"
+          >
+            LinkedIn
+          </a>
           .
         </p>
       </div>

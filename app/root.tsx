@@ -51,7 +51,7 @@ export default function App() {
           className="w-full min-h-[100svh] [&>*]:flex [&>*]:flex-col"
         >
           <header className="py-8 lg:py-16 flex justify-center">
-            <div className="flex flex-col lg:flex-row justify-start items-center w-4/5 md:w-2/5 ">
+            <div className="flex flex-col lg:flex-row justify-center items-center w-4/5 md:w-2/5 ">
               <h1 className="text-xl lg:text-2xl text-center">
                 <Link className="" to="">
                   Ilham Wahabi
@@ -69,9 +69,6 @@ export default function App() {
                 </Link>
                 <Link className="sm:p-2 md:p-4" to="about">
                   About
-                </Link>
-                <Link className="sm:p-2 md:p-4" to="contact">
-                  Contact
                 </Link>
               </div>
             </div>
