@@ -16,6 +16,7 @@ import NProgress from "nprogress";
 import nProgressStyles from "nprogress/nprogress.css";
 import { SpeedInsights } from "@vercel/speed-insights/remix";
 import { useEffect } from "react";
+import { motion } from "motion/react";
 
 import tailwind from "./tailwind.css";
 import styles from "./app.css";
@@ -27,6 +28,34 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
   { rel: "stylesheet", href: nProgressStyles },
 ];
+
+// Animated Navigation Link Component
+const AnimatedNavLink = ({
+  to,
+  children,
+}: {
+  to: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <motion.div className="relative" whileHover="hover" initial="initial">
+      <Link className="sm:px-2 md:px-4 block" to={to}>
+        <span className="relative">
+          {children}
+          <motion.div
+            className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gray-800"
+            variants={{
+              initial: { scaleX: 0 },
+              hover: { scaleX: 1 },
+            }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            style={{ transformOrigin: "left" }}
+          />
+        </span>
+      </Link>
+    </motion.div>
+  );
+};
 
 export default function App() {
   const navigation = useNavigation();
@@ -58,18 +87,10 @@ export default function App() {
                 </Link>
               </h1>
               <div className="lg:ml-16 mt-4 lg:mt-0 space-x-4 sm:space-x-6 md:space-x-4 text-base lg:text-lg flex items-end">
-                <Link className="sm:p-2 md:p-4" to="blog">
-                  Blog
-                </Link>
-                <Link className="sm:p-2 md:p-4" to="talk">
-                  Talk
-                </Link>
-                <Link className="sm:p-2 md:p-4" to="project">
-                  Project
-                </Link>
-                <Link className="sm:p-2 md:p-4" to="about">
-                  About
-                </Link>
+                <AnimatedNavLink to="blog">Blog</AnimatedNavLink>
+                <AnimatedNavLink to="talk">Talk</AnimatedNavLink>
+                <AnimatedNavLink to="project">Project</AnimatedNavLink>
+                <AnimatedNavLink to="about">About</AnimatedNavLink>
               </div>
             </div>
           </header>

@@ -16,6 +16,7 @@
     "@vercel/speed-insights": "^1.0.1",
     "dayjs": "^1.11.9",
     "isbot": "^3.6.12",
+    "motion": "^12.23.12",
     "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-custom-scrollbars-2": "^4.5.0",
