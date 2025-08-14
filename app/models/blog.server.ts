@@ -1,5 +1,3 @@
-import type { BlockMapType } from "react-notion";
-
 type Blog = {
   id: string;
   slug: string;
@@ -15,8 +13,4 @@ export async function getBlogs(): Promise<Array<Blog>> {
   return await fetch(`${NOTION_WORKER}/table/${NOTION_PAGE_ID}`).then((res) =>
     res.json()
   );
-}
-
-export async function getBlocks(id: string): Promise<BlockMapType> {
-  return await fetch(`${NOTION_WORKER}/page/${id}`).then((res) => res.json());
 }
