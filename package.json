@@ -4,8 +4,7 @@
   "scripts": {
     "build": "remix build",
     "dev": "remix dev",
-    "typecheck": "tsc",
-    "postinstall": "patch-package"
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@remix-run/css-bundle": "^1.18.1",

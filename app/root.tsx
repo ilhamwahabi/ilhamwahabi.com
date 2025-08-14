@@ -7,7 +7,6 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration,
   useNavigation,
 } from "@remix-run/react";
 import { Analytics } from "@vercel/analytics/react";
@@ -15,7 +14,7 @@ import { FaGithub, FaGoodreads, FaLinkedin, FaTwitter } from "react-icons/fa6";
 import NProgress from "nprogress";
 import nProgressStyles from "nprogress/nprogress.css";
 import { SpeedInsights } from "@vercel/speed-insights/remix";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 
 import tailwind from "./tailwind.css";
@@ -72,10 +71,18 @@ const AnimatedNavLink = ({
 
 export default function App() {
   const navigation = useNavigation();
+  const scrollbarsRef = useRef<Scrollbars>(null);
+
+  const handleResetClick = () => {
+    scrollbarsRef.current?.scrollToTop();
+  };
 
   useEffect(() => {
     if (navigation.state === "loading") NProgress.start();
-    if (navigation.state === "idle") NProgress.done();
+    if (navigation.state === "idle") {
+      NProgress.done();
+      handleResetClick();
+    }
   }, [navigation.state]);
 
   return (
@@ -88,6 +95,7 @@ export default function App() {
       </head>
       <body className="bg-slate-50 text-gray-800 font-roboto">
         <Scrollbars
+          ref={scrollbarsRef}
           autoHide
           universal
           className="w-full min-h-[100svh] [&>*]:flex [&>*]:flex-col"
@@ -114,9 +122,6 @@ export default function App() {
               <Outlet />
             </div>
           </main>
-          <ScrollRestoration />
-          <Scripts />
-          <LiveReload />
           <footer className="flex justify-center items-center space-x-8 md:space-x-2 p-12 border-t-gray-300 border-t text-lg md:text-2xl mt-8 lg:mt-12">
             <a
               target="_blank"
@@ -152,6 +157,8 @@ export default function App() {
             </a>
           </footer>
         </Scrollbars>
+        <Scripts />
+        <LiveReload />
       </body>
     </html>
   );
