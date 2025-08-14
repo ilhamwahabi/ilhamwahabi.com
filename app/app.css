@@ -1,34 +1,3 @@
-/* Handle dark mode, since Notion is default in light mode */
-
-.notion {
-  color: rgb(241 245 249);
-  caret-color: rgb(241 245 249);
-}
-
-.notion-image-caption {
-  color: rgb(241 245 249);
-}
-
-.notion-bookmark {
-  border: 1px solid rgb(241 245 249);
-}
-
-.notion-bookmark-title {
-  color: rgb(241 245 249);
-}
-
-.notion-bookmark-description {
-  color: rgb(241 245 249);
-}
-
-.notion-bookmark-link > div {
-  color: rgb(241 245 249);
-}
-
-.notion-hr {
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
 #nprogress .bar {
   height: 4px !important;
 }

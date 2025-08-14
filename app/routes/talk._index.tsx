@@ -45,7 +45,7 @@ export default function Talks() {
             </a>
             <p className="text-base lg:text-lg mt-1 md:mt-2">
               {dayjs(talk.date).format("D MMMM YYYY")} on{" "}
-              <span className="text-[#F6983F] font-semibold">
+              <span className="text-sky-600 font-semibold">
                 {talk.organizer}
               </span>
             </p>

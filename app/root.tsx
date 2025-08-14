@@ -44,7 +44,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-[#21292E] text-slate-100">
+      <body className="bg-slate-50 text-gray-800">
         <Scrollbars
           autoHide
           universal
@@ -83,7 +83,7 @@ export default function App() {
           <ScrollRestoration />
           <Scripts />
           <LiveReload />
-          <footer className="flex justify-center items-center space-x-8 md:space-x-2 p-12 border-t-gray-600 border-t text-lg md:text-2xl mt-8 lg:mt-12">
+          <footer className="flex justify-center items-center space-x-8 md:space-x-2 p-12 border-t-gray-300 border-t text-lg md:text-2xl mt-8 lg:mt-12">
             <a
               target="_blank"
               href="https://github.com/ilhamwahabi"

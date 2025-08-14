@@ -18,21 +18,21 @@ export default function About() {
         <p>I'm a software engineer based in Jakarta, Indonesia.</p>
         <p>
           Currently I'm working as a{" "}
-          <span className="text-[#F6983F]">
-            Frontend Engineer on Kargo Technologies
+          <span className="text-sky-600">
+            Fullstack Engineer on Kargo Technologies
           </span>
           , a multinational Series A-funded logistics company based in
           Indonesia.
         </p>
         <p>
           I'm graduated from{" "}
-          <span className="text-[#F6983F]">Institut Teknologi Bandung</span>{" "}
-          with a major in Informatics (Computer Science). One of the best places
-          to study computer science in Indonesia.
+          <span className="text-sky-600">Institut Teknologi Bandung</span> with
+          a major in Informatics (Computer Science). One of the best places to
+          study computer science in Indonesia.
         </p>
         <p>
           I have over{" "}
-          <span className="text-[#F6983F]">5 years of experience</span> as a
+          <span className="text-sky-600">5 years of experience</span> as a
           Software Engineer especially on frontend web development, and have
           worked across various industries with companies based in Indonesia and
           Singapore, remote and onsite.
@@ -44,7 +44,7 @@ export default function About() {
         </p>
         <p>
           Although I have more{" "}
-          <span className="text-[#F6983F]">
+          <span className="text-sky-600">
             extensive experience with React.js
           </span>
           , I’m able to working with other technologies, including mobile
@@ -53,7 +53,7 @@ export default function About() {
         </p>
         <p>
           I also utilize AI in my development process, ensuring{" "}
-          <span className="text-[#F6983F]">
+          <span className="text-sky-600">
             faster and efficient work results
           </span>
           .
@@ -61,7 +61,7 @@ export default function About() {
         <p>
           Aside from coding, I enjoy reading books and staying active through
           sports like gym workouts, swimming, and badminton, which help keep{" "}
-          <span className="text-[#F6983F]">
+          <span className="text-sky-600">
             my mind and body in excellent shape
           </span>{" "}
           for professional work.
