@@ -1,3 +1,11 @@
 #nprogress .bar {
   height: 4px !important;
 }
+
+.notion-simple-table {
+  margin-bottom: 16px;
+}
+
+.notion-simple-table td {
+  border: 1px solid #e0e0e0;
+}
