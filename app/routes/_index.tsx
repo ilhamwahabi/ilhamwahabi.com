@@ -19,7 +19,10 @@ export default function Index() {
       </h1>
       <p className="mt-8 md:mt-16 text-base md:text-2xl">
         I'm an experienced software engineer currently work as a fullstack
-        engineer at <span className="text-sky-600">Kargo Technologies</span>.
+        engineer at{" "}
+        <Link to="https://www.kargo.tech" target="_blank">
+          <span className="text-sky-600">Kargo Technologies</span>.
+        </Link>
       </p>
       <p className="mt-8 text-base md:text-2xl">
         You can find out more about me{" "}
