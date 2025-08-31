@@ -18,8 +18,7 @@ export default function Index() {
         Hi, <span className="text-sky-600">Ilham Wahabi</span> here 👋
       </h1>
       <p className="mt-8 md:mt-16 text-base md:text-2xl">
-        I'm an experienced software engineer currently work as a fullstack
-        engineer at{" "}
+        I'm an experienced software engineer currently work at{" "}
         <Link to="https://www.kargo.tech" target="_blank">
           <span className="text-sky-600">Kargo Technologies</span>.
         </Link>

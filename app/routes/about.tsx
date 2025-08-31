@@ -19,7 +19,7 @@ export default function About() {
         <p>
           Currently I'm working as a{" "}
           <span className="text-sky-600">
-            Fullstack Engineer on Kargo Technologies
+            Frontend Engineer on Kargo Technologies
           </span>
           , a multinational Series A-funded logistics company based in
           Indonesia.
