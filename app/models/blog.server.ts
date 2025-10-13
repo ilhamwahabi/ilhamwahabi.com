@@ -6,7 +6,7 @@ type Blog = {
   description: string;
 };
 
-const NOTION_WORKER = "https://notion-api.splitbee.io/v1";
+const NOTION_WORKER = "https://notion-api-worker.notionforms.workers.dev/v1";
 const NOTION_PAGE_ID = "16f0a3444a684362a829f42b33db4ff0";
 
 export async function getBlogs(): Promise<Array<Blog>> {

@@ -27,8 +27,7 @@ export default function About() {
         <p>
           I'm graduated from{" "}
           <span className="text-sky-600">Institut Teknologi Bandung</span> with
-          a major in Informatics (Computer Science). One of the best places to
-          study computer science in Indonesia.
+          a major in Informatics (Computer Science).
         </p>
         <p>
           I have over{" "}
@@ -72,7 +71,7 @@ export default function About() {
           <span className="underline underline-offset-4">
             ilhamwahabi.sikumbang@gmail.com
           </span>{" "}
-          or you can also contant me on{" "}
+          or you can also contact me on{" "}
           <a
             href="https://www.linkedin.com/in/ilhamwahabi"
             target="_blank"
