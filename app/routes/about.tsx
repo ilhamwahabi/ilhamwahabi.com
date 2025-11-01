@@ -15,14 +15,12 @@ export default function About() {
     <div className="flex flex-col justify-center items-center p-6 lg:p-16">
       <h1 className="text-center text-xl md:text-4xl">A little about me… </h1>
       <div className="mt-8 lg:mt-12 text-left space-y-6 md:space-y-8 text-base md:text-xl flex flex-col items-start w-full">
-        <p>I'm a software engineer based in Jakarta, Indonesia.</p>
+        <p>I'm a software engineer based in Tangerang, Indonesia.</p>
         <p>
           Currently I'm working as a{" "}
-          <span className="text-sky-600">
-            Frontend Engineer on Kargo Technologies
-          </span>
-          , a multinational Series A-funded logistics company based in
-          Indonesia.
+          <span className="text-sky-600">Frontend Engineer on Traveloka</span>,
+          a leading Southeast Asian technology company providing online travel
+          and lifestyle booking services.
         </p>
         <p>
           I'm graduated from{" "}
@@ -30,9 +28,11 @@ export default function About() {
           a major in Informatics (Computer Science).
         </p>
         <p>
-          I have over{" "}
-          <span className="text-sky-600">5 years of experience</span> as a
-          Software Engineer especially on frontend web development, and have
+          I have about{" "}
+          <span className="text-sky-600">
+            {new Date().getFullYear() - 2020} years of experience
+          </span>{" "}
+          as a Software Engineer especially on frontend web development. I have
           worked across various industries with companies based in Indonesia and
           Singapore, remote and onsite.
         </p>
@@ -42,13 +42,9 @@ export default function About() {
           performance optimization.
         </p>
         <p>
-          Although I have more{" "}
-          <span className="text-sky-600">
-            extensive experience with React.js
-          </span>
-          , I’m able to working with other technologies, including mobile
-          development, since I believe that the main principles of UI
-          development remain the same.
+          Although I have more experience with frontend web development, I’m
+          also able to do mobile app development, since I believe that the main
+          principles of UI development remain the same.
         </p>
         <p>
           I also utilize AI in my development process, ensuring{" "}
