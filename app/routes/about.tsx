@@ -18,9 +18,9 @@ export default function About() {
         <p>I'm a software engineer based in Tangerang, Indonesia.</p>
         <p>
           Currently I'm working as a{" "}
-          <span className="text-sky-600">Frontend Engineer on Traveloka</span>,
-          a leading Southeast Asian technology company providing online travel
-          and lifestyle booking services.
+          <span className="text-sky-600">Frontend Engineer at Traveloka</span>,
+          a leading technology company providing online travel and lifestyle
+          booking services.
         </p>
         <p>
           I'm graduated from{" "}
@@ -30,9 +30,9 @@ export default function About() {
         <p>
           I have about{" "}
           <span className="text-sky-600">
-            {new Date().getFullYear() - 2020} years of experience
+            {new Date().getFullYear() - 2020 - 1} years of experience
           </span>{" "}
-          as a Software Engineer especially on frontend web development. I have
+          as a software engineer especially on frontend web development. I have
           worked across various industries with companies based in Indonesia and
           Singapore, remote and onsite.
         </p>
@@ -42,12 +42,12 @@ export default function About() {
           performance optimization.
         </p>
         <p>
-          Although I have more experience with frontend web development, I’m
-          also able to do mobile app development, since I believe that the main
-          principles of UI development remain the same.
+          Although I have more experience in frontend web development, I’m also
+          capable of mobile app development and have some familiarity with
+          backend development as well.
         </p>
         <p>
-          I also utilize AI in my development process, ensuring{" "}
+          I'm also utilize AI in my development process, ensuring{" "}
           <span className="text-sky-600">
             faster and efficient work results
           </span>
@@ -55,7 +55,7 @@ export default function About() {
         </p>
         <p>
           Aside from coding, I enjoy reading books and staying active through
-          sports like gym workouts, swimming, and badminton, which help keep{" "}
+          sports like gym, swimming, and badminton, which helps keep{" "}
           <span className="text-sky-600">
             my mind and body in excellent shape
           </span>{" "}
@@ -64,17 +64,13 @@ export default function About() {
         <p>
           If you’re interested and would like to have a chat, feel free to reach
           me out on{" "}
-          <span className="underline underline-offset-4">
-            ilhamwahabi.sikumbang@gmail.com
-          </span>{" "}
-          or you can also contact me on{" "}
           <a
             href="https://www.linkedin.com/in/ilhamwahabi"
             target="_blank"
             rel="noreferrer"
             className="underline underline-offset-4"
           >
-            LinkedIn
+            my LinkedIn
           </a>
           .
         </p>
