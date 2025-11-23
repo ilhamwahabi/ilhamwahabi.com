@@ -25,7 +25,7 @@ export default function About() {
         <p>
           I'm graduated from{" "}
           <span className="text-sky-600">Institut Teknologi Bandung</span> with
-          a major in Informatics (Computer Science).
+          bachelor degree in Informatics (Computer Science).
         </p>
         <p>
           I have about{" "}
@@ -34,11 +34,16 @@ export default function About() {
           </span>{" "}
           as a software engineer especially on frontend web development. I have
           worked across various industries with companies based in Indonesia and
-          Singapore, remote and onsite.
+          Singapore, remote and on-site.
+        </p>
+        <p>
+          I have been involved in building products that receive billions of
+          investments, generate billions of revenue and being used by big
+          enterprises, which I'm proud of.
         </p>
         <p>
           I’m fluent in English, know how to craft clean and intuitive UIs, have
-          experience in recruit & led teams, and possess experience in frontend
+          experiences in recruit & led teams, and possess experience in frontend
           performance optimization.
         </p>
         <p>
@@ -48,10 +53,7 @@ export default function About() {
         </p>
         <p>
           I'm also utilize AI in my development process, ensuring{" "}
-          <span className="text-sky-600">
-            faster and efficient work results
-          </span>
-          .
+          <span className="text-sky-600">faster and efficient work</span>.
         </p>
         <p>
           Aside from coding, I enjoy reading books and staying active through
@@ -62,15 +64,19 @@ export default function About() {
           for professional work.
         </p>
         <p>
+          Currently I'm NOT available for freelance / part-time work, but I'm
+          always open to new opportunities.
+        </p>
+        <p>
           If you’re interested and would like to have a chat, feel free to reach
-          me out on{" "}
+          me out on my{" "}
           <a
             href="https://www.linkedin.com/in/ilhamwahabi"
             target="_blank"
             rel="noreferrer"
             className="underline underline-offset-4"
           >
-            my LinkedIn
+            LinkedIn
           </a>
           .
         </p>
