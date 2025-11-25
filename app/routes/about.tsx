@@ -77,6 +77,15 @@ export default function About() {
             className="underline underline-offset-4"
           >
             LinkedIn
+          </a>{" "}
+          or you can{" "}
+          <a
+            href="https://calendar.app.google/tcTBDxVB8PoA1fZF6"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-4"
+          >
+            book a meeting with me
           </a>
           .
         </p>
