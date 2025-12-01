@@ -38,8 +38,8 @@ export default function About() {
         </p>
         <p>
           I have been involved in building products that receive billions of
-          investments, generate billions of revenue and being used by big
-          enterprises, which I'm proud of.
+          investments, generate billions of revenue, being used by big
+          enterprises, and expanded to another country, which I'm proud of.
         </p>
         <p>
           I’m fluent in English, know how to craft clean and intuitive UIs, have
@@ -56,20 +56,20 @@ export default function About() {
           <span className="text-sky-600">faster and efficient work</span>.
         </p>
         <p>
-          Aside from coding, I enjoy reading books and staying active through
-          sports like gym, swimming, and badminton, which helps keep{" "}
+          Aside from coding, I enjoy{" "}
           <span className="text-sky-600">
-            my mind and body in excellent shape
+            reading books and playing badminton
           </span>{" "}
-          for professional work.
+          which helps keep my mind and body in excellent shape for work.
         </p>
         <p>
-          Currently I'm NOT available for freelance / part-time work, but I'm
-          always open to new opportunities.
+          I'm always open to new opportunities. But I'm not interested working
+          in industries related to: gambling, adult content, credit / paylater,
+          and conventional banking.
         </p>
         <p>
-          If you’re interested and would like to have a chat, feel free to reach
-          me out on my{" "}
+          If you’re interested and would like to connect, feel free to reach me
+          out on{" "}
           <a
             href="https://www.linkedin.com/in/ilhamwahabi"
             target="_blank"
@@ -77,17 +77,20 @@ export default function About() {
             className="underline underline-offset-4"
           >
             LinkedIn
-          </a>{" "}
-          or you can{" "}
+          </a>
+          .
+        </p>
+        <p>
+          Or you can also{" "}
           <a
             href="https://calendar.app.google/tcTBDxVB8PoA1fZF6"
             target="_blank"
             rel="noreferrer"
             className="underline underline-offset-4"
           >
-            book a meeting with me
-          </a>
-          .
+            book a meeting
+          </a>{" "}
+          to have a casual chat with me (It's free, but please be responsible).
         </p>
       </div>
     </div>
