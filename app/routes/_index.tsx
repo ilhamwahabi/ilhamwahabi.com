@@ -25,7 +25,7 @@ export default function Index() {
       </p>
       <p className="mt-8 text-base md:text-2xl">
         You can find out more about me{" "}
-        <Link className="border-b border-b-gray-800" to="about">
+        <Link className="underline underline-offset-4" to="about">
           here
         </Link>
         .
@@ -33,7 +33,7 @@ export default function Index() {
       <p className="mt-8 text-base md:text-2xl">
         I also <span className="text-sky-600">write blog</span> about
         technology, opinion, and life journey ✍️ which you can{" "}
-        <Link className="border-b border-b-gray-800" to="blog">
+        <Link className="underline underline-offset-4" to="blog">
           read here
         </Link>
         .

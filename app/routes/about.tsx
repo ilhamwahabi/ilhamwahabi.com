@@ -15,7 +15,11 @@ export default function About() {
     <div className="flex flex-col justify-center items-center p-6 lg:p-16">
       <h1 className="text-center text-xl md:text-4xl">A little about me… </h1>
       <div className="mt-8 lg:mt-12 text-left space-y-6 md:space-y-8 text-base md:text-xl flex flex-col items-start w-full">
-        <p>I'm a software engineer based in Tangerang, Indonesia.</p>
+        <p>
+          My name is Ilham Wahabi,{" "}
+          <span className="text-sky-600">you can call me Ilham</span>. I'm a
+          software engineer based in Tangerang, Indonesia.
+        </p>
         <p>
           Currently I'm working as a{" "}
           <span className="text-sky-600">Frontend Engineer at Traveloka</span>,
@@ -34,16 +38,22 @@ export default function About() {
           </span>{" "}
           as a software engineer especially on frontend web development. I have
           worked across various industries with companies based in Indonesia and
-          Singapore, remote and on-site.
+          Singapore, from early stage startups to established companies, remote
+          and on-site.
         </p>
         <p>
-          I have been involved in building products that receive billions of
-          investments, generate billions of revenue, being used by big
-          enterprises, and expanded to another country, which I'm proud of.
+          I have been{" "}
+          <span className="text-sky-600">
+            involved in building products that generate billions of revenue
+          </span>
+          , receive billions of investments, being used by large enterprises,
+          and expanded to another country, which I'm proud of.
         </p>
         <p>
-          I’m fluent in English, know how to craft clean and intuitive UIs, have
-          experiences in recruit & led teams, and possess experience in frontend
+          <span className="text-sky-600">I’m fluent in English</span>, know how
+          to craft clean and intuitive UIs, have experience in building a
+          startup, have experiences in recruiting & leading team, able to build
+          the project from ground up, and have experience in frontend
           performance optimization.
         </p>
         <p>
@@ -52,8 +62,9 @@ export default function About() {
           backend development as well.
         </p>
         <p>
-          I'm also utilize AI in my development process, ensuring{" "}
-          <span className="text-sky-600">faster and efficient work</span>.
+          I'm also{" "}
+          <span className="text-sky-600">utilize AI in development</span>{" "}
+          process, ensuring faster and efficient work.
         </p>
         <p>
           Aside from coding, I enjoy{" "}
@@ -63,9 +74,10 @@ export default function About() {
           which helps keep my mind and body in excellent shape for work.
         </p>
         <p>
-          I'm always open to new opportunities. But I'm not interested working
-          in industries related to: gambling, adult content, credit / paylater,
-          and conventional banking.
+          I'm always{" "}
+          <span className="text-sky-600">open to new opportunities</span>.
+          However, I'm not interested working in industries related to:
+          gambling, adult content, credit / paylater, and conventional banking.
         </p>
         <p>
           If you’re interested and would like to connect, feel free to reach me
@@ -90,8 +102,9 @@ export default function About() {
           >
             book a meeting
           </a>{" "}
-          to have a casual chat with me (It's free, but please be responsible).
+          to have a casual chat with me (it's free, but please be responsible).
         </p>
+        <p>See you!</p>
       </div>
     </div>
   );
