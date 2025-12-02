@@ -47,7 +47,7 @@ export default function About() {
             involved in building products that generate billions of revenue
           </span>
           , receive billions of investments, being used by large enterprises,
-          and expanded to another country, which I'm proud of.
+          and expand to various countries, which I'm proud of.
         </p>
         <p>
           <span className="text-sky-600">I’m fluent in English</span>, know how
@@ -76,8 +76,9 @@ export default function About() {
         <p>
           I'm always{" "}
           <span className="text-sky-600">open to new opportunities</span>.
-          However, I'm not interested working in industries related to:
-          gambling, adult content, credit / paylater, and conventional banking.
+          However, I'm not interested working in industries that have main focus
+          on: gambling, adult content, credit / paylater, and conventional
+          banking.
         </p>
         <p>
           If you’re interested and would like to connect, feel free to reach me
@@ -86,23 +87,32 @@ export default function About() {
             href="https://www.linkedin.com/in/ilhamwahabi"
             target="_blank"
             rel="noreferrer"
-            className="underline underline-offset-4"
+            className="underline underline-offset-2"
           >
             LinkedIn
+          </a>{" "}
+          or{" "}
+          <a
+            href="https://twitter.com/ilhamwahabigx"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2"
+          >
+            Twitter
           </a>
           .
         </p>
         <p>
-          Or you can also{" "}
+          You can also{" "}
           <a
             href="https://calendar.app.google/tcTBDxVB8PoA1fZF6"
             target="_blank"
             rel="noreferrer"
-            className="underline underline-offset-4"
+            className="underline underline-offset-2"
           >
             book a meeting
           </a>{" "}
-          to have a casual chat with me (it's free, but please be responsible).
+          with me to discuss anything (it's free, but please be responsible).
         </p>
         <p>See you!</p>
       </div>

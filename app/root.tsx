@@ -16,6 +16,7 @@ import nProgressStyles from "nprogress/nprogress.css";
 import { SpeedInsights } from "@vercel/speed-insights/remix";
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
+import { SiLeetcode } from "react-icons/si";
 
 import tailwind from "./tailwind.css";
 import styles from "./app.css";
@@ -127,15 +128,23 @@ export default function App() {
               target="_blank"
               href="https://github.com/ilhamwahabi"
               rel="noreferrer"
-              className="sm:p-2 md:p-4"
+              className="sm:p-2 md:p-4 hover:opacity-50 transition-opacity duration-300"
             >
               <FaGithub />
             </a>
             <a
               target="_blank"
+              href="https://leetcode.com/u/ilhamwahabi"
+              rel="noreferrer"
+              className="sm:p-2 md:p-4 hover:opacity-50 transition-opacity duration-300"
+            >
+              <SiLeetcode />
+            </a>
+            <a
+              target="_blank"
               href="https://twitter.com/ilhamwahabigx"
               rel="noreferrer"
-              className="sm:p-2 md:p-4"
+              className="sm:p-2 md:p-4 hover:opacity-50 transition-opacity duration-300"
             >
               <FaTwitter />
             </a>
@@ -143,7 +152,7 @@ export default function App() {
               target="_blank"
               href="https://www.linkedin.com/in/ilhamwahabi"
               rel="noreferrer"
-              className="sm:p-2 md:p-4"
+              className="sm:p-2 md:p-4 hover:opacity-50 transition-opacity duration-300"
             >
               <FaLinkedin />
             </a>
@@ -151,7 +160,7 @@ export default function App() {
               target="_blank"
               href="https://www.goodreads.com/ilhamwahabi"
               rel="noreferrer"
-              className="sm:p-2 md:p-4"
+              className="sm:p-2 md:p-4 hover:opacity-50 transition-opacity duration-300"
             >
               <FaGoodreads />
             </a>
