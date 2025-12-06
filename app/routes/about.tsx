@@ -105,7 +105,7 @@ export default function About() {
         <p>
           You can also{" "}
           <a
-            href="https://calendar.app.google/tcTBDxVB8PoA1fZF6"
+            href="https://cal.com/ilham-wahabi"
             target="_blank"
             rel="noreferrer"
             className="underline underline-offset-2"
