@@ -23,8 +23,7 @@ export default function About() {
         <p>
           Currently I'm working as a{" "}
           <span className="text-sky-600">Frontend Engineer at Traveloka</span>,
-          a leading technology company providing online travel and lifestyle
-          booking services.
+          one of the biggest online travel platform in Southeast Asia.
         </p>
         <p>
           I'm graduated from{" "}
@@ -41,14 +40,19 @@ export default function About() {
           Singapore, remote and on-site.
         </p>
         <p>
-          I've experience working in early stage startups, so I know how to
-          build products from the scratch. I'm also familiar with working in a
-          fast-paced environment.
+          I have experience working in early stage startups, so I{" "}
+          <span className="text-sky-600">
+            know how to build products from the scratch
+          </span>
+          . I'm also familiar with working in a fast-paced environment.
         </p>
         <p>
-          I've experience working in established companies too, that means I
-          know how to maintain existing products and improve them. I'm also
-          comfortable working in a large team.
+          And I've been working in established companies too, that means I know
+          how to maintain existing products and improve them. I also have{" "}
+          <span className="text-sky-600">
+            proven experience working in a large team
+          </span>
+          .
         </p>
         <p>
           Although I have more experience in frontend web development, I’m also
@@ -73,7 +77,7 @@ export default function About() {
           I'm always{" "}
           <span className="text-sky-600">open to new opportunities</span>.
           However, I'm not interested working in products that related to:
-          gambling, adult content, credit / paylater, and conventional banking.
+          gambling, adult content, credit, paylater, and conventional banking.
         </p>
         <p>
           If you’re interested and would like to connect, feel free to reach me
@@ -107,7 +111,8 @@ export default function About() {
           >
             book a meeting
           </a>{" "}
-          with me to discuss anything (it's free, but please be responsible).
+          with me if you have something to discuss (it's free, so please be
+          responsible).
         </p>
         <p>See you!</p>
       </div>

@@ -30,15 +30,15 @@ export default function Index() {
         enterprises, and have expanded to multiple countries.
       </p>
       <p className="mt-8 text-base md:text-2xl">
-        You can find out more about me{" "}
+        Find out more about me{" "}
         <Link className="underline underline-offset-4" to="about">
           here
         </Link>
         .
       </p>
       <p className="mt-8 text-base md:text-2xl">
-        I also <span className="text-sky-600">write blog</span> about
-        technology, opinion, and life journey ✍️ which you can{" "}
+        I also <span className="text-sky-600">write blog</span> on technology,
+        opinions, and my life journey ✍️ which you can{" "}
         <Link className="underline underline-offset-4" to="blog">
           read here
         </Link>
