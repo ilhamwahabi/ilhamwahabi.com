@@ -38,23 +38,17 @@ export default function About() {
           </span>{" "}
           as a software engineer especially on frontend web development. I have
           worked across various industries with companies based in Indonesia and
-          Singapore, from early stage startups to established companies, remote
-          and on-site.
+          Singapore, remote and on-site.
         </p>
         <p>
-          I have been{" "}
-          <span className="text-sky-600">
-            involved in building products that generate billions of revenue
-          </span>
-          , receive billions of investments, being used by large enterprises,
-          and expand to various countries, which I'm proud of.
+          I've experience working in early stage startups, so I know how to
+          build products from the scratch. I'm also familiar with working in a
+          fast-paced environment.
         </p>
         <p>
-          <span className="text-sky-600">I’m fluent in English</span>, know how
-          to craft clean and intuitive UIs, have experience in building a
-          startup, have experiences in recruiting & leading team, able to build
-          the project from ground up, and have experience in frontend
-          performance optimization.
+          I've experience working in established companies too, that means I
+          know how to maintain existing products and improve them. I'm also
+          comfortable working in a large team.
         </p>
         <p>
           Although I have more experience in frontend web development, I’m also
@@ -62,9 +56,11 @@ export default function About() {
           backend development as well.
         </p>
         <p>
-          I'm also{" "}
-          <span className="text-sky-600">utilize AI in development</span>{" "}
-          process, ensuring faster and efficient work.
+          Furthermore,{" "}
+          <span className="text-sky-600">I’m fluent in English</span>, know how
+          to craft clean and intuitive UIs, have experiences in mentoring junior
+          developers, familiar with frontend performance optimization, and have
+          been utilizing AI in my development process.
         </p>
         <p>
           Aside from coding, I enjoy{" "}
@@ -76,9 +72,8 @@ export default function About() {
         <p>
           I'm always{" "}
           <span className="text-sky-600">open to new opportunities</span>.
-          However, I'm not interested working in industries that have main focus
-          on: gambling, adult content, credit / paylater, and conventional
-          banking.
+          However, I'm not interested working in products that related to:
+          gambling, adult content, credit / paylater, and conventional banking.
         </p>
         <p>
           If you’re interested and would like to connect, feel free to reach me

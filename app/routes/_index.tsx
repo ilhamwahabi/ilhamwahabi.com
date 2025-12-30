@@ -24,6 +24,12 @@ export default function Index() {
         </Link>
       </p>
       <p className="mt-8 text-base md:text-2xl">
+        I’ve been in the industry for about{" "}
+        {new Date().getFullYear() - 2020 - 1} years and have been involved in
+        building products that generate billions in revenue, are used by large
+        enterprises, and have expanded to multiple countries.
+      </p>
+      <p className="mt-8 text-base md:text-2xl">
         You can find out more about me{" "}
         <Link className="underline underline-offset-4" to="about">
           here
