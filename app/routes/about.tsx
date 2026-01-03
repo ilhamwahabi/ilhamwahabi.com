@@ -60,11 +60,12 @@ export default function About() {
           backend development as well.
         </p>
         <p>
-          Furthermore,{" "}
-          <span className="text-sky-600">I’m fluent in English</span>, know how
-          to craft clean and intuitive UIs, have experiences in mentoring junior
-          developers, familiar with frontend performance optimization, and have
-          been utilizing AI in my development process.
+          Furthermore, I’m fluent in English, skilled at crafting clean and
+          intuitive UIs, have experience in mentoring junior developers,{" "}
+          <span className="text-sky-600">
+            possess experiences in frontend performance optimization
+          </span>
+          , and have been utilizing AI to enhance my development workflow.
         </p>
         <p>
           Aside from coding, I enjoy{" "}
@@ -76,7 +77,7 @@ export default function About() {
         <p>
           I'm always{" "}
           <span className="text-sky-600">open to new opportunities</span>.
-          However, I'm not interested working in products that related to:
+          However, I'm NOT interested working in products that related to:
           gambling, adult content, credit, paylater, and conventional banking.
         </p>
         <p>

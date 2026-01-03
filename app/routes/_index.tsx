@@ -15,7 +15,7 @@ export default function Index() {
   return (
     <div className="flex flex-col justify-center items-start p-6 lg:p-16">
       <h1 className="text-center text-2xl md:text-4xl self-center">
-        Hi, <span className="text-sky-600">Ilham Wahabi</span> here 👋
+        Hi, <span className="text-sky-600">Ilham</span> here 👋
       </h1>
       <p className="mt-8 md:mt-16 text-base md:text-2xl">
         I'm a software engineer currently work at{" "}
@@ -26,11 +26,11 @@ export default function Index() {
       <p className="mt-8 text-base md:text-2xl">
         I’ve been in the industry for about{" "}
         {new Date().getFullYear() - 2020 - 1} years and have been involved in
-        building products that generate billions in revenue, are used by large
+        building products that generate billions in revenue, being used by large
         enterprises, and have expanded to multiple countries.
       </p>
       <p className="mt-8 text-base md:text-2xl">
-        Find out more about me{" "}
+        You can find out more about me{" "}
         <Link className="underline underline-offset-4" to="about">
           here
         </Link>
