@@ -18,12 +18,17 @@ export default function About() {
         <p>
           My name is Ilham Wahabi,{" "}
           <span className="text-sky-600">you can call me Ilham</span>. I'm a
-          software engineer based in Tangerang, Indonesia.
+          software engineer based in Indonesia 🇮🇩
         </p>
         <p>
           Currently I'm working as a{" "}
-          <span className="text-sky-600">Frontend Engineer at Traveloka</span>,
-          one of the biggest online travel platform in Southeast Asia.
+          <span className="text-sky-600">Frontend Engineer at Traveloka</span>
+          <img
+            src="/traveloka-logo.png"
+            alt="Traveloka"
+            className="inline-block h-8 w-8 -mt-2"
+          />
+          , one of the biggest online travel platform in Southeast Asia.
         </p>
         <p>
           I'm graduated from{" "}
@@ -47,8 +52,8 @@ export default function About() {
           . I'm also familiar with working in a fast-paced environment.
         </p>
         <p>
-          And I've been working in established companies too, that means I know
-          how to maintain existing products and improve them. I also have{" "}
+          I've been working in established companies too, so I know how to
+          maintain existing products and improve them. With that, I also have{" "}
           <span className="text-sky-600">
             proven experience working in a large team
           </span>
@@ -70,7 +75,7 @@ export default function About() {
         <p>
           Aside from coding, I enjoy{" "}
           <span className="text-sky-600">
-            reading books and playing badminton
+            reading books 📖 and playing badminton 🏸
           </span>{" "}
           which helps keep my mind and body in excellent shape for work.
         </p>

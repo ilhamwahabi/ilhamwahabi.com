@@ -20,7 +20,12 @@ export default function Index() {
       <p className="mt-8 md:mt-16 text-base md:text-2xl">
         I'm a software engineer currently work at{" "}
         <Link to="https://www.traveloka.com" target="_blank">
-          <span className="text-sky-600">Traveloka</span>.
+          <span className="text-sky-600">Traveloka</span>
+          <img
+            src="/traveloka-logo.png"
+            alt="Traveloka"
+            className="inline-block h-8 w-8 -mt-2"
+          />
         </Link>
       </p>
       <p className="mt-8 text-base md:text-2xl">
