@@ -36,7 +36,7 @@ export default function About() {
           bachelor degree in Informatics (Computer Science).
         </p>
         <p>
-          I have about{" "}
+          I have{" "}
           <span className="text-sky-600">
             {new Date().getFullYear() - 2020 - 1} years of experience
           </span>{" "}
