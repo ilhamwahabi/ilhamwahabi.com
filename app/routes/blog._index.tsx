@@ -20,6 +20,7 @@ export const meta: V2_MetaFunction = () => {
 
 export default function Blogs() {
   const { blogs } = useLoaderData<typeof loader>();
+  console.log({blogs});
 
   return (
     <main className="flex flex-col justify-center items-center p-6 lg:p-16">
