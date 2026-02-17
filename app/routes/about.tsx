@@ -52,8 +52,8 @@ export default function About() {
           . I'm also familiar with working in a fast-paced environment.
         </p>
         <p>
-          I've been working in established companies too, so I know how to
-          maintain existing products and improve them. With that, I also have{" "}
+          I've been working in established companies too, I know how to
+          maintain existing products and improve them. Hence, I have{" "}
           <span className="text-sky-600">
             proven experience working in a large team
           </span>
@@ -120,7 +120,7 @@ export default function About() {
           with me if you have something to discuss (it's free, so please be
           responsible).
         </p>
-        <p>See you!</p>
+        <p>Thanks for visiting!</p>
       </div>
     </div>
   );

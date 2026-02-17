@@ -33,7 +33,7 @@ export default function Index() {
         <span className="text-sky-600">
           {new Date().getFullYear() - 2020 - 1} years of experience
         </span>{" "}
-        as a software engineer, working on products that generate billions in
+        on building products that generate billions in
         revenue, being used by large enterprises, and have expanded to multiple
         countries.
       </p>
