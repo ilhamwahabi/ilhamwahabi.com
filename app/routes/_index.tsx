@@ -1,6 +1,7 @@
 import type { V2_MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { getMeta } from "~/utils/seo";
+import { YEARS_OF_EXPERIENCE } from "~/const";
 
 export const meta: V2_MetaFunction = () => {
   return getMeta({
@@ -31,7 +32,7 @@ export default function Index() {
       <p className="mt-8 text-base md:text-2xl">
         I bring{" "}
         <span className="text-sky-600">
-          {new Date().getFullYear() - 2020 - 1} years of experience
+          {YEARS_OF_EXPERIENCE} years of experience
         </span>{" "}
         on building products that generate billions in
         revenue, being used by large enterprises, and have expanded to multiple

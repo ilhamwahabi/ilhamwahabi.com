@@ -1,5 +1,6 @@
 import type { V2_MetaFunction } from "@remix-run/node";
 import { getMeta } from "~/utils/seo";
+import { YEARS_OF_EXPERIENCE } from "~/const";
 
 export const meta: V2_MetaFunction = () => {
   return getMeta({
@@ -38,7 +39,7 @@ export default function About() {
         <p>
           I have{" "}
           <span className="text-sky-600">
-            {new Date().getFullYear() - 2020 - 1} years of experience
+            {YEARS_OF_EXPERIENCE} years of experience
           </span>{" "}
           as a software engineer especially on frontend web development. I have
           worked across various industries with companies based in Indonesia and

@@ -1,3 +1,5 @@
+import { NOTION_WORKER } from "~/const";
+
 export type Project = {
   id: string;
   name: string;
@@ -8,7 +10,6 @@ export type Project = {
   link: string;
 };
 
-const NOTION_WORKER = "https://notion-api.splitbee.io/v1";
 const NOTION_PAGE_ID = "da578f06d0074d1b8178abc9642abdc9";
 
 export async function getProjects(): Promise<Array<Project>> {
