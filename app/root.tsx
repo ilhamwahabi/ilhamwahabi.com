@@ -15,7 +15,6 @@ import NProgress from "nprogress";
 import nProgressStyles from "nprogress/nprogress.css";
 import { SpeedInsights } from "@vercel/speed-insights/remix";
 import { useEffect, useRef } from "react";
-import { motion } from "motion/react";
 import { SiLeetcode } from "react-icons/si";
 
 import tailwind from "./tailwind.css";
@@ -42,7 +41,8 @@ export const links: LinksFunction = () => [
   },
 ];
 
-// Animated Navigation Link Component
+// Nav underline uses CSS (group-hover) so hover state always clears with the pointer;
+// Motion whileHover + nested variants could leave scaleX stuck when leave events were missed.
 const AnimatedNavLink = ({
   to,
   children,
@@ -51,22 +51,15 @@ const AnimatedNavLink = ({
   children: React.ReactNode;
 }) => {
   return (
-    <motion.div className="relative" whileHover="hover" initial="initial">
-      <Link className="sm:px-2 md:px-4 block" to={to}>
-        <span className="relative">
-          {children}
-          <motion.div
-            className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gray-800"
-            variants={{
-              initial: { scaleX: 0 },
-              hover: { scaleX: 1 },
-            }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            style={{ transformOrigin: "left" }}
-          />
-        </span>
-      </Link>
-    </motion.div>
+    <Link className="group sm:px-2 md:px-4 block" to={to}>
+      <span className="relative inline-block">
+        {children}
+        <span
+          className="pointer-events-none absolute -bottom-1 left-0 right-0 h-0.5 origin-left scale-x-0 bg-gray-800 transition-transform duration-300 ease-in-out group-hover:scale-x-100"
+          aria-hidden
+        />
+      </span>
+    </Link>
   );
 };
 

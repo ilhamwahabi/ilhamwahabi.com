@@ -19,7 +19,7 @@ export default function Index() {
         Hi, <span className="text-sky-600">Ilham</span> here 👋
       </h1>
       <p className="mt-8 md:mt-16 text-base md:text-2xl">
-        I'm a software engineer currently work at{" "}
+        I'm a software engineer currently working at{" "}
         <Link to="https://www.traveloka.com" target="_blank">
           <span className="text-sky-600">Traveloka</span>
           <img
@@ -34,9 +34,8 @@ export default function Index() {
         <span className="text-sky-600">
           {YEARS_OF_EXPERIENCE} years of experience
         </span>{" "}
-        on building products that generate billions in
-        revenue, being used by large enterprises, and have expanded to multiple
-        countries.
+        on building products that generate billions in revenue, being used by
+        large enterprises, and have expanded to multiple countries.
       </p>
       <p className="mt-8 text-base md:text-2xl">
         You can find out more about me{" "}
