@@ -51,7 +51,7 @@ function Talks() {
       </ul>
       {talks.length === 0 && (
         <p className="text-center text-lg md:text-2xl">
-          Nothing to display yet 🙏
+          Sorry, something went wrong 🙏
         </p>
       )}
     </main>

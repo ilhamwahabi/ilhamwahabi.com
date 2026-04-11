@@ -65,7 +65,7 @@ function Projects() {
       </ul>
       {projects.length === 0 ? (
         <p className="text-center text-lg md:text-2xl">
-          Nothing to display yet 🙏
+          Sorry, something went wrong 🙏
         </p>
       ) : (
         <p className="mt-16 text-center text-base leading-6 md:text-lg lg:mt-24">

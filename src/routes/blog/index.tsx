@@ -46,7 +46,7 @@ function Blogs() {
       </ul>
       {blogs.length === 0 && (
         <p className="text-center text-base md:text-2xl">
-          Nothing to display yet 🙏
+          Sorry, something went wrong 🙏
         </p>
       )}
     </main>
