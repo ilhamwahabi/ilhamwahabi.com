@@ -1,35 +1,18 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
-import { NotionAPI } from 'notion-client'
 import type { ExtendedRecordMap } from 'notion-types'
 import { NotionRenderer } from 'react-notion-x'
 import { Code } from 'react-notion-x/build/third-party/code'
-import { getBlogs } from '#/models/blog'
+import { loadBlogPostData } from '#/lib/notion-server-fns'
 import { getSeoHead } from '#/lib/seo'
 
 import 'prismjs/themes/prism-tomorrow.css'
 import 'react-notion-x/src/styles.css'
 
-const notion = new NotionAPI()
-
 export const Route = createFileRoute('/blog/$slug')({
   loader: async ({ params }) => {
-    const blogs = await getBlogs()
-    const blog = blogs.find((b) => b.slug === params.slug)
-
-    if (!blog) throw notFound()
-
-    let recordMap
-    try {
-      recordMap = await notion.getPage(blog.id)
-    } catch (e) {
-      console.error('[notion] getPage failed', blog.id, e)
-      throw notFound()
-    }
-
-    return {
-      blog,
-      recordMap,
-    }
+    const result = await loadBlogPostData({ data: { slug: params.slug } })
+    if (!result) throw notFound()
+    return result
   },
   head: ({ loaderData }) => {
     if (!loaderData) {

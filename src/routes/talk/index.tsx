@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import dayjs from 'dayjs'
-import { getTalks } from '#/models/talk'
+import { loadTalkListData } from '#/lib/notion-server-fns'
 import { getSeoHead } from '#/lib/seo'
 
 export const Route = createFileRoute('/talk/')({
@@ -12,9 +12,7 @@ export const Route = createFileRoute('/talk/')({
       keywords: 'talk,speaker,pembicara',
     }),
   }),
-  loader: async () => ({
-    talks: await getTalks(),
-  }),
+  loader: () => loadTalkListData(),
   component: Talks,
 })
 

@@ -1,5 +1,5 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
-import { getBlogs } from '#/models/blog'
+import { loadBlogListData } from '#/lib/notion-server-fns'
 import { getSeoHead } from '#/lib/seo'
 
 export const Route = createFileRoute('/blog/')({
@@ -11,9 +11,7 @@ export const Route = createFileRoute('/blog/')({
       keywords: 'blog',
     }),
   }),
-  loader: async () => ({
-    blogs: await getBlogs(),
-  }),
+  loader: () => loadBlogListData(),
   component: Blogs,
 })
 

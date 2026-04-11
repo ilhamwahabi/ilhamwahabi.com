@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { FaGithub } from 'react-icons/fa6'
-import { getProjects } from '#/models/project'
+import { loadProjectListData } from '#/lib/notion-server-fns'
 import { getSeoHead } from '#/lib/seo'
 
 export const Route = createFileRoute('/project/')({
@@ -12,9 +12,7 @@ export const Route = createFileRoute('/project/')({
       keywords: 'proyek,project,portofolio',
     }),
   }),
-  loader: async () => ({
-    projects: await getProjects(),
-  }),
+  loader: () => loadProjectListData(),
   component: Projects,
 })
 
