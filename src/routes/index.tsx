@@ -1,5 +1,4 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
-import { YEARS_OF_EXPERIENCE } from '#/const'
 import { getSeoHead } from '#/lib/seo'
 
 export const Route = createFileRoute('/')({
@@ -32,13 +31,7 @@ function Index() {
         </a>
       </p>
       <p className="mt-8 text-base md:text-2xl">
-        I bring{' '}
-        <span className="text-sky-600">
-          {YEARS_OF_EXPERIENCE} years of experience
-        </span>{' '}
-        on building products that generate billions in revenue, being used by
-        large enterprises, and have expanded to multiple countries.
-      </p>
+        I've several years of experience on building products that generate billions in revenue, serve large enterprises, and operate across multiple countries.      </p>
       <p className="mt-8 text-base md:text-2xl">
         You can find out more about me{' '}
         <Link className="underline underline-offset-4" to="/about">
