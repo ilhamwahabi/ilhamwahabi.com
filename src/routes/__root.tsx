@@ -1,21 +1,21 @@
 /// <reference types="vite/client" />
-import type { ReactNode } from 'react'
-import { useEffect, useRef } from 'react'
-import NProgress from 'nprogress'
+import type { ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
+import NProgress from "nprogress";
 import {
   HeadContent,
   Link,
   Scripts,
   createRootRoute,
   useRouterState,
-} from '@tanstack/react-router'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/react'
-import { FaGithub, FaGoodreads, FaLinkedin, FaTwitter } from 'react-icons/fa6'
-import { SiLeetcode } from 'react-icons/si'
+} from "@tanstack/react-router";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { FaGithub, FaGoodreads, FaLinkedin, FaTwitter } from "react-icons/fa6";
+import { SiLeetcode } from "react-icons/si";
 
-import appCss from '../styles.css?url'
-import nProgressStyles from 'nprogress/nprogress.css?url'
+import appCss from "../styles.css?url";
+import nProgressStyles from "nprogress/nprogress.css?url";
 
 function NotFound() {
   return (
@@ -25,110 +25,221 @@ function NotFound() {
         The page you are looking for does not exist.
       </p>
     </div>
-  )
+  );
 }
 
 const AnimatedNavLink = ({
   to,
   children,
+  isSelected,
+  onPointerEnter,
+  setLinkRef,
 }: {
-  to: string
-  children: React.ReactNode
+  to: string;
+  children: React.ReactNode;
+  isSelected: boolean;
+  onPointerEnter: () => void;
+  setLinkRef: (node: HTMLAnchorElement | null) => void;
 }) => {
   return (
-    <Link className="group sm:px-2 md:px-4 block" to={to}>
-      <span className="relative inline-block">
-        {children}
-        <span
-          className="pointer-events-none absolute -bottom-1 left-0 right-0 h-0.5 origin-left scale-x-0 bg-gray-800 transition-transform duration-300 ease-in-out group-hover:scale-x-100"
-          aria-hidden
-        />
-      </span>
+    <Link
+      ref={setLinkRef}
+      className={`relative z-10 block rounded-full px-3 py-2 text-sm font-semibold transition duration-300 md:px-4 ${
+        isSelected ? "text-white" : "text-slate-600 hover:text-slate-950"
+      }`}
+      onPointerEnter={onPointerEnter}
+      to={to}
+    >
+      {children}
     </Link>
-  )
+  );
+};
+
+const navLinks = [
+  { to: "/blog", label: "Blog" },
+  { to: "/talk", label: "Talk" },
+  { to: "/project", label: "Project" },
+  { to: "/about", label: "About" },
+] as const;
+
+const getActiveNavPath = (pathname: string) =>
+  navLinks.find(({ to }) => pathname === to || pathname.startsWith(`${to}/`))
+    ?.to;
+
+function Navigation({ pathname }: { pathname: string }) {
+  const activePath = getActiveNavPath(pathname);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+  const [selectedPath, setSelectedPath] = useState(activePath);
+  const [pill, setPill] = useState({
+    left: 0,
+    top: 0,
+    width: 0,
+    height: 0,
+    opacity: 0,
+  });
+
+  const movePillTo = (path?: string) => {
+    const container = containerRef.current;
+    const link = path ? linkRefs.current[path] : null;
+
+    if (!container || !link) {
+      setPill((current) => ({ ...current, opacity: 0 }));
+      return;
+    }
+
+    const containerRect = container.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+
+    setPill({
+      left: linkRect.left - containerRect.left,
+      top: linkRect.top - containerRect.top,
+      width: linkRect.width,
+      height: linkRect.height,
+      opacity: 1,
+    });
+  };
+
+  useEffect(() => {
+    setSelectedPath(activePath);
+    movePillTo(activePath);
+  }, [activePath]);
+
+  useEffect(() => {
+    const handleResize = () => movePillTo(selectedPath);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [selectedPath]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative flex flex-wrap items-center justify-center gap-1 rounded-full bg-slate-950/5 p-1 text-sm"
+      onPointerLeave={() => {
+        setSelectedPath(activePath);
+        movePillTo(activePath);
+      }}
+    >
+      <span
+        aria-hidden
+        className="pointer-events-none absolute left-0 top-0 rounded-full bg-slate-950 shadow-sm transition-[height,opacity,transform,width] duration-300 ease-out"
+        style={{
+          height: pill.height,
+          opacity: pill.opacity,
+          transform: `translate(${pill.left}px, ${pill.top}px)`,
+          width: pill.width,
+        }}
+      />
+      {navLinks.map(({ to, label }) => (
+        <AnimatedNavLink
+          key={to}
+          to={to}
+          isSelected={selectedPath === to}
+          onPointerEnter={() => {
+            setSelectedPath(to);
+            movePillTo(to);
+          }}
+          setLinkRef={(node) => {
+            linkRefs.current[to] = node;
+          }}
+        >
+          {label}
+        </AnimatedNavLink>
+      ))}
+    </div>
+  );
 }
 
 export const Route = createRootRoute({
   notFoundComponent: NotFound,
   head: () => ({
     meta: [
-      { charSet: 'utf-8' },
+      { charSet: "utf-8" },
       {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
       },
     ],
     links: [
-      { rel: 'stylesheet', href: appCss },
-      { rel: 'stylesheet', href: nProgressStyles },
+      { rel: "stylesheet", href: appCss },
+      { rel: "stylesheet", href: nProgressStyles },
       {
-        rel: 'preconnect',
-        href: 'https://fonts.googleapis.com',
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
       },
       {
-        rel: 'preconnect',
-        href: 'https://fonts.gstatic.com',
-        crossOrigin: 'anonymous',
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
       },
       {
-        rel: 'icon',
-        href: '/favicon.ico',
+        rel: "icon",
+        type: "image/svg+xml",
+        href: "/favicon.svg",
       },
     ],
   }),
   shellComponent: RootDocument,
-})
+});
 
 function RootDocument({ children }: { children: ReactNode }) {
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const status = useRouterState({ select: (s) => s.status })
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const status = useRouterState({ select: (s) => s.status });
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   const scrollToTop = () => {
-    scrollRef.current?.scrollTo({ top: 0, behavior: 'instant' })
-  }
+    scrollRef.current?.scrollTo({ top: 0, behavior: "instant" });
+  };
 
   useEffect(() => {
-    if (status === 'pending') NProgress.start()
-    if (status === 'idle') {
-      NProgress.done()
-      scrollToTop()
+    if (status === "pending") NProgress.start();
+    if (status === "idle") {
+      NProgress.done();
+      scrollToTop();
     }
-  }, [status])
+  }, [status]);
 
   return (
     <html lang="en">
       <head>
         <HeadContent />
       </head>
-      <body className="bg-slate-50 font-roboto text-gray-800">
+      <body className="bg-[#f7f4ef] font-roboto text-slate-800 antialiased">
         <div
           ref={scrollRef}
-          className="flex min-h-[100svh] w-full flex-col overflow-y-auto"
+          className="relative flex min-h-svh w-full flex-col overflow-y-auto"
         >
-          <header className="flex justify-center py-8 lg:py-16">
-            <div className="flex w-4/5 flex-col items-center justify-center md:w-2/5 lg:flex-row">
-              <h1 className="text-center text-xl lg:text-2xl">
-                <Link to="/">Ilham Wahabi</Link>
+          <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_18%_12%,rgba(14,165,233,0.18),transparent_28%),radial-gradient(circle_at_88%_18%,rgba(251,191,36,0.18),transparent_24%),linear-gradient(180deg,#fffaf3_0%,#f7f4ef_46%,#eef5f9_100%)]" />
+          <header className="relative z-10 flex justify-center px-5 py-5 lg:py-8">
+            <div className="flex w-full max-w-3xl flex-wrap items-center justify-center gap-3 rounded-3xl border border-white/80 bg-white/75 px-4 py-3 shadow-lg shadow-slate-200/50 backdrop-blur-xl sm:justify-between sm:rounded-full md:px-5">
+              <h1 className="text-center text-base font-semibold tracking-tight text-slate-950 lg:text-lg">
+                <Link
+                  className="inline-flex items-center gap-2 rounded-full px-2 py-1 transition hover:text-sky-700"
+                  to="/"
+                >
+                  <img
+                    src="/favicon.svg"
+                    alt=""
+                    className="h-6 w-6 rounded-md"
+                  />
+                  Ilham Wahabi
+                </Link>
               </h1>
-              <div className="mt-4 flex items-end space-x-4 text-base sm:space-x-6 md:space-x-4 lg:ml-16 lg:mt-0 lg:text-lg">
-                <AnimatedNavLink to="/blog">Blog</AnimatedNavLink>
-                <AnimatedNavLink to="/talk">Talk</AnimatedNavLink>
-                <AnimatedNavLink to="/project">Project</AnimatedNavLink>
-                <AnimatedNavLink to="/about">About</AnimatedNavLink>
-              </div>
+              <Navigation pathname={pathname} />
             </div>
           </header>
           <Analytics />
           <SpeedInsights />
-          <main className="flex-1">
-            <div className="mx-auto w-4/5 md:w-2/5">{children}</div>
+          <main className="relative z-10 flex-1">
+            <div className="mx-auto w-full max-w-5xl px-5">{children}</div>
           </main>
-          <footer className="mt-8 flex items-center justify-center space-x-8 border-t border-t-gray-300 p-12 text-lg md:space-x-2 md:text-2xl lg:mt-12">
+          <footer className="relative z-10 mx-auto mt-10 flex w-full max-w-5xl flex-wrap items-center justify-center gap-3 border-t border-slate-200/80 px-5 py-10 text-lg text-slate-600 md:text-xl lg:mt-16">
             <a
               target="_blank"
               href="https://github.com/ilhamwahabi"
               rel="noreferrer"
-              className="transition-opacity duration-300 hover:opacity-50 sm:p-2 md:p-4"
+              className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
             >
               <FaGithub />
             </a>
@@ -136,7 +247,7 @@ function RootDocument({ children }: { children: ReactNode }) {
               target="_blank"
               href="https://leetcode.com/u/ilhamwahabi"
               rel="noreferrer"
-              className="transition-opacity duration-300 hover:opacity-50 sm:p-2 md:p-4"
+              className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
             >
               <SiLeetcode />
             </a>
@@ -144,7 +255,7 @@ function RootDocument({ children }: { children: ReactNode }) {
               target="_blank"
               href="https://twitter.com/ilhamwahabigx"
               rel="noreferrer"
-              className="transition-opacity duration-300 hover:opacity-50 sm:p-2 md:p-4"
+              className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
             >
               <FaTwitter />
             </a>
@@ -152,7 +263,7 @@ function RootDocument({ children }: { children: ReactNode }) {
               target="_blank"
               href="https://www.linkedin.com/in/ilhamwahabi"
               rel="noreferrer"
-              className="transition-opacity duration-300 hover:opacity-50 sm:p-2 md:p-4"
+              className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
             >
               <FaLinkedin />
             </a>
@@ -160,7 +271,7 @@ function RootDocument({ children }: { children: ReactNode }) {
               target="_blank"
               href="https://www.goodreads.com/ilhamwahabi"
               rel="noreferrer"
-              className="transition-opacity duration-300 hover:opacity-50 sm:p-2 md:p-4"
+              className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
             >
               <FaGoodreads />
             </a>
@@ -169,5 +280,5 @@ function RootDocument({ children }: { children: ReactNode }) {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }

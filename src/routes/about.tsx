@@ -16,17 +16,28 @@ export const Route = createFileRoute('/about')({
 
 function About() {
   return (
-    <div className="flex flex-col items-center justify-center p-6 lg:p-16">
-      <h1 className="text-center text-xl md:text-4xl">A little about me… </h1>
-      <div className="mt-8 flex w-full flex-col items-start space-y-6 text-left text-base md:space-y-8 md:text-xl lg:mt-12">
+    <div className="mx-auto max-w-3xl py-10 lg:py-16">
+      <section className="text-center">
+        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-600">
+          About
+        </p>
+        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">
+          A little about me
+        </h1>
+      </section>
+      <div className="mt-8 flex w-full flex-col items-start space-y-6 rounded-[2rem] border border-slate-200/90 bg-white/95 p-6 text-left text-base leading-8 text-slate-900 shadow-md shadow-slate-300/40 md:p-8 md:text-lg lg:mt-12">
         <p>
           My name is Ilham Wahabi,{' '}
-          <span className="text-sky-600">you can call me Ilham</span>. I'm a
-          software engineer based in Indonesia 🇮🇩
+          <span className="font-semibold text-sky-700">
+            you can call me Ilham
+          </span>
+          . I'm a software engineer based in Indonesia 🇮🇩
         </p>
         <p>
           Currently I'm working as a{' '}
-          <span className="text-sky-600">Frontend Engineer at Traveloka</span>
+          <span className="font-semibold text-sky-700">
+            Frontend Engineer at Traveloka
+          </span>
           <img
             src="/traveloka-logo.png"
             alt="Traveloka"
@@ -36,12 +47,14 @@ function About() {
         </p>
         <p>
           I'm graduated from{' '}
-          <span className="text-sky-600">Institut Teknologi Bandung</span> with
-          bachelor degree in Informatics (Computer Science).
+          <span className="font-semibold text-sky-700">
+            Institut Teknologi Bandung
+          </span>{' '}
+          with bachelor degree in Informatics (Computer Science).
         </p>
         <p>
           I have{' '}
-          <span className="text-sky-600">
+          <span className="font-semibold text-sky-700">
             {YEARS_OF_EXPERIENCE} years of experience
           </span>{' '}
           as a software engineer especially on frontend web development. I have
@@ -50,7 +63,7 @@ function About() {
         </p>
         <p>
           I have experience working in early stage startups, so I{' '}
-          <span className="text-sky-600">
+          <span className="font-semibold text-sky-700">
             know how to build products from the scratch
           </span>
           . I'm also familiar with working in a fast-paced environment.
@@ -58,7 +71,7 @@ function About() {
         <p>
           I've been working in established companies too, I know how to
           maintain existing products and improve them. Hence, I have{' '}
-          <span className="text-sky-600">
+          <span className="font-semibold text-sky-700">
             proven experience working in a large team
           </span>
           .
@@ -71,22 +84,24 @@ function About() {
         <p>
           Furthermore, I’m fluent in English, skilled at crafting clean and
           intuitive UIs, have experience in mentoring junior developers,{' '}
-          <span className="text-sky-600">
+          <span className="font-semibold text-sky-700">
             possess experiences in frontend performance optimization
           </span>
           , and have been utilizing AI to enhance my development workflow.
         </p>
         <p>
           Aside from coding, I enjoy{' '}
-          <span className="text-sky-600">
+          <span className="font-semibold text-sky-700">
             reading books 📖 and playing badminton 🏸
           </span>{' '}
           which helps keep my mind and body in excellent shape for work.
         </p>
         <p>
           I'm always{' '}
-          <span className="text-sky-600">open to new opportunities</span>.
-          However, I'm NOT interested working in products that related to:
+          <span className="font-semibold text-sky-700">
+            open to new opportunities
+          </span>
+          . However, I'm NOT interested working in products that related to:
           gambling, adult content, credit, paylater, and conventional banking.
         </p>
         <p>
@@ -96,7 +111,7 @@ function About() {
             href="https://www.linkedin.com/in/ilhamwahabi"
             target="_blank"
             rel="noreferrer"
-            className="underline underline-offset-2"
+            className="font-semibold text-sky-700 underline underline-offset-4"
           >
             LinkedIn
           </a>{' '}
@@ -105,7 +120,7 @@ function About() {
             href="https://twitter.com/ilhamwahabigx"
             target="_blank"
             rel="noreferrer"
-            className="underline underline-offset-2"
+            className="font-semibold text-sky-700 underline underline-offset-4"
           >
             Twitter
           </a>
@@ -117,7 +132,7 @@ function About() {
             href="https://cal.com/ilham-wahabi"
             target="_blank"
             rel="noreferrer"
-            className="underline underline-offset-2"
+            className="font-semibold text-sky-700 underline underline-offset-4"
           >
             book a meeting
           </a>{' '}

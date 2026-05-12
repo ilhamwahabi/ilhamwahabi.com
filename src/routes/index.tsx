@@ -15,41 +15,62 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="flex flex-col items-start justify-center p-6 lg:p-16">
-      <h1 className="self-center text-center text-2xl md:text-4xl">
-        Hi, <span className="text-sky-600">Ilham</span> here 👋
-      </h1>
-      <p className="mt-8 text-base md:mt-16 md:text-2xl">
-        I'm a software engineer currently working at{" "}
-        <a href="https://www.traveloka.com" target="_blank" rel="noreferrer">
-          <span className="text-sky-600">Traveloka</span>
-          <img
-            src="/traveloka-logo.png"
-            alt="Traveloka"
-            className="-mt-2 inline-block h-8 w-8"
-          />
-        </a>
-      </p>
-      <p className="mt-8 text-base md:text-2xl">
-        I've helped building products that generate billions in revenue, serve
-        large enterprises, and being used by users across multiple
-        countries.{" "}
-      </p>
-      <p className="mt-8 text-base md:text-2xl">
-        You can find out more about me{" "}
-        <Link className="underline underline-offset-4" to="/about">
-          here
-        </Link>
-        .
-      </p>
-      <p className="mt-8 text-base md:text-2xl">
-        I also <span className="text-sky-600">write blog</span> on technology,
-        opinions, and my life journey ✍️ which you can{" "}
-        <Link className="underline underline-offset-4" to="/blog">
-          read here
-        </Link>
-        .
-      </p>
+    <div className="py-10 lg:py-20">
+      <section className="grid items-center gap-10 rounded-[2.5rem] border border-white/80 bg-white/75 p-6 shadow-xl shadow-slate-200/60 backdrop-blur md:grid-cols-[1.15fr_0.85fr] md:p-10 lg:p-14">
+        <div>
+          <p className="mb-4 inline-flex rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-sm font-medium text-sky-700">
+            Frontend-focused Software Engineer
+          </p>
+          <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-6xl">
+            Hi, <span className="text-sky-600">Ilham</span> here.
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl md:leading-9">
+            I build reliable web apps with thoughtful interfaces and great user
+            experiences.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-300 transition hover:-translate-y-0.5 hover:bg-slate-800"
+              to="/about"
+            >
+              About me
+            </Link>
+            <Link
+              className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-sky-200 hover:text-sky-700 hover:shadow-sm"
+              to="/blog"
+            >
+              Read Blog
+            </Link>
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-slate-950 to-slate-800 p-6 text-white shadow-2xl shadow-slate-300/70">
+          <p className="text-sm uppercase tracking-[0.28em] text-sky-200">
+            Currently
+          </p>
+          <p className="mt-4 text-2xl font-semibold leading-snug">
+            Software Engineer at{" "}
+            <a
+              href="https://www.traveloka.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sky-300"
+            >
+              Traveloka
+            </a>
+            <img
+              src="/traveloka-logo.png"
+              alt="Traveloka"
+              className="-mt-2 ml-1 inline-block h-8 w-8"
+            />
+          </p>
+          <p className="mt-6 text-sm leading-7 text-slate-300">
+            Part of the Bus & Train team. I'm developing new features for
+            business expansion and improving existing customer-facing and
+            internal web apps.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }

@@ -44,9 +44,16 @@ function BlogPost() {
   const { title } = blog
 
   return (
-    <main className="flex w-full flex-col items-center justify-start p-4">
-      <h1 className="text-center text-2xl font-medium lg:text-3xl">{title}</h1>
-      <div className="my-8 w-full overflow-x-auto lg:mb-12">
+    <main className="mx-auto max-w-3xl py-10 lg:py-16">
+      <div className="rounded-[2rem] border border-white/80 bg-white/70 p-6 shadow-sm shadow-slate-200/70 md:p-8">
+        <p className="text-center text-sm font-semibold uppercase tracking-[0.28em] text-sky-600">
+          Post
+        </p>
+        <h1 className="mx-auto mt-3 max-w-2xl text-center text-3xl font-semibold leading-tight tracking-tight text-slate-950 lg:text-5xl">
+          {title}
+        </h1>
+      </div>
+      <div className="my-8 w-full overflow-x-auto rounded-[2rem] border border-white/80 bg-white/75 p-4 shadow-sm shadow-slate-200/70 md:p-8 lg:mb-12">
         <NotionRenderer
           recordMap={recordMap as ExtendedRecordMap}
           fullPage={false}

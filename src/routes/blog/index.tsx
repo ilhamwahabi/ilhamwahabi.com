@@ -19,33 +19,53 @@ function Blogs() {
   const { blogs } = Route.useLoaderData()
 
   return (
-    <main className="flex flex-col items-center justify-center p-6 lg:p-16">
-      <h1 className="text-center text-2xl md:text-5xl">Blog</h1>
-      <div className="mt-4 flex w-full flex-col items-center space-y-4 text-center text-base lg:mt-8 lg:text-lg">
-        <p className="italic">
-          "If you write the problem down clearly, then the matter is half
-          solved”
+    <main className="py-10 lg:py-16">
+      <section className="mx-auto max-w-3xl text-center">
+        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-600">
+          Writing
         </p>
-        <p>- Kidlin's Law</p>
-      </div>
-      <ul className="mt-8 w-full space-y-8 text-center text-lg md:mt-16 md:space-y-16 md:text-2xl">
+        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">
+          Blog
+        </h1>
+        <blockquote className="mx-auto mt-6 inline-block max-w-2xl border-l-4 border-sky-400 px-5 text-left text-base leading-7 text-slate-600 lg:text-lg">
+          <p className="italic">
+            "If you write the problem down clearly, then the matter is half
+            solved"
+          </p>
+          <p className="mt-3 text-sm font-medium text-slate-500">
+            - Kidlin's Law
+          </p>
+        </blockquote>
+      </section>
+      <ul className="mx-auto mt-8 grid max-w-3xl gap-4 md:mt-12">
         {blogs.map((blog) => (
           <li key={blog.slug} className="w-full">
             <Link
               to="/blog/$slug"
               params={{ slug: blog.slug }}
-              className="underline"
+              className="group block rounded-[2rem] border border-white/80 bg-white/70 p-6 text-left shadow-sm shadow-slate-200/70 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl hover:shadow-slate-200/70 md:p-7"
             >
-              {blog.title}
+              <h2 className="text-xl font-semibold tracking-tight text-slate-950 transition group-hover:text-sky-700 md:text-2xl">
+                {blog.title}
+              </h2>
+              <p className="mt-3 text-base leading-7 text-slate-600">
+                {blog.description}
+              </p>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-sky-700">
+                Read post
+                <span
+                  aria-hidden
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  -&gt;
+                </span>
+              </span>
             </Link>
-            <p className="mx-auto mt-2 max-w-lg text-base leading-6 md:mt-3 md:text-lg md:leading-8">
-              {blog.description}
-            </p>
           </li>
         ))}
       </ul>
       {blogs.length === 0 && (
-        <p className="text-center text-base md:text-2xl">
+        <p className="mt-10 text-center text-base md:text-2xl">
           Sorry, something went wrong 🙏
         </p>
       )}
