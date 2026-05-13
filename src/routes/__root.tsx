@@ -116,7 +116,11 @@ function Navigation({ pathname }: { pathname: string }) {
     <div
       ref={containerRef}
       className="relative flex flex-wrap items-center justify-center gap-1 rounded-full bg-slate-950/5 p-1 text-sm"
-      onPointerLeave={() => {
+      onPointerLeave={(e) => {
+        // On real devices, touch often ends with a container pointerleave while
+        // the route has not updated yet, which snapped the pill back to the old
+        // tab and caused a visible wiggle. Mouse hover still resets when leaving.
+        if (e.pointerType === "touch") return;
         setSelectedPath(activePath);
         movePillTo(activePath);
       }}
