@@ -25,8 +25,8 @@ function Index() {
             Hi, <span className="text-sky-600">Ilham</span> here.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl md:leading-9">
-            I build reliable web apps with thoughtful interfaces and great user
-            experiences.
+            I love building products with great user experiences that are used
+            by many people
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -65,9 +65,9 @@ function Index() {
             />
           </p>
           <p className="mt-6 text-sm leading-7 text-slate-300">
-            Part of the Bus & Train team. I'm developing new features for
-            business expansion and improving existing customer-facing and
-            internal web apps.
+            Part of the Bus & Train team. I drive business growth by developing
+            new features and improving existing customer-facing and internal web
+            apps.
           </p>
         </div>
       </section>
