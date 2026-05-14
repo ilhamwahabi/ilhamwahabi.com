@@ -19,6 +19,7 @@ export const Route = createFileRoute("/blog/")({
 function Blogs() {
   const { blogs } = Route.useLoaderData();
   const [selectedKeyword, setSelectedKeyword] = useState<string | null>(null);
+  const [listAnimEnabled, setListAnimEnabled] = useState(false);
 
   const allKeywords = useMemo(() => {
     const keywords = new Set<string>();
@@ -70,11 +71,12 @@ function Blogs() {
                 key={keyword}
                 type="button"
                 aria-pressed={selected}
-                onClick={() =>
+                onClick={() => {
+                  setListAnimEnabled(true);
                   setSelectedKeyword((prev) =>
                     prev !== null && prev === keyword ? null : keyword,
-                  )
-                }
+                  );
+                }}
                 className={
                   selected
                     ? "rounded-full border cursor-pointer border-sky-600 bg-sky-600 px-3 py-1 text-sm font-medium text-white"
@@ -94,8 +96,20 @@ function Blogs() {
             : "mx-auto mt-8 grid max-w-3xl gap-4 md:mt-12"
         }
       >
-        {filteredBlogs.map((blog) => (
-          <li key={blog.slug} className="w-full">
+        {filteredBlogs.map((blog, index) => (
+          <li
+            key={`${blog.slug}-${selectedKeyword ?? "all"}`}
+            className={
+              listAnimEnabled
+                ? "w-full motion-safe:animate-blog-list-in"
+                : "w-full"
+            }
+            style={
+              listAnimEnabled
+                ? { animationDelay: `${index * 45}ms` }
+                : undefined
+            }
+          >
             <Link
               to="/blog/$slug"
               params={{ slug: blog.slug }}
