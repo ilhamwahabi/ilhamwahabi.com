@@ -25,9 +25,19 @@ function Contact() {
         </h1>
       </section>
       <div className="mt-8 flex w-full flex-col items-start space-y-6 rounded-[2rem] border border-slate-200/90 bg-white/95 p-6 text-left text-base leading-8 text-slate-900 shadow-md shadow-slate-300/40 md:p-8 md:text-lg lg:mt-12">
-        <p>
+        <p className="sm:hidden">
+          Feel free to send me an email{" "}
+          <a
+            href="mailto:ilhamwahabi.sikumbang@gmail.com"
+            className="font-semibold text-sky-700 underline underline-offset-4 sm:hidden"
+          >
+            here
+          </a>
+          .
+        </p>
+        <p className="hidden sm:block">
           Feel free to email me at{" "}
-          <span className="font-semibold text-sky-700 break-all">
+          <span className="font-semibold text-sky-700">
             ilhamwahabi.sikumbang@gmail.com
           </span>
           .
