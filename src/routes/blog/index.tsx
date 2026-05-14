@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { loadBlogListData } from "#/lib/notion-server-fns";
 import { getSeoHead } from "#/lib/seo";
@@ -18,25 +18,72 @@ export const Route = createFileRoute("/blog/")({
 
 function Blogs() {
   const { blogs } = Route.useLoaderData();
-  const [selectedKeyword, setSelectedKeyword] = useState<string | null>(null);
+  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(
+    null,
+  );
+  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
   const [listAnimEnabled, setListAnimEnabled] = useState(false);
 
-  const allKeywords = useMemo(() => {
+  const languageKeywords = useMemo(() => {
     const keywords = new Set<string>();
     for (const blog of blogs) {
       for (const keyword of blog.keywords) {
         keywords.add(keyword);
       }
     }
-    return Array.from(keywords).sort();
+    const language: string[] = [];
+    if (keywords.has("en")) language.push("en");
+    if (keywords.has("id")) language.push("id");
+    return language;
   }, [blogs]);
 
-  const filteredBlogs = useMemo(() => {
-    if (!selectedKeyword) return blogs;
-    return blogs.filter((blog) =>
-      blog.keywords.some((k) => k === selectedKeyword),
+  const topicKeywords = useMemo(() => {
+    const scope =
+      selectedLanguage != null
+        ? blogs.filter((b) =>
+            b.keywords.some((k) => k === selectedLanguage),
+          )
+        : blogs;
+    const keywords = new Set<string>();
+    for (const blog of scope) {
+      for (const keyword of blog.keywords) {
+        if (keyword === "en" || keyword === "id") continue;
+        keywords.add(keyword);
+      }
+    }
+    return Array.from(keywords).sort((a, z) =>
+      a.localeCompare(z, undefined, { sensitivity: "base" }),
     );
-  }, [blogs, selectedKeyword]);
+  }, [blogs, selectedLanguage]);
+
+  useEffect(() => {
+    setSelectedTopic((prev) => {
+      if (prev == null) return null;
+      if (!topicKeywords.includes(prev)) return null;
+      return prev;
+    });
+  }, [topicKeywords]);
+
+  const hasFilterKeywords =
+    languageKeywords.length > 0 || topicKeywords.length > 0;
+
+  const filteredBlogs = useMemo(() => {
+    return blogs.filter((blog) => {
+      if (
+        selectedLanguage != null &&
+        !blog.keywords.some((k) => k === selectedLanguage)
+      ) {
+        return false;
+      }
+      if (
+        selectedTopic != null &&
+        !blog.keywords.some((k) => k === selectedTopic)
+      ) {
+        return false;
+      }
+      return true;
+    });
+  }, [blogs, selectedLanguage, selectedTopic]);
 
   return (
     <main className="py-10 lg:py-16">
@@ -57,48 +104,112 @@ function Blogs() {
           </p>
         </blockquote>
       </section>
-      {allKeywords.length > 0 && (
-        <div
-          className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2 md:mt-12"
-          role="group"
-          aria-label="Filter posts by keyword"
-        >
-          {allKeywords.map((keyword) => {
-            const selected =
-              selectedKeyword !== null && selectedKeyword === keyword;
-            return (
-              <button
-                key={keyword}
-                type="button"
-                aria-pressed={selected}
-                onClick={() => {
-                  setListAnimEnabled(true);
-                  setSelectedKeyword((prev) =>
-                    prev !== null && prev === keyword ? null : keyword,
-                  );
-                }}
-                className={
-                  selected
-                    ? "rounded-full border cursor-pointer border-sky-600 bg-sky-600 px-3 py-1 text-sm font-medium text-white"
-                    : "rounded-full border cursor-pointer border-slate-200 bg-white/80 px-3 py-1 text-sm font-medium text-slate-700 shadow-sm shadow-slate-200/60 transition hover:border-sky-300 hover:text-sky-800"
-                }
+      {hasFilterKeywords && (
+        <div className="mx-auto mt-8 flex max-w-3xl flex-col items-center gap-6 md:mt-12">
+          {languageKeywords.length > 0 && (
+            <section
+              className="flex w-full flex-col items-center gap-2"
+              aria-labelledby="blog-filter-language-heading"
+            >
+              <h2
+                id="blog-filter-language-heading"
+                className="text-xs font-semibold uppercase tracking-[0.22em] text-violet-600"
               >
-                {keyword}
-              </button>
-            );
-          })}
+                Language
+              </h2>
+              <div
+                role="group"
+                aria-label="Filter posts by language"
+                className="flex flex-wrap justify-center gap-2"
+              >
+                {languageKeywords.map((keyword) => {
+                  const selected =
+                    selectedLanguage !== null && selectedLanguage === keyword;
+                  return (
+                    <button
+                      key={keyword}
+                      type="button"
+                      aria-pressed={selected}
+                      aria-label={
+                        keyword === "en"
+                          ? "Filter by language: English"
+                          : "Filter by language: Indonesia"
+                      }
+                      onClick={() => {
+                        setListAnimEnabled(true);
+                        setSelectedLanguage((prev) =>
+                          prev === keyword ? null : keyword,
+                        );
+                      }}
+                      className={
+                        selected
+                          ? "cursor-pointer rounded-full border border-violet-600 bg-violet-600 px-3 py-1 text-sm font-semibold text-white"
+                          : "cursor-pointer rounded-full border border-dashed border-violet-300 bg-violet-50/90 px-3 py-1 text-sm font-semibold text-violet-900 shadow-sm shadow-violet-200/50 transition hover:border-violet-400 hover:bg-violet-100/90 hover:text-violet-950"
+                      }
+                    >
+                      {keyword === "en" ? "English" : "Indonesia"}
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          )}
+          {topicKeywords.length > 0 && (
+            <section
+              className="flex w-full flex-col items-center gap-2"
+              aria-labelledby="blog-filter-topics-heading"
+            >
+              <h2
+                id="blog-filter-topics-heading"
+                className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500"
+              >
+                Topics
+              </h2>
+              <div
+                role="group"
+                aria-label="Filter posts by topic"
+                className="flex flex-wrap justify-center gap-2"
+              >
+                {topicKeywords.map((keyword) => {
+                  const selected =
+                    selectedTopic !== null && selectedTopic === keyword;
+                  return (
+                    <button
+                      key={keyword}
+                      type="button"
+                      aria-pressed={selected}
+                      aria-label={`Filter by topic: ${keyword}`}
+                      onClick={() => {
+                        setListAnimEnabled(true);
+                        setSelectedTopic((prev) =>
+                          prev === keyword ? null : keyword,
+                        );
+                      }}
+                      className={
+                        selected
+                          ? "cursor-pointer rounded-full border border-sky-600 bg-sky-600 px-3 py-1 text-sm font-medium text-white"
+                          : "cursor-pointer rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-sm font-medium text-slate-700 shadow-sm shadow-slate-200/60 transition hover:border-sky-300 hover:text-sky-800"
+                      }
+                    >
+                      {keyword}
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          )}
         </div>
       )}
       <ul
         className={
-          allKeywords.length > 0
+          hasFilterKeywords
             ? "mx-auto mt-4 grid max-w-3xl gap-4 md:mt-6"
             : "mx-auto mt-8 grid max-w-3xl gap-4 md:mt-12"
         }
       >
         {filteredBlogs.map((blog, index) => (
           <li
-            key={`${blog.slug}-${selectedKeyword ?? "all"}`}
+            key={`${blog.slug}-${selectedLanguage ?? "all"}-${selectedTopic ?? "all"}`}
             className={
               listAnimEnabled
                 ? "w-full motion-safe:animate-blog-list-in"
