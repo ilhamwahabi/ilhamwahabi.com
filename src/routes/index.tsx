@@ -25,7 +25,7 @@ function Index() {
             Hi, <span className="text-sky-600">Ilham</span> here.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl md:leading-9">
-            I love building products with great user experiences that are used
+            I love building products with great user experiences and being used
             by many people
           </p>
           <div className="mt-8 flex flex-wrap gap-3">

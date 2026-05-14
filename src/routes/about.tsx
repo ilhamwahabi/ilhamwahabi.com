@@ -35,20 +35,53 @@ function About() {
         </p>
         <p>
           Currently I'm working as a{" "}
-          <span className="font-semibold text-sky-700">
-            Frontend Engineer at Traveloka
+          <span className="font-semibold text-sky-700" tabIndex={0}>
+            Frontend Engineer
+          </span>{" "}
+          at{" "}
+          <span
+            className="group/tvk relative inline cursor-help font-semibold text-sky-700 underline decoration-sky-700 decoration-dotted decoration-2 underline-offset-[5px] outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2"
+            tabIndex={0}
+          >
+            Traveloka
+            <span
+              role="tooltip"
+              className="pointer-events-none absolute bottom-[calc(100%+0.5rem)] left-1/2 z-50 w-max max-w-[min(18rem,calc(100vw-2rem))] -translate-x-1/2 rounded-xl border border-slate-200/90 bg-white p-2.5 opacity-0 shadow-lg shadow-slate-300/50 transition-opacity duration-200 group-hover/tvk:opacity-100 group-focus-within/tvk:opacity-100"
+            >
+              <img
+                src="/traveloka-logo.png"
+                alt="Traveloka logo"
+                className="mx-auto block h-auto max-h-20 w-auto max-w-full"
+                width={220}
+                height={79}
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
           </span>
-          <img
-            src="/traveloka-logo.png"
-            alt="Traveloka"
-            className="-mt-2 inline-block h-8 w-8"
-          />
           , one of the biggest online travel platform in Southeast Asia.
         </p>
         <p>
           I'm graduated from{" "}
-          <span className="font-semibold text-sky-700">
+          <span
+            className="group/itb relative inline cursor-help font-semibold text-sky-700 underline decoration-sky-700 decoration-dotted decoration-2 underline-offset-[5px] outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2"
+            tabIndex={0}
+          >
             Institut Teknologi Bandung
+            <span
+              role="tooltip"
+              className="pointer-events-none absolute bottom-[calc(100%+0.5rem)] left-1/2 z-50 w-max max-w-[min(18rem,calc(100vw-2rem))] -translate-x-1/2 rounded-xl border border-slate-200/90 bg-white p-2.5 opacity-0 shadow-lg shadow-slate-300/50 transition-opacity duration-200 group-hover/itb:opacity-100 group-focus-within/itb:opacity-100"
+            >
+              <img
+                src="/itb-logo.png"
+                alt="Institut Teknologi Bandung logo"
+                className="mx-auto block h-auto max-h-20 w-auto max-w-full"
+                width={220}
+                height={88}
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
           </span>{" "}
           with bachelor degree in Informatics (Computer Science).
         </p>
