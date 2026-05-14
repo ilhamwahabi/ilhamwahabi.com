@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { YEARS_OF_EXPERIENCE } from "#/const";
 import { getSeoHead } from "#/lib/seo";
 
@@ -131,49 +131,15 @@ function About() {
           high-quality work.
         </p>
         <p>
-          I'm{" "}
-          <span className="font-semibold text-sky-700">
-            open to new opportunities
-          </span>
-          . However, I'm NOT interested working in products that related to:
-          gambling, adult content, credit, paylater, and conventional banking.
-        </p>
-        <p>
-          If you’re interested and would like to connect, feel free to reach me
-          out on{" "}
-          <a
-            href="https://www.linkedin.com/in/ilhamwahabi"
-            target="_blank"
-            rel="noreferrer"
+          If you interested to know more, you can{" "}
+          <Link
             className="font-semibold text-sky-700 underline underline-offset-4"
+            to="/contact"
           >
-            LinkedIn
-          </a>{" "}
-          or{" "}
-          <a
-            href="https://twitter.com/ilhamwahabigx"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold text-sky-700 underline underline-offset-4"
-          >
-            Twitter
-          </a>
+            contact me
+          </Link>
           .
         </p>
-        <p>
-          You can also{" "}
-          <a
-            href="https://cal.com/ilham-wahabi"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold text-sky-700 underline underline-offset-4"
-          >
-            book a meeting
-          </a>{" "}
-          with me if you have something to discuss (it's free, so please be
-          responsible).
-        </p>
-        <p>Thanks for visiting!</p>
       </div>
     </div>
   );

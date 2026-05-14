@@ -60,6 +60,7 @@ const navLinks = [
   { to: "/talk", label: "Talk" },
   { to: "/project", label: "Project" },
   { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 const getActiveNavPath = (pathname: string) =>
@@ -135,6 +136,7 @@ function Navigation({ pathname }: { pathname: string }) {
           width: pill.width,
         }}
       />
+      {/* <div className="flex items-center justify-center gap-1 flex-wrap"> */}
       {navLinks.map(({ to, label }) => (
         <AnimatedNavLink
           key={to}
@@ -151,6 +153,7 @@ function Navigation({ pathname }: { pathname: string }) {
           {label}
         </AnimatedNavLink>
       ))}
+      {/* </div> */}
     </div>
   );
 }
