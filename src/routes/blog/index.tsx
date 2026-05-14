@@ -1,22 +1,41 @@
-import { Link, createFileRoute } from '@tanstack/react-router'
-import { loadBlogListData } from '#/lib/notion-server-fns'
-import { getSeoHead } from '#/lib/seo'
+import { useMemo, useState } from "react";
+import { Link, createFileRoute } from "@tanstack/react-router";
+import { loadBlogListData } from "#/lib/notion-server-fns";
+import { getSeoHead } from "#/lib/seo";
 
-export const Route = createFileRoute('/blog/')({
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     ...getSeoHead({
-      title: 'Blog',
-      description: 'Thought as a human 🧠',
-      url: '/blog',
-      keywords: 'blog',
+      title: "Blog",
+      description: "Thought as a human 🧠",
+      url: "/blog",
+      keywords: "blog",
     }),
   }),
   loader: () => loadBlogListData(),
   component: Blogs,
-})
+});
 
 function Blogs() {
-  const { blogs } = Route.useLoaderData()
+  const { blogs } = Route.useLoaderData();
+  const [selectedKeyword, setSelectedKeyword] = useState<string | null>(null);
+
+  const allKeywords = useMemo(() => {
+    const keywords = new Set<string>();
+    for (const blog of blogs) {
+      for (const keyword of blog.keywords) {
+        keywords.add(keyword);
+      }
+    }
+    return Array.from(keywords).sort();
+  }, [blogs]);
+
+  const filteredBlogs = useMemo(() => {
+    if (!selectedKeyword) return blogs;
+    return blogs.filter((blog) =>
+      blog.keywords.some((k) => k === selectedKeyword),
+    );
+  }, [blogs, selectedKeyword]);
 
   return (
     <main className="py-10 lg:py-16">
@@ -37,8 +56,45 @@ function Blogs() {
           </p>
         </blockquote>
       </section>
-      <ul className="mx-auto mt-8 grid max-w-3xl gap-4 md:mt-12">
-        {blogs.map((blog) => (
+      {allKeywords.length > 0 && (
+        <div
+          className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2 md:mt-12"
+          role="group"
+          aria-label="Filter posts by keyword"
+        >
+          {allKeywords.map((keyword) => {
+            const selected =
+              selectedKeyword !== null && selectedKeyword === keyword;
+            return (
+              <button
+                key={keyword}
+                type="button"
+                aria-pressed={selected}
+                onClick={() =>
+                  setSelectedKeyword((prev) =>
+                    prev !== null && prev === keyword ? null : keyword,
+                  )
+                }
+                className={
+                  selected
+                    ? "rounded-full border cursor-pointer border-sky-600 bg-sky-600 px-3 py-1 text-sm font-medium text-white"
+                    : "rounded-full border cursor-pointer border-slate-200 bg-white/80 px-3 py-1 text-sm font-medium text-slate-700 shadow-sm shadow-slate-200/60 transition hover:border-sky-300 hover:text-sky-800"
+                }
+              >
+                {keyword}
+              </button>
+            );
+          })}
+        </div>
+      )}
+      <ul
+        className={
+          allKeywords.length > 0
+            ? "mx-auto mt-4 grid max-w-3xl gap-4 md:mt-6"
+            : "mx-auto mt-8 grid max-w-3xl gap-4 md:mt-12"
+        }
+      >
+        {filteredBlogs.map((blog) => (
           <li key={blog.slug} className="w-full">
             <Link
               to="/blog/$slug"
@@ -70,5 +126,5 @@ function Blogs() {
         </p>
       )}
     </main>
-  )
+  );
 }
