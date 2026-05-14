@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { YEARS_OF_EXPERIENCE } from "#/const";
 import { getSeoHead } from "#/lib/seo";
 
 export const Route = createFileRoute("/contact")({
