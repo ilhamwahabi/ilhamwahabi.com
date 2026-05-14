@@ -9,14 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as IngestRouteImport } from './routes/ingest'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TalkIndexRouteImport } from './routes/talk/index'
 import { Route as ProjectIndexRouteImport } from './routes/project/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as IngestSplatRouteImport } from './routes/ingest/$'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
+const IngestRoute = IngestRouteImport.update({
+  id: '/ingest',
+  path: '/ingest',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -47,6 +54,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IngestSplatRoute = IngestSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => IngestRoute,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -57,7 +69,9 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/ingest': typeof IngestRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
+  '/ingest/$': typeof IngestSplatRoute
   '/blog/': typeof BlogIndexRoute
   '/project/': typeof ProjectIndexRoute
   '/talk/': typeof TalkIndexRoute
@@ -66,7 +80,9 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/ingest': typeof IngestRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
+  '/ingest/$': typeof IngestSplatRoute
   '/blog': typeof BlogIndexRoute
   '/project': typeof ProjectIndexRoute
   '/talk': typeof TalkIndexRoute
@@ -76,7 +92,9 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/ingest': typeof IngestRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
+  '/ingest/$': typeof IngestSplatRoute
   '/blog/': typeof BlogIndexRoute
   '/project/': typeof ProjectIndexRoute
   '/talk/': typeof TalkIndexRoute
@@ -87,7 +105,9 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/ingest'
     | '/blog/$slug'
+    | '/ingest/$'
     | '/blog/'
     | '/project/'
     | '/talk/'
@@ -96,7 +116,9 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/ingest'
     | '/blog/$slug'
+    | '/ingest/$'
     | '/blog'
     | '/project'
     | '/talk'
@@ -105,7 +127,9 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/ingest'
     | '/blog/$slug'
+    | '/ingest/$'
     | '/blog/'
     | '/project/'
     | '/talk/'
@@ -115,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  IngestRoute: typeof IngestRouteWithChildren
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ProjectIndexRoute: typeof ProjectIndexRoute
@@ -123,6 +148,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/ingest': {
+      id: '/ingest'
+      path: '/ingest'
+      fullPath: '/ingest'
+      preLoaderRoute: typeof IngestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -165,6 +197,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ingest/$': {
+      id: '/ingest/$'
+      path: '/$'
+      fullPath: '/ingest/$'
+      preLoaderRoute: typeof IngestSplatRouteImport
+      parentRoute: typeof IngestRoute
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/blog/$slug'
@@ -175,10 +214,22 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface IngestRouteChildren {
+  IngestSplatRoute: typeof IngestSplatRoute
+}
+
+const IngestRouteChildren: IngestRouteChildren = {
+  IngestSplatRoute: IngestSplatRoute,
+}
+
+const IngestRouteWithChildren =
+  IngestRoute._addFileChildren(IngestRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  IngestRoute: IngestRouteWithChildren,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
   ProjectIndexRoute: ProjectIndexRoute,

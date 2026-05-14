@@ -282,44 +282,44 @@ function RootDocument({ children }: { children: ReactNode }) {
           apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_PROJECT_TOKEN!}
           options={{
             api_host: "/ingest",
-            ui_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST || "https://us.posthog.com",
+            ui_host: "https://us.posthog.com",
             defaults: "2025-05-24",
             capture_exceptions: true,
             debug: import.meta.env.DEV,
           }}
         >
-        <div
-          ref={scrollRef}
-          className="relative flex min-h-svh w-full flex-col overflow-y-auto"
-        >
-          <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_18%_12%,rgba(14,165,233,0.18),transparent_28%),radial-gradient(circle_at_88%_18%,rgba(251,191,36,0.18),transparent_24%),linear-gradient(180deg,#fffaf3_0%,#f7f4ef_46%,#eef5f9_100%)]" />
-          <header className="relative z-30 flex justify-center px-5 py-5 lg:py-8">
-            <div className="flex w-full max-w-3xl items-center justify-between gap-3 rounded-full border border-white/80 bg-white/75 px-4 py-3 shadow-lg shadow-slate-200/50 backdrop-blur-xl md:px-5">
-              <h1 className="text-center text-base font-semibold tracking-tight text-slate-950 lg:text-lg">
-                <Link
-                  className="inline-flex items-center gap-2 rounded-full px-2 py-1 transition hover:text-sky-700"
-                  to="/"
-                >
-                  <img
-                    src="/favicon.svg"
-                    alt=""
-                    className="h-6 w-6 rounded-md"
-                  />
-                  Ilham Wahabi
-                </Link>
-              </h1>
-              <Navigation pathname={pathname} />
-            </div>
-          </header>
-          <Analytics />
-          <SpeedInsights />
-          <main className="relative z-10 flex-1">
-            <div className="mx-auto w-full max-w-5xl px-5">{children}</div>
-          </main>
-          <footer className="relative z-10 mx-auto mt-10 flex w-full max-w-5xl flex-wrap items-center justify-center gap-3 border-t border-slate-200/80 px-5 py-10 text-lg text-slate-600 md:text-xl lg:mt-16">
-            <FooterSocialLinks />
-          </footer>
-        </div>
+          <div
+            ref={scrollRef}
+            className="relative flex min-h-svh w-full flex-col overflow-y-auto"
+          >
+            <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_18%_12%,rgba(14,165,233,0.18),transparent_28%),radial-gradient(circle_at_88%_18%,rgba(251,191,36,0.18),transparent_24%),linear-gradient(180deg,#fffaf3_0%,#f7f4ef_46%,#eef5f9_100%)]" />
+            <header className="relative z-30 flex justify-center px-5 py-5 lg:py-8">
+              <div className="flex w-full max-w-3xl items-center justify-between gap-3 rounded-full border border-white/80 bg-white/75 px-4 py-3 shadow-lg shadow-slate-200/50 backdrop-blur-xl md:px-5">
+                <h1 className="text-center text-base font-semibold tracking-tight text-slate-950 lg:text-lg">
+                  <Link
+                    className="inline-flex items-center gap-2 rounded-full px-2 py-1 transition hover:text-sky-700"
+                    to="/"
+                  >
+                    <img
+                      src="/favicon.svg"
+                      alt=""
+                      className="h-6 w-6 rounded-md"
+                    />
+                    Ilham Wahabi
+                  </Link>
+                </h1>
+                <Navigation pathname={pathname} />
+              </div>
+            </header>
+            <Analytics />
+            <SpeedInsights />
+            <main className="relative z-10 flex-1">
+              <div className="mx-auto w-full max-w-5xl px-5">{children}</div>
+            </main>
+            <footer className="relative z-10 mx-auto mt-10 flex w-full max-w-5xl flex-wrap items-center justify-center gap-3 border-t border-slate-200/80 px-5 py-10 text-lg text-slate-600 md:text-xl lg:mt-16">
+              <FooterSocialLinks />
+            </footer>
+          </div>
         </PostHogProvider>
         <Scripts />
       </body>
