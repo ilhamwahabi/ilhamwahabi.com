@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { usePostHog } from "@posthog/react";
 import { getSeoHead } from "#/lib/seo";
 
 export const Route = createFileRoute("/contact")({
@@ -14,6 +15,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 function Contact() {
+  const posthog = usePostHog();
+
   return (
     <div className="mx-auto max-w-3xl py-10 lg:py-16">
       <section className="text-center">
@@ -30,6 +33,7 @@ function Contact() {
           <a
             href="mailto:ilhamwahabi.sikumbang@gmail.com"
             className="font-semibold text-sky-700 underline underline-offset-4 sm:hidden"
+            onClick={() => posthog.capture("contact_email_clicked")}
           >
             here
           </a>
@@ -49,6 +53,7 @@ function Contact() {
             target="_blank"
             rel="noreferrer"
             className="font-semibold text-sky-700 underline underline-offset-4"
+            onClick={() => posthog.capture("contact_linkedin_clicked")}
           >
             LinkedIn
           </a>{" "}
@@ -58,6 +63,7 @@ function Contact() {
             target="_blank"
             rel="noreferrer"
             className="font-semibold text-sky-700 underline underline-offset-4"
+            onClick={() => posthog.capture("contact_twitter_clicked")}
           >
             Twitter
           </a>
@@ -70,6 +76,7 @@ function Contact() {
             target="_blank"
             rel="noreferrer"
             className="font-semibold text-sky-700 underline underline-offset-4"
+            onClick={() => posthog.capture("contact_meeting_booked")}
           >
             book a meeting
           </a>{" "}

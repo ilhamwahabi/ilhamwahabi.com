@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import dayjs from 'dayjs'
+import { usePostHog } from '@posthog/react'
 import { loadTalkListData } from '#/lib/notion-server-fns'
 import { getSeoHead } from '#/lib/seo'
 
@@ -18,6 +19,7 @@ export const Route = createFileRoute('/talk/')({
 
 function Talks() {
   const { talks } = Route.useLoaderData()
+  const posthog = usePostHog()
 
   return (
     <main className="py-10 lg:py-16">
@@ -46,6 +48,12 @@ function Talks() {
               href={talk.ppt}
               rel="noreferrer"
               className="group block rounded-[2rem] border border-white/80 bg-white/70 p-6 text-left shadow-sm shadow-slate-200/70 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl hover:shadow-slate-200/70 md:p-7"
+              onClick={() =>
+                posthog.capture('talk_slides_opened', {
+                  title: talk.title,
+                  organizer: talk.organizer,
+                })
+              }
             >
               <h2 className="text-xl font-semibold tracking-tight text-slate-950 transition group-hover:text-sky-700 md:text-2xl">
                 {talk.title}

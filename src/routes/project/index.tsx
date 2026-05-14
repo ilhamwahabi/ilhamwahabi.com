@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { FaGithub } from 'react-icons/fa6'
+import { usePostHog } from '@posthog/react'
 import { loadProjectListData } from '#/lib/notion-server-fns'
 import { getSeoHead } from '#/lib/seo'
 
@@ -18,6 +19,7 @@ export const Route = createFileRoute('/project/')({
 
 function Projects() {
   const { projects } = Route.useLoaderData()
+  const posthog = usePostHog()
 
   return (
     <main className="py-10 lg:py-16">
@@ -53,6 +55,11 @@ function Projects() {
                   href={project.repo}
                   rel="noreferrer"
                   className="rounded-full bg-slate-100 p-2 text-slate-700 transition hover:bg-slate-950 hover:text-white"
+                  onClick={() =>
+                    posthog.capture('project_github_clicked', {
+                      project_name: project.name,
+                    })
+                  }
                 >
                   <FaGithub className="text-base md:text-xl" />
                 </a>
@@ -68,6 +75,11 @@ function Projects() {
                   href={project.link}
                   rel="noreferrer"
                   className="group inline-flex items-center gap-2 text-sm font-semibold text-sky-700"
+                  onClick={() =>
+                    posthog.capture('project_link_opened', {
+                      project_name: project.name,
+                    })
+                  }
                 >
                   Open project
                   <span

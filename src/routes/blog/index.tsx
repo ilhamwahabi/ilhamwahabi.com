@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
+import { usePostHog } from "@posthog/react";
 import { loadBlogListData } from "#/lib/notion-server-fns";
 import { getSeoHead } from "#/lib/seo";
 
@@ -18,6 +19,7 @@ export const Route = createFileRoute("/blog/")({
 
 function Blogs() {
   const { blogs } = Route.useLoaderData();
+  const posthog = usePostHog();
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(
     null,
   );
@@ -137,9 +139,11 @@ function Blogs() {
                       }
                       onClick={() => {
                         setListAnimEnabled(true);
-                        setSelectedLanguage((prev) =>
-                          prev === keyword ? null : keyword,
-                        );
+                        const next = selectedLanguage === keyword ? null : keyword;
+                        setSelectedLanguage(next);
+                        posthog.capture("blog_language_filter_applied", {
+                          language: next ?? "none",
+                        });
                       }}
                       className={
                         selected
@@ -181,9 +185,11 @@ function Blogs() {
                       aria-label={`Filter by topic: ${keyword}`}
                       onClick={() => {
                         setListAnimEnabled(true);
-                        setSelectedTopic((prev) =>
-                          prev === keyword ? null : keyword,
-                        );
+                        const next = selectedTopic === keyword ? null : keyword;
+                        setSelectedTopic(next);
+                        posthog.capture("blog_topic_filter_applied", {
+                          topic: next ?? "none",
+                        });
                       }}
                       className={
                         selected
@@ -225,6 +231,12 @@ function Blogs() {
               to="/blog/$slug"
               params={{ slug: blog.slug }}
               className="group block rounded-[2rem] border border-white/80 bg-white/70 p-6 text-left shadow-sm shadow-slate-200/70 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl hover:shadow-slate-200/70 md:p-7"
+              onClick={() =>
+                posthog.capture("blog_post_clicked", {
+                  slug: blog.slug,
+                  title: blog.title,
+                })
+              }
             >
               <h2 className="text-xl font-semibold tracking-tight text-slate-950 transition group-hover:text-sky-700 md:text-2xl">
                 {blog.title}

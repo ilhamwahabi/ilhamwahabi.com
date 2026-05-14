@@ -1,4 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
+import { usePostHog } from "@posthog/react";
 import { getSeoHead } from "#/lib/seo";
 
 export const Route = createFileRoute("/")({
@@ -14,6 +15,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const posthog = usePostHog();
+
   return (
     <div className="py-10 lg:py-20">
       <section className="grid items-center gap-10 rounded-[2.5rem] border border-white/80 bg-white/75 p-6 shadow-xl shadow-slate-200/60 backdrop-blur md:grid-cols-[1.15fr_0.85fr] md:p-10 lg:p-14">
@@ -32,12 +35,14 @@ function Index() {
             <Link
               className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-300 transition hover:-translate-y-0.5 hover:bg-slate-800"
               to="/about"
+              onClick={() => posthog.capture("home_cta_clicked", { cta: "about_me" })}
             >
               About me
             </Link>
             <Link
               className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-sky-200 hover:text-sky-700 hover:shadow-sm"
               to="/blog"
+              onClick={() => posthog.capture("home_cta_clicked", { cta: "read_blog" })}
             >
               Read Blog
             </Link>

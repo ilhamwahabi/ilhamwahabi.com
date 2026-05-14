@@ -11,6 +11,7 @@ import {
 } from "@tanstack/react-router";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { PostHogProvider, usePostHog } from "@posthog/react";
 import {
   FaBars,
   FaGithub,
@@ -277,6 +278,16 @@ function RootDocument({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body className="bg-[#f7f4ef] font-roboto text-slate-800 antialiased">
+        <PostHogProvider
+          apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_PROJECT_TOKEN!}
+          options={{
+            api_host: "/ingest",
+            ui_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST || "https://us.posthog.com",
+            defaults: "2025-05-24",
+            capture_exceptions: true,
+            debug: import.meta.env.DEV,
+          }}
+        >
         <div
           ref={scrollRef}
           className="relative flex min-h-svh w-full flex-col overflow-y-auto"
@@ -306,50 +317,70 @@ function RootDocument({ children }: { children: ReactNode }) {
             <div className="mx-auto w-full max-w-5xl px-5">{children}</div>
           </main>
           <footer className="relative z-10 mx-auto mt-10 flex w-full max-w-5xl flex-wrap items-center justify-center gap-3 border-t border-slate-200/80 px-5 py-10 text-lg text-slate-600 md:text-xl lg:mt-16">
-            <a
-              target="_blank"
-              href="https://github.com/ilhamwahabi"
-              rel="noreferrer"
-              className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
-            >
-              <FaGithub />
-            </a>
-            <a
-              target="_blank"
-              href="https://leetcode.com/u/ilhamwahabi"
-              rel="noreferrer"
-              className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
-            >
-              <SiLeetcode />
-            </a>
-            <a
-              target="_blank"
-              href="https://twitter.com/ilhamwahabigx"
-              rel="noreferrer"
-              className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/ilhamwahabi"
-              rel="noreferrer"
-              className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              target="_blank"
-              href="https://www.goodreads.com/ilhamwahabi"
-              rel="noreferrer"
-              className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
-            >
-              <FaGoodreads />
-            </a>
+            <FooterSocialLinks />
           </footer>
         </div>
+        </PostHogProvider>
         <Scripts />
       </body>
     </html>
+  );
+}
+
+function FooterSocialLinks() {
+  const posthog = usePostHog();
+
+  const handleSocialClick = (platform: string) => {
+    posthog.capture("social_link_clicked", { platform });
+  };
+
+  return (
+    <>
+      <a
+        target="_blank"
+        href="https://github.com/ilhamwahabi"
+        rel="noreferrer"
+        className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
+        onClick={() => handleSocialClick("github")}
+      >
+        <FaGithub />
+      </a>
+      <a
+        target="_blank"
+        href="https://leetcode.com/u/ilhamwahabi"
+        rel="noreferrer"
+        className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
+        onClick={() => handleSocialClick("leetcode")}
+      >
+        <SiLeetcode />
+      </a>
+      <a
+        target="_blank"
+        href="https://twitter.com/ilhamwahabigx"
+        rel="noreferrer"
+        className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
+        onClick={() => handleSocialClick("twitter")}
+      >
+        <FaTwitter />
+      </a>
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/ilhamwahabi"
+        rel="noreferrer"
+        className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
+        onClick={() => handleSocialClick("linkedin")}
+      >
+        <FaLinkedin />
+      </a>
+      <a
+        target="_blank"
+        href="https://www.goodreads.com/ilhamwahabi"
+        rel="noreferrer"
+        className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
+        onClick={() => handleSocialClick("goodreads")}
+      >
+        <FaGoodreads />
+      </a>
+    </>
   );
 }
