@@ -9,8 +9,6 @@ import {
   createRootRoute,
   useRouterState,
 } from "@tanstack/react-router";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 import { PostHogProvider, usePostHog } from "@posthog/react";
 import {
   FaBars,
@@ -311,8 +309,6 @@ function RootDocument({ children }: { children: ReactNode }) {
                 <Navigation pathname={pathname} />
               </div>
             </header>
-            <Analytics />
-            <SpeedInsights />
             <main className="relative z-10 flex-1">
               <div className="mx-auto w-full max-w-5xl px-5">{children}</div>
             </main>
