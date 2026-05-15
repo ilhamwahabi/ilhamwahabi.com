@@ -283,6 +283,7 @@ function RootDocument({ children }: { children: ReactNode }) {
             ui_host: "https://us.posthog.com",
             defaults: "2025-05-24",
             capture_exceptions: true,
+            opt_out_capturing_by_default: import.meta.env.DEV,
             debug: import.meta.env.DEV,
           }}
         >
