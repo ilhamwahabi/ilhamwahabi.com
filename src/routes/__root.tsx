@@ -11,12 +11,10 @@ import {
 } from "@tanstack/react-router";
 import { PostHogProvider, usePostHog } from "@posthog/react";
 import {
-  FaBars,
   FaGithub,
   FaGoodreads,
   FaLinkedin,
   FaTwitter,
-  FaXmark,
 } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 
@@ -72,6 +70,35 @@ const navLinks = [
 const getActiveNavPath = (pathname: string) =>
   navLinks.find(({ to }) => pathname === to || pathname.startsWith(`${to}/`))
     ?.to;
+
+function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
+  const lineClass =
+    "absolute left-0 h-0.5 w-3.5 rounded-full bg-current transition-all duration-300 ease-out";
+
+  return (
+    <span className="relative block h-3 w-3.5 shrink-0" aria-hidden>
+      <span
+        className={`${lineClass} ${
+          isOpen
+            ? "top-1/2 -translate-y-1/2 rotate-45"
+            : "top-0"
+        }`}
+      />
+      <span
+        className={`${lineClass} top-1/2 -translate-y-1/2 ${
+          isOpen ? "scale-x-0 opacity-0" : ""
+        }`}
+      />
+      <span
+        className={`${lineClass} ${
+          isOpen
+            ? "top-1/2 -translate-y-1/2 -rotate-45"
+            : "bottom-0"
+        }`}
+      />
+    </span>
+  );
+}
 
 function Navigation({ pathname }: { pathname: string }) {
   const activePath = getActiveNavPath(pathname);
@@ -144,7 +171,11 @@ function Navigation({ pathname }: { pathname: string }) {
     <div ref={mobileMenuRef} className="relative">
       <button
         type="button"
-        className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-950/5 text-slate-700 transition hover:bg-slate-950 hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-950/20 sm:hidden"
+        className={`inline-flex size-10 shrink-0 items-center justify-center rounded-full transition duration-300 focus:outline-none focus:ring-2 focus:ring-slate-950/20 sm:hidden ${
+          isMobileMenuOpen
+            ? "bg-slate-950 text-white"
+            : "bg-slate-950/5 text-slate-700 hover:bg-slate-950 hover:text-white"
+        }`}
         aria-controls="mobile-navigation"
         aria-expanded={isMobileMenuOpen}
         aria-label={
@@ -152,71 +183,71 @@ function Navigation({ pathname }: { pathname: string }) {
         }
         onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
       >
-        {isMobileMenuOpen ? <FaXmark aria-hidden /> : <FaBars aria-hidden />}
+        <HamburgerIcon isOpen={isMobileMenuOpen} />
       </button>
 
-      {isMobileMenuOpen ? (
+        {isMobileMenuOpen ? (
+          <nav
+            id="mobile-navigation"
+            className="absolute right-0 top-full z-40 mt-3 w-52 origin-top-right animate-mobile-menu-in rounded-2xl border border-white/80 bg-white/95 p-2 text-sm font-semibold shadow-xl shadow-slate-300/40 backdrop-blur-xl sm:hidden"
+          >
+            {navLinks.map(({ to, label }) => (
+              <Link
+                key={to}
+                to={to}
+                aria-current={activePath === to ? "page" : undefined}
+                className={`block rounded-xl px-4 py-3 transition duration-200 ${
+                  activePath === to
+                    ? "bg-slate-950 text-white"
+                    : "text-slate-700 hover:bg-slate-950/5 hover:text-slate-950"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+        ) : null}
+
         <nav
-          id="mobile-navigation"
-          className="absolute right-0 top-full z-20 mt-3 w-48 rounded-2xl border border-white/80 bg-white p-2 text-sm font-semibold shadow-xl shadow-slate-200/70 backdrop-blur-xl sm:hidden"
+          ref={containerRef}
+          className="relative hidden items-center justify-center gap-1 rounded-full bg-slate-950/5 p-1 text-sm sm:flex"
+          onPointerLeave={(e) => {
+            // On real devices, touch often ends with a container pointerleave while
+            // the route has not updated yet, which snapped the pill back to the old
+            // tab and caused a visible wiggle. Mouse hover still resets when leaving.
+            if (e.pointerType === "touch") return;
+            setSelectedPath(activePath);
+            movePillTo(activePath);
+          }}
         >
+          <span
+            aria-hidden
+            className="pointer-events-none absolute left-0 top-0 rounded-full bg-slate-950 shadow-sm transition-[height,opacity,transform,width] duration-300 ease-out"
+            style={{
+              height: pill.height,
+              opacity: pill.opacity,
+              transform: `translate(${pill.left}px, ${pill.top}px)`,
+              width: pill.width,
+            }}
+          />
           {navLinks.map(({ to, label }) => (
-            <Link
+            <AnimatedNavLink
               key={to}
               to={to}
-              aria-current={activePath === to ? "page" : undefined}
-              className={`block rounded-xl px-4 py-3 transition ${
-                activePath === to
-                  ? "bg-slate-950 text-white"
-                  : "text-slate-700 hover:bg-slate-950/5 hover:text-slate-950"
-              }`}
-              onClick={() => setIsMobileMenuOpen(false)}
+              isSelected={selectedPath === to}
+              onPointerEnter={() => {
+                setSelectedPath(to);
+                movePillTo(to);
+              }}
+              setLinkRef={(node) => {
+                linkRefs.current[to] = node;
+              }}
             >
               {label}
-            </Link>
+            </AnimatedNavLink>
           ))}
         </nav>
-      ) : null}
-
-      <nav
-        ref={containerRef}
-        className="relative hidden items-center justify-center gap-1 rounded-full bg-slate-950/5 p-1 text-sm sm:flex"
-        onPointerLeave={(e) => {
-          // On real devices, touch often ends with a container pointerleave while
-          // the route has not updated yet, which snapped the pill back to the old
-          // tab and caused a visible wiggle. Mouse hover still resets when leaving.
-          if (e.pointerType === "touch") return;
-          setSelectedPath(activePath);
-          movePillTo(activePath);
-        }}
-      >
-        <span
-          aria-hidden
-          className="pointer-events-none absolute left-0 top-0 rounded-full bg-slate-950 shadow-sm transition-[height,opacity,transform,width] duration-300 ease-out"
-          style={{
-            height: pill.height,
-            opacity: pill.opacity,
-            transform: `translate(${pill.left}px, ${pill.top}px)`,
-            width: pill.width,
-          }}
-        />
-        {navLinks.map(({ to, label }) => (
-          <AnimatedNavLink
-            key={to}
-            to={to}
-            isSelected={selectedPath === to}
-            onPointerEnter={() => {
-              setSelectedPath(to);
-              movePillTo(to);
-            }}
-            setLinkRef={(node) => {
-              linkRefs.current[to] = node;
-            }}
-          >
-            {label}
-          </AnimatedNavLink>
-        ))}
-      </nav>
     </div>
   );
 }
