@@ -22,7 +22,7 @@ function Index() {
       <section className="grid items-center gap-10 rounded-[2.5rem] border border-white/80 bg-white/75 p-6 shadow-xl shadow-slate-200/60 backdrop-blur md:grid-cols-[1.15fr_0.85fr] md:p-10 lg:p-14">
         <div>
           <p className="mb-4 inline-flex rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-sm font-medium text-sky-700">
-            Frontend-focused Software Engineer
+            Frontend-focused Product Engineer
           </p>
           <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-6xl">
             Hi, <span className="text-sky-600">Ilham</span> here.
@@ -35,14 +35,18 @@ function Index() {
             <Link
               className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-300 transition hover:-translate-y-0.5 hover:bg-slate-800"
               to="/about"
-              onClick={() => posthog.capture("home_cta_clicked", { cta: "about_me" })}
+              onClick={() =>
+                posthog.capture("home_cta_clicked", { cta: "about_me" })
+              }
             >
               About me
             </Link>
             <Link
               className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-sky-200 hover:text-sky-700 hover:shadow-sm"
               to="/blog"
-              onClick={() => posthog.capture("home_cta_clicked", { cta: "read_blog" })}
+              onClick={() =>
+                posthog.capture("home_cta_clicked", { cta: "read_blog" })
+              }
             >
               Read Blog
             </Link>

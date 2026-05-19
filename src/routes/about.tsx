@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { YEARS_OF_EXPERIENCE } from "#/const";
+import { textHighlightClass, withTextHighlight } from "#/lib/highlight";
 import { getSeoHead } from "#/lib/seo";
 
 export const Route = createFileRoute("/about")({
@@ -28,19 +29,19 @@ function About() {
       <div className="mt-8 flex w-full flex-col items-start space-y-6 rounded-[2rem] border border-slate-200/90 bg-white/95 p-6 text-left text-base leading-8 text-slate-900 shadow-md shadow-slate-300/40 md:p-8 md:text-lg lg:mt-12">
         <p>
           My name is Ilham Wahabi,{" "}
-          <span className="font-semibold text-sky-700">
-            you can call me Ilham
-          </span>
-          . I'm a software engineer based in Indonesia 🇮🇩 .
+          <span className={textHighlightClass}>you can call me Ilham</span>. I'm
+          a software engineer based in Indonesia 🇮🇩 .
         </p>
         <p>
           Currently I'm working as a{" "}
-          <span className="font-semibold text-sky-700" tabIndex={0}>
+          <span className={textHighlightClass} tabIndex={0}>
             Frontend Engineer
           </span>{" "}
           at{" "}
           <span
-            className="group/tvk relative inline cursor-help font-semibold text-sky-700 underline decoration-sky-700 decoration-dotted decoration-2 underline-offset-[5px] outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2"
+            className={withTextHighlight(
+              "group/tvk relative inline cursor-help underline decoration-slate-600 decoration-dotted decoration-2 underline-offset-[5px] outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2",
+            )}
             tabIndex={0}
           >
             Traveloka
@@ -64,7 +65,9 @@ function About() {
         <p>
           I'm graduated from{" "}
           <span
-            className="group/itb relative inline cursor-help font-semibold text-sky-700 underline decoration-sky-700 decoration-dotted decoration-2 underline-offset-[5px] outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2"
+            className={withTextHighlight(
+              "group/itb relative inline cursor-help underline decoration-slate-600 decoration-dotted decoration-2 underline-offset-[5px] outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2",
+            )}
             tabIndex={0}
           >
             Institut Teknologi Bandung
@@ -86,8 +89,8 @@ function About() {
           with bachelor degree in Informatics (Computer Science).
         </p>
         <p>
-          I have{" "}
-          <span className="font-semibold text-sky-700">
+          I have over{" "}
+          <span className={textHighlightClass}>
             {YEARS_OF_EXPERIENCE} years of experience
           </span>{" "}
           as a software engineer especially on frontend web development. I have
@@ -95,17 +98,17 @@ function About() {
           Singapore, remote and on-site.
         </p>
         <p>
-          I have experience working in early stage startups, so I{" "}
-          <span className="font-semibold text-sky-700">
-            know how to build products from the scratch
+          I'm used to working in early stage startups, so I'm{" "}
+          <span className={textHighlightClass}>
+            experienced in building products from the scratch
           </span>{" "}
-          and work in a fast-paced environment.
+          and working in a fast-paced environment.
         </p>
         <p>
           I've been working in established companies too, so I know how to
-          improve existing product and{" "}
-          <span className="font-semibold text-sky-700">
-            collaborate effectively within large teams
+          improve existing products and{" "}
+          <span className={textHighlightClass}>
+            comfortable with working in large & cross-functional teams
           </span>
           .
         </p>
@@ -115,28 +118,25 @@ function About() {
           backend development as well.
         </p>
         <p>
-          Furthermore, I’m fluent in English, skilled at crafting clean and
-          intuitive UIs, have experience in mentoring junior developers,{" "}
-          <span className="font-semibold text-sky-700">
+          Furthermore, I'm skilled at crafting clean and intuitive UIs, have
+          experience in mentoring junior developers,{" "}
+          <span className={textHighlightClass}>
             possess experiences in frontend performance optimization
           </span>
           , and have been utilizing AI to enhance my development workflow.
         </p>
         <p>
-          Aside from coding, I enjoy{" "}
-          <span className="font-semibold text-sky-700">
-            reading books 📖 and playing badminton 🏸
-          </span>{" "}
+          Aside from coding, I enjoy reading books 📖 and playing badminton 🏸{" "}
           which helps keep my mind and body in excellent shape to produce
           high-quality work.
         </p>
         <p>
-          If you interested to know more, you can{" "}
+          If you interested to learn more, you can{" "}
           <Link
-            className="font-semibold text-sky-700 underline underline-offset-4"
+            className="font-semibold underline underline-offset-4"
             to="/contact"
           >
-            contact me
+            reach me out
           </Link>
           .
         </p>
