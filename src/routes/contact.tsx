@@ -29,7 +29,7 @@ function Contact() {
         </h1>
       </section>
       <div className="mt-8 flex w-full flex-col items-start space-y-6 rounded-[2rem] border border-slate-200/90 bg-white/95 p-6 text-left text-base leading-8 text-slate-900 shadow-md shadow-slate-300/40 md:p-8 md:text-lg lg:mt-12">
-        <p>Hi, thanks for your interest in learning more about me.</p>
+        <p>Hi, thanks for your interest to know more about me.</p>
         <p>
           Feel free to send me an email{" "}
           <span className="sm:hidden">
@@ -72,16 +72,16 @@ function Contact() {
         <p>
           You can{" "}
           <a
-            href="https://cal.com/ilham-wahabi"
+            href="https://cal.com/ilham-wahabi/1-1"
             target="_blank"
             rel="noreferrer"
             className="font-semibold underline underline-offset-4"
             onClick={() => posthog.capture("contact_meeting_booked")}
           >
-            book a meeting
+            book a paid 1:1
           </a>{" "}
-          with me if you'd like to discuss something (it's free, so please be
-          responsible).
+          with me if you'd like to discuss about career, interview, tech, or
+          anything else. I'll try my best to help you.
         </p>
         <p>
           I'm{" "}

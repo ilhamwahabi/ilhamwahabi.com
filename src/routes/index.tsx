@@ -28,8 +28,8 @@ function Index() {
             Hi, <span className="text-sky-600">Ilham</span> here.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl md:leading-9">
-            I love building products with great user experiences and being used
-            by many people
+            I love building products with great user experiences that are being
+            used by many people
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -75,10 +75,36 @@ function Index() {
           </p>
           <p className="mt-6 text-sm leading-7 text-slate-300">
             Part of the Bus & Train team. I drive business growth by developing
-            new features and improving existing customer-facing and internal web
+            new features and improving existing customer-facing and internal
             apps.
           </p>
         </div>
+      </section>
+
+      <section className="mt-6 flex flex-col gap-6 rounded-[2rem] border border-sky-200/80 bg-gradient-to-br from-sky-50 to-white p-6 shadow-lg shadow-sky-100/80 md:flex-row md:items-center md:justify-between md:p-8 lg:mt-8">
+        <div>
+          <p className="text-sm uppercase tracking-[0.28em] text-sky-600">
+            Available for
+          </p>
+          <p className="mt-3 text-2xl font-semibold text-slate-950">
+            Paid 1:1 sessions
+          </p>
+          <p className="mt-2 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
+            Discuss career, interviews, tech, or anything else you'd like to
+            talk through.
+          </p>
+        </div>
+        <a
+          className="inline-flex shrink-0 self-start rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-sky-700 hover:shadow-md md:self-center"
+          href="https://cal.com/ilham-wahabi/1-1"
+          target="_blank"
+          rel="noreferrer"
+          onClick={() =>
+            posthog.capture("home_cta_clicked", { cta: "book_paid_1_1" })
+          }
+        >
+          Book a session
+        </a>
       </section>
     </div>
   );
