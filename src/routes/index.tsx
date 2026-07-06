@@ -28,8 +28,8 @@ function Index() {
             Hi, <span className="text-sky-600">Ilham</span> here.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl md:leading-9">
-            I love building products with great user experiences that are being
-            used by many people
+            I love building products with great user experiences and being used
+            by many people
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -74,9 +74,8 @@ function Index() {
             />
           </p>
           <p className="mt-6 text-sm leading-7 text-slate-300">
-            Part of the Bus & Train team. I drive business growth by developing
-            new features and improving existing customer-facing and internal
-            apps.
+            Part of the Bus & Train team. I develop customer-facing web,
+            Android, and iOS apps, as well as internal tools.
           </p>
         </div>
       </section>
@@ -87,11 +86,11 @@ function Index() {
             Available for
           </p>
           <p className="mt-3 text-2xl font-semibold text-slate-950">
-            Paid 1:1 sessions
+            Paid Consultation sessions
           </p>
           <p className="mt-2 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
-            Discuss career, interviews, tech, or anything else you'd like to
-            talk through.
+            Discuss career, interviews, tech, product development, or anything
+            else you'd like to talk through.
           </p>
         </div>
         <a

@@ -78,10 +78,10 @@ function Contact() {
             className="font-semibold underline underline-offset-4"
             onClick={() => posthog.capture("contact_meeting_booked")}
           >
-            book a paid 1:1
+            book a paid consultation
           </a>{" "}
-          with me if you'd like to discuss about career, interview, tech, or
-          anything else. I'll try my best to help you.
+          with me if you'd like to discuss about career, interview, tech,
+          product development, or anything else. I'll try my best to help you.
         </p>
         <p>
           I'm{" "}
