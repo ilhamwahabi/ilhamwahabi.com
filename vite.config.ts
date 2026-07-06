@@ -12,6 +12,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "#/": `${path.join(root, "src")}/`,
+      jsonp: path.join(root, "src/lib/jsonp-stub.ts"),
     },
   },
   plugins: [tailwindcss(), tanstackStart(), nitro(), viteReact()],

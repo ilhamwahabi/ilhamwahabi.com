@@ -2,6 +2,7 @@ import { createFileRoute, notFound } from '@tanstack/react-router'
 import type { ExtendedRecordMap } from 'notion-types'
 import { NotionRenderer } from 'react-notion-x'
 import { Code } from 'react-notion-x/build/third-party/code'
+import { BlogShareButtons } from '#/components/blog-share-buttons'
 import { loadBlogPostData } from '#/lib/notion-server-fns'
 import { getSeoHead } from '#/lib/seo'
 
@@ -41,7 +42,8 @@ export const Route = createFileRoute('/blog/$slug')({
 
 function BlogPost() {
   const { recordMap, blog } = Route.useLoaderData()
-  const { title } = blog
+  const { title, slug } = blog
+  const shareUrl = `https://ilhamwahabi.com/blog/${slug}`
 
   return (
     <main className="mx-auto max-w-3xl py-10 lg:py-16">
@@ -52,6 +54,9 @@ function BlogPost() {
         <h1 className="mx-auto mt-3 max-w-2xl text-center text-3xl font-semibold leading-tight tracking-tight text-slate-950 lg:text-5xl">
           {title}
         </h1>
+        <div className="mt-6">
+          <BlogShareButtons url={shareUrl} title={title} variant="compact" />
+        </div>
       </div>
       <div className="my-8 w-full overflow-x-auto rounded-[2rem] border border-white/80 bg-white/75 p-4 shadow-sm shadow-slate-200/70 md:p-8 lg:mb-12">
         <NotionRenderer
@@ -62,6 +67,9 @@ function BlogPost() {
             Code,
           }}
         />
+        <div className="mt-8 border-t border-slate-200/80 pt-8">
+          <BlogShareButtons url={shareUrl} title={title} />
+        </div>
       </div>
     </main>
   )
