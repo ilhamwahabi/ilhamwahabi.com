@@ -141,6 +141,16 @@ function About() {
           .
         </p>
       </div>
+      <section className="mt-8 text-center lg:mt-12">
+        <p className="mx-auto max-w-xl text-base leading-8 text-slate-600 md:text-lg">
+          There's one principle I live by. It's what pushes me to give my best
+          in everything I do — praying, working, learning, and playing. So I
+          don't regret anything in my life.
+        </p>
+        <blockquote className="mt-4 text-xl font-semibold italic leading-relaxed tracking-tight text-slate-950 md:text-2xl">
+          “Time will pass anyway, so give your best every day.”
+        </blockquote>
+      </section>
     </div>
   );
 }
