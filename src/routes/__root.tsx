@@ -14,6 +14,7 @@ import {
   FaGithub,
   FaGoodreads,
   FaLinkedin,
+  FaRss,
   FaTwitter,
 } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
@@ -279,6 +280,12 @@ export const Route = createRootRoute({
         type: "image/svg+xml",
         href: "/favicon.svg",
       },
+      {
+        rel: "alternate",
+        type: "application/rss+xml",
+        title: "Ilham Wahabi RSS Feed",
+        href: "/feed",
+      },
     ],
   }),
   shellComponent: RootDocument,
@@ -408,6 +415,14 @@ function FooterSocialLinks() {
         onClick={() => handleSocialClick("goodreads")}
       >
         <FaGoodreads />
+      </a>
+      <a
+        href="/feed"
+        title="RSS Feed"
+        className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-orange-500 hover:shadow-sm"
+        onClick={() => handleSocialClick("rss")}
+      >
+        <FaRss />
       </a>
     </>
   );
