@@ -1,10 +1,8 @@
 import { createServerFn } from '@tanstack/react-start'
-import { NotionAPI } from 'notion-client'
+import { notion } from '#/lib/notion-client'
 import { getBlogs } from '#/models/blog'
 import { getProjects } from '#/models/project'
 import { getTalks } from '#/models/talk'
-
-const notion = new NotionAPI()
 
 /** Server-only: blog index needs this when the loader runs in the browser (client navigations). */
 export const loadBlogListData = createServerFn({ method: 'GET' }).handler(
