@@ -59,13 +59,13 @@ function Contact() {
           </a>{" "}
           and{" "}
           <a
-            href="https://twitter.com/ilhamwahabigx"
+            href="https://x.com/ilhamwgx"
             target="_blank"
             rel="noreferrer"
             className="font-semibold underline underline-offset-4"
-            onClick={() => posthog.capture("contact_twitter_clicked")}
+            onClick={() => posthog.capture("contact_x_clicked")}
           >
-            Twitter
+            X
           </a>
           .
         </p>

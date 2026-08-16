@@ -33,7 +33,7 @@ export function getSeoHead({
       { property: 'og:image', content: metaImage },
       { name: 'twitter:image', content: metaImage },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:creator', content: '@ilhamwahabigx' },
+      { name: 'twitter:creator', content: '@ilhamwgx' },
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'ilhamwahabi' },
     ],
