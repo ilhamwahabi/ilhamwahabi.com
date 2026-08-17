@@ -279,6 +279,12 @@ export const Route = createRootRoute({
         type: "image/svg+xml",
         href: "/favicon.svg",
       },
+      {
+        rel: "alternate",
+        type: "application/rss+xml",
+        title: "Ilham Wahabi RSS Feed",
+        href: "/feed",
+      },
     ],
   }),
   shellComponent: RootDocument,

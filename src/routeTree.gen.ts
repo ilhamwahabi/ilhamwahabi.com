@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IngestRouteImport } from './routes/ingest'
+import { Route as FeedRouteImport } from './routes/feed'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -22,6 +23,11 @@ import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 const IngestRoute = IngestRouteImport.update({
   id: '/ingest',
   path: '/ingest',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedRoute = FeedRouteImport.update({
+  id: '/feed',
+  path: '/feed',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/feed': typeof FeedRoute
   '/ingest': typeof IngestRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/ingest/$': typeof IngestSplatRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/feed': typeof FeedRoute
   '/ingest': typeof IngestRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/ingest/$': typeof IngestSplatRoute
@@ -92,6 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/feed': typeof FeedRoute
   '/ingest': typeof IngestRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/ingest/$': typeof IngestSplatRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/feed'
     | '/ingest'
     | '/blog/$slug'
     | '/ingest/$'
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/feed'
     | '/ingest'
     | '/blog/$slug'
     | '/ingest/$'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/feed'
     | '/ingest'
     | '/blog/$slug'
     | '/ingest/$'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  FeedRoute: typeof FeedRoute
   IngestRoute: typeof IngestRouteWithChildren
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -153,6 +166,13 @@ declare module '@tanstack/react-router' {
       path: '/ingest'
       fullPath: '/ingest'
       preLoaderRoute: typeof IngestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feed': {
+      id: '/feed'
+      path: '/feed'
+      fullPath: '/feed'
+      preLoaderRoute: typeof FeedRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -229,6 +249,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  FeedRoute: FeedRoute,
   IngestRoute: IngestRouteWithChildren,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
