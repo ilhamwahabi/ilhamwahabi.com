@@ -14,7 +14,6 @@ import {
   FaGithub,
   FaGoodreads,
   FaLinkedin,
-  FaRss,
   FaTiktok,
   FaXTwitter,
 } from "react-icons/fa6";
@@ -415,14 +414,6 @@ function FooterSocialLinks() {
         onClick={() => handleSocialClick("goodreads")}
       >
         <FaGoodreads />
-      </a>
-      <a
-        href="/feed"
-        title="RSS Feed"
-        className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-orange-500 hover:shadow-sm"
-        onClick={() => handleSocialClick("rss")}
-      >
-        <FaRss />
       </a>
     </>
   );
