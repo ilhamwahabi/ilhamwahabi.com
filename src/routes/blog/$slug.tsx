@@ -1,4 +1,4 @@
-import { createFileRoute, notFound } from '@tanstack/react-router'
+import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 import type { ExtendedRecordMap } from 'notion-types'
 import { NotionRenderer } from 'react-notion-x'
 import { Code } from 'react-notion-x/build/third-party/code'
@@ -58,7 +58,7 @@ function BlogPost() {
           <BlogShareButtons url={shareUrl} title={title} variant="compact" />
         </div>
       </div>
-      <div className="my-8 w-full overflow-x-auto rounded-[2rem] border border-white/80 bg-white/75 p-4 shadow-sm shadow-slate-200/70 md:p-8 lg:mb-12">
+      <div className="my-8 w-full overflow-x-auto rounded-[2rem] border border-white/80 bg-white/75 p-4 shadow-sm shadow-slate-200/70 md:p-8">
         <NotionRenderer
           recordMap={recordMap as ExtendedRecordMap}
           fullPage={false}
@@ -71,6 +71,12 @@ function BlogPost() {
           <BlogShareButtons url={shareUrl} title={title} />
         </div>
       </div>
+      <Link
+        to="/blog"
+        className="block text-center text-base font-semibold text-slate-700 hover:text-slate-950"
+      >
+        ← Back to all blog posts
+      </Link>
     </main>
   )
 }

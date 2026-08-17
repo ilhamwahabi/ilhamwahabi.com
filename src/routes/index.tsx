@@ -86,7 +86,7 @@ function Index() {
             Available for
           </p>
           <p className="mt-3 text-2xl font-semibold text-slate-950">
-            Paid Consultation sessions
+            Consultation sessions
           </p>
           <p className="mt-2 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
             Discuss career, interviews, tech, product development, or anything

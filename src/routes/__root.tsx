@@ -15,9 +15,9 @@ import {
   FaGoodreads,
   FaLinkedin,
   FaRss,
-  FaTwitter,
+  FaTiktok,
+  FaXTwitter,
 } from "react-icons/fa6";
-import { SiLeetcode } from "react-icons/si";
 
 import appCss from "../styles.css?url";
 import nProgressStyles from "nprogress/nprogress.css?url";
@@ -382,21 +382,21 @@ function FooterSocialLinks() {
       </a>
       <a
         target="_blank"
-        href="https://leetcode.com/u/ilhamwahabi"
+        href="https://x.com/ilhamwgx"
         rel="noreferrer"
         className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
-        onClick={() => handleSocialClick("leetcode")}
+        onClick={() => handleSocialClick("x")}
       >
-        <SiLeetcode />
+        <FaXTwitter />
       </a>
       <a
         target="_blank"
-        href="https://twitter.com/ilhamwahabigx"
+        href="https://www.tiktok.com/@ilhamwgx"
         rel="noreferrer"
         className="rounded-full bg-white/70 p-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 hover:shadow-sm"
-        onClick={() => handleSocialClick("twitter")}
+        onClick={() => handleSocialClick("tiktok")}
       >
-        <FaTwitter />
+        <FaTiktok />
       </a>
       <a
         target="_blank"

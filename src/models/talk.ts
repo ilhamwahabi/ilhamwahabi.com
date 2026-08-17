@@ -1,5 +1,4 @@
-import { fetchNotionTable } from '#/lib/fetch-notion-table'
-import { NOTION_WORKER } from '#/const'
+import { getTableData } from '#/lib/notion-client'
 
 export type Talk = {
   id: string
@@ -13,7 +12,5 @@ export type Talk = {
 const NOTION_PAGE_ID = '067828ac23fd428f866844c0b0109ab2'
 
 export async function getTalks(): Promise<Array<Talk>> {
-  return fetchNotionTable<Talk>(
-    `${NOTION_WORKER}/table/${NOTION_PAGE_ID}`,
-  )
+  return getTableData<Talk>(NOTION_PAGE_ID)
 }
