@@ -80,13 +80,13 @@ function Contact() {
           >
             book a consultation
           </a>{" "}
-          with me if you'd like to discuss about career, interview, tech,
+          with me if you'd like to discuss career, interview, tech,
           product development, or anything else. I'll try my best to help you.
         </p>
         <p>
           I'm{" "}
           <span className={textHighlightClass}>open to new opportunities</span>.
-          However, I'm NOT interested working in products that related to:
+          However, I'm NOT interested in working on products related to:
           gambling, adult content, credit, paylater, and conventional banking.
         </p>
         <p>Thanks for visiting!</p>
