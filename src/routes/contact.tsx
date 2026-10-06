@@ -29,7 +29,7 @@ function Contact() {
         </h1>
       </section>
       <div className="mt-8 flex w-full flex-col items-start space-y-6 rounded-[2rem] border border-slate-200/90 bg-white/95 p-6 text-left text-base leading-8 text-slate-900 shadow-md shadow-slate-300/40 md:p-8 md:text-lg lg:mt-12">
-        <p>Hi, thanks for your interest to know more about me.</p>
+        <p>Hi, thanks for your interest to learn more about me.</p>
         <p>
           Feel free to send me an email{" "}
           <span className="sm:hidden">
