@@ -70,20 +70,6 @@ function Contact() {
           .
         </p>
         <p>
-          You can{" "}
-          <a
-            href="https://cal.com/ilham-wahabi/1-1"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold underline underline-offset-4"
-            onClick={() => posthog.capture("contact_meeting_booked")}
-          >
-            book a consultation
-          </a>{" "}
-          with me if you'd like to discuss career, interview, tech,
-          product development, or anything else. I'll try my best to help you.
-        </p>
-        <p>
           I'm{" "}
           <span className={textHighlightClass}>open to new opportunities</span>.
           However, I'm NOT interested in working on products related to:
