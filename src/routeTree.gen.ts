@@ -9,30 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IngestRouteImport } from './routes/ingest'
-import { Route as FeedRouteImport } from './routes/feed'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as TalkIndexRouteImport } from './routes/talk/index'
-import { Route as ProjectIndexRouteImport } from './routes/project/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FeedRouteImport } from './routes/feed'
+import { Route as IngestRouteImport } from './routes/ingest'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
-import { Route as IngestSplatRouteImport } from './routes/ingest/$'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as IngestSplatRouteImport } from './routes/ingest/$'
+import { Route as ProjectIndexRouteImport } from './routes/project/index'
+import { Route as TalkIndexRouteImport } from './routes/talk/index'
 
-const IngestRoute = IngestRouteImport.update({
-  id: '/ingest',
-  path: '/ingest',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FeedRoute = FeedRouteImport.update({
-  id: '/feed',
-  path: '/feed',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -40,19 +30,19 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TalkIndexRoute = TalkIndexRouteImport.update({
-  id: '/talk/',
-  path: '/talk/',
+const FeedRoute = FeedRouteImport.update({
+  id: '/feed',
+  path: '/feed',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjectIndexRoute = ProjectIndexRouteImport.update({
-  id: '/project/',
-  path: '/project/',
+const IngestRoute = IngestRouteImport.update({
+  id: '/ingest',
+  path: '/ingest',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -60,14 +50,24 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IngestSplatRoute = IngestSplatRouteImport.update({
   id: '/$',
   path: '/$',
   getParentRoute: () => IngestRoute,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
+const ProjectIndexRoute = ProjectIndexRouteImport.update({
+  id: '/project/',
+  path: '/project/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TalkIndexRoute = TalkIndexRouteImport.update({
+  id: '/talk/',
+  path: '/talk/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -161,25 +161,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/ingest': {
-      id: '/ingest'
-      path: '/ingest'
-      fullPath: '/ingest'
-      preLoaderRoute: typeof IngestRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/feed': {
-      id: '/feed'
-      path: '/feed'
-      fullPath: '/feed'
-      preLoaderRoute: typeof FeedRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -189,25 +175,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/talk/': {
-      id: '/talk/'
-      path: '/talk'
-      fullPath: '/talk/'
-      preLoaderRoute: typeof TalkIndexRouteImport
+    '/feed': {
+      id: '/feed'
+      path: '/feed'
+      fullPath: '/feed'
+      preLoaderRoute: typeof FeedRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/project/': {
-      id: '/project/'
-      path: '/project'
-      fullPath: '/project/'
-      preLoaderRoute: typeof ProjectIndexRouteImport
+    '/ingest': {
+      id: '/ingest'
+      path: '/ingest'
+      fullPath: '/ingest'
+      preLoaderRoute: typeof IngestRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -217,6 +203,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ingest/$': {
       id: '/ingest/$'
       path: '/$'
@@ -224,11 +217,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IngestSplatRouteImport
       parentRoute: typeof IngestRoute
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
+    '/project/': {
+      id: '/project/'
+      path: '/project'
+      fullPath: '/project/'
+      preLoaderRoute: typeof ProjectIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/talk/': {
+      id: '/talk/'
+      path: '/talk'
+      fullPath: '/talk/'
+      preLoaderRoute: typeof TalkIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

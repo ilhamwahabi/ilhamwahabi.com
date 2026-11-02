@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { usePostHog } from "@posthog/react";
+import { featureFlags } from "#/lib/feature-flags";
 import { getSeoHead } from "#/lib/seo";
 
 export const Route = createFileRoute("/")({
@@ -82,28 +83,55 @@ function Index() {
       <section className="mt-6 flex flex-col gap-6 rounded-[2rem] border border-sky-200/80 bg-gradient-to-br from-sky-50 to-white p-6 shadow-lg shadow-sky-100/80 md:flex-row md:items-center md:justify-between md:p-8 lg:mt-8">
         <div>
           <p className="text-sm uppercase tracking-[0.28em] text-sky-600">
-            Courses and consultation available
+            My new project
           </p>
           <p className="mt-3 text-2xl font-semibold text-slate-950">
-            Achieve more with{"\u00A0"}AI
+            Scenerator
           </p>
           <p className="mt-2 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
-            I will teach you how to utilize AI so you can get more work done,
-            faster, and simpler.
+            Design a realistic post or chat in seconds, then download and share it.
           </p>
         </div>
         <a
           className="inline-flex shrink-0 self-start rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-sky-700 hover:shadow-md md:self-center"
-          href="https://ai.ilhamwahabi.com"
+          href="https://scenerator.com"
           target="_blank"
           rel="noreferrer"
           onClick={() =>
-            posthog.capture("home_cta_clicked", { cta: "ai_site" })
+            posthog.capture("home_cta_clicked", { cta: "scenerator" })
           }
         >
-          Learn more about AI
+          Open Scenerator
         </a>
       </section>
+
+      {featureFlags.aiCourses ? (
+        <section className="mt-6 flex flex-col gap-6 rounded-[2rem] border border-sky-200/80 bg-gradient-to-br from-sky-50 to-white p-6 shadow-lg shadow-sky-100/80 md:flex-row md:items-center md:justify-between md:p-8 lg:mt-8">
+          <div>
+            <p className="text-sm uppercase tracking-[0.28em] text-sky-600">
+              Courses and consultation available
+            </p>
+            <p className="mt-3 text-2xl font-semibold text-slate-950">
+              Achieve more with{"\u00A0"}AI
+            </p>
+            <p className="mt-2 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
+              I will teach you how to utilize AI so you can get more work done,
+              faster, and simpler.
+            </p>
+          </div>
+          <a
+            className="inline-flex shrink-0 self-start rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-sky-700 hover:shadow-md md:self-center"
+            href="https://ai.ilhamwahabi.com"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() =>
+              posthog.capture("home_cta_clicked", { cta: "ai_site" })
+            }
+          >
+            Learn more about AI
+          </a>
+        </section>
+      ) : null}
     </div>
   );
 }
