@@ -106,15 +106,17 @@ function Blogs() {
             - Kidlin's Law
           </p>
         </blockquote>
-        <a
-          href="/feed"
-          title="Subscribe via RSS"
-          className="mt-6 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50/80 px-4 py-2 text-sm font-medium text-orange-700 shadow-sm transition duration-300 hover:border-orange-300 hover:bg-orange-100 hover:text-orange-800"
-          onClick={() => posthog.capture("rss_feed_clicked", { location: "blog" })}
-        >
-          <FaRss className="text-orange-500" />
-          Subscribe to RSS
-        </a>
+        <div className="mt-6 flex w-full justify-center">
+          <a
+            href="/feed"
+            title="Subscribe via RSS"
+            className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50/80 px-4 py-2 text-sm font-medium text-orange-700 shadow-sm transition duration-300 hover:border-orange-300 hover:bg-orange-100 hover:text-orange-800"
+            onClick={() => posthog.capture("rss_feed_clicked", { location: "blog" })}
+          >
+            <FaRss className="text-orange-500" />
+            Subscribe to RSS
+          </a>
+        </div>
       </section>
       {hasFilterKeywords && (
         <div className="mx-auto mt-8 flex max-w-3xl flex-col items-center gap-6 md:mt-12">
